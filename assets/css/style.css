@@ -1,0 +1,274 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fffaf7;
+    color: #2d2528;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+    border: none;
+    cursor: pointer;
+}
+
+.cabecera {
+    width: min(1120px, 92%);
+    margin: 0 auto;
+    padding: 28px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.marca {
+    display: flex;
+    flex-direction: column;
+}
+
+.nombre {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.profesion {
+    font-size: 0.85rem;
+    color: #8b7b80;
+}
+
+.navegacion {
+    display: flex;
+    gap: 22px;
+    align-items: center;
+    font-size: 0.95rem;
+}
+
+.navegacion a:hover {
+    color: #c75b74;
+}
+
+.boton-cv {
+    padding: 9px 16px;
+    border: 1px solid #2d2528;
+    border-radius: 999px;
+}
+
+.presentacion {
+    width: min(1120px, 92%);
+    margin: 70px auto 60px;
+}
+
+.saludo {
+    color: #c75b74;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+
+.presentacion h1 {
+    margin-top: 16px;
+    font-size: clamp(3rem, 8vw, 6rem);
+    line-height: 0.95;
+    letter-spacing: -0.07em;
+}
+
+.descripcion {
+    margin-top: 26px;
+    max-width: 760px;
+    font-size: 1.1rem;
+    color: #665a5e;
+}
+
+.tecnologias {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tecnologias span,
+.tecnologias-proyecto span {
+    background: #ffffff;
+    border: 1px solid #eadde0;
+    color: #5d5054;
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-size: 0.9rem;
+}
+
+.proyectos {
+    width: min(1120px, 92%);
+    margin: 0 auto 90px;
+}
+
+.cabecera-seccion {
+    margin-bottom: 28px;
+}
+
+.cabecera-seccion h2 {
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    line-height: 1;
+    letter-spacing: -0.06em;
+}
+
+.cabecera-seccion p {
+    margin-top: 12px;
+    color: #665a5e;
+    max-width: 640px;
+}
+
+.tarjetas-categorias {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-bottom: 26px;
+}
+
+.tarjeta-categoria {
+    background: #ffffff;
+    border: 1px solid #eadde0;
+    border-radius: 26px;
+    padding: 24px;
+    text-align: left;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border 0.2s ease;
+}
+
+.tarjeta-categoria:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 45px rgba(91, 54, 64, 0.1);
+}
+
+.tarjeta-categoria.activa {
+    border-color: #c75b74;
+    box-shadow: 0 18px 45px rgba(91, 54, 64, 0.12);
+}
+
+.icono-categoria {
+    display: block;
+    font-size: 1.8rem;
+    margin-bottom: 16px;
+}
+
+.tarjeta-categoria strong {
+    display: block;
+    font-size: 1.15rem;
+    margin-bottom: 8px;
+}
+
+.tarjeta-categoria small {
+    display: block;
+    color: #665a5e;
+    line-height: 1.4;
+}
+
+.lista-proyectos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.tarjeta-proyecto {
+    background: #ffffff;
+    border: 1px solid #eadde0;
+    border-radius: 26px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    min-height: 260px;
+}
+
+.tarjeta-proyecto h3 {
+    font-size: 1.4rem;
+    letter-spacing: -0.04em;
+}
+
+.tarjeta-proyecto p {
+    color: #665a5e;
+    font-size: 0.96rem;
+}
+
+.tecnologias-proyecto {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto;
+}
+
+.enlace-proyecto {
+    color: #c75b74;
+    font-weight: 700;
+}
+
+.pie-pagina {
+    width: min(1120px, 92%);
+    margin: 0 auto;
+    padding: 34px 0;
+    border-top: 1px solid #eadde0;
+    color: #8b7b80;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+@media (max-width: 850px) {
+    .cabecera {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+    }
+
+    .navegacion {
+        flex-wrap: wrap;
+    }
+
+    .tarjetas-categorias,
+    .lista-proyectos {
+        grid-template-columns: 1fr;
+    }
+
+    .presentacion {
+        margin-top: 45px;
+    }
+
+    .pie-pagina {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 520px) {
+    .navegacion {
+        gap: 14px;
+        font-size: 0.9rem;
+    }
+
+    .boton-cv {
+        width: 100%;
+        text-align: center;
+    }
+
+    .presentacion h1 {
+        font-size: 3rem;
+    }
+
+    .tarjeta-categoria,
+    .tarjeta-proyecto {
+        padding: 20px;
+        border-radius: 22px;
+    }
+}
