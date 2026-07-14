@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portfolio de Laura Basurto, desarrolladora web Full Stack.">
 
-    <title>Laura Basurto | Portfolio</title>
+    <title>Laura Basurto - Desarrolladora Web</title>
 
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -19,67 +19,98 @@
 
     <section class="presentacion">
 
-        <span class="saludo">Hola, soy Laura 👋</span>
+        <div class="bloque-presentacion">
 
-        <h1>Desarrolladora Web</h1>
+            <h1>Desarrolladora Web</h1>
 
-        <p class="descripcion">
-            Tras finalizar el Grado Superior en Desarrollo de Aplicaciones Web,
-            busco mi primera oportunidad como desarrolladora. Me gusta crear
-            aplicaciones completas, funcionales e intuitivas, cuidando tanto
-            el frontend como el backend.
-        </p>
+            <p class="descripcion">
+               Hola, soy Laura. Soy desarrolladora web Full Stack y disfruto creando aplicaciones web funcionales, intuitivas y con un diseño cuidado. Me gusta participar en todo el proceso de desarrollo, desde la interfaz que ve el usuario hasta la lógica que hace funcionar cada aplicación, siempre buscando un código limpio y soluciones bien estructuradas. Actualmente continúo ampliando mis conocimientos y desarrollando nuevos proyectos para seguir creciendo profesionalmente y afrontar nuevos retos.
+            </p>
 
-        <div class="tecnologias">
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JavaScript</span>
-            <span>PHP</span>
-            <span>MySQL</span>
-            <span>Python</span>
-            <span>Git</span>
-            <span>WordPress</span>
         </div>
 
-    </section>
+        <aside class="bloque-tecnologias">
+
+            <div class="cabecera-stack">
+                <span class="etiqueta-bloque">Stack tecnológico</span>
+            </div>
+
+            <div class="grupos-stack">
+                <div class="grupo-tecnologias">
+                    <h3>Frontend</h3>
+                    <p>HTML · CSS · JavaScript</p>
+                </div>
+
+                <div class="grupo-tecnologias">
+                    <h3>Backend</h3>
+                    <p>PHP · Java · Python</p>
+                </div>
+
+                <div class="grupo-tecnologias">
+                    <h3>Base de datos</h3>
+                    <p>MySQL · phpMyAdmin</p>
+                </div>
+
+                <div class="grupo-tecnologias">
+                    <h3>Control de versiones</h3>
+                    <p>Git · GitHub</p>
+                </div>
+
+                <div class="grupo-tecnologias">
+                    <h3>CMS</h3>
+                    <p>WordPress</p>
+                </div>
+            </div>
+
+        </aside>
+
+     </section>
 
     <section class="proyectos">
 
         <div class="cabecera-seccion">
-            <h2>Mis proyectos</h2>
+
+            <h2>Proyectos por área</h2>
+
             <p>
-                Explora mis trabajos por área. En la portada verás un resumen,
-                y cada proyecto tendrá su propia página con más detalle.
+                Selecciona un área para ver proyectos resumidos. Cada tarjeta
+                enlaza a una página con capturas, tecnologías y más detalle.
             </p>
+
         </div>
 
-        <div class="tarjetas-categorias">
+       <div class="contenedor-proyectos">
+
+            <aside class="menu-categorias">
 
             <button class="tarjeta-categoria activa" data-categoria="desarrollo">
                 <span class="icono-categoria">💻</span>
                 <strong>Desarrollo Web</strong>
-                <small>Aplicaciones con HTML, CSS, JavaScript, PHP y MySQL.</small>
+                <small>Aplicaciones y proyectos con código.</small>
             </button>
 
             <button class="tarjeta-categoria" data-categoria="automatizaciones">
                 <span class="icono-categoria">⚙️</span>
                 <strong>Automatizaciones</strong>
-                <small>Flujos digitales para optimizar procesos y tareas.</small>
+                <small>Workflows y optimización de tareas.</small>
             </button>
 
             <button class="tarjeta-categoria" data-categoria="wordpress">
                 <span class="icono-categoria">🌐</span>
                 <strong>WordPress</strong>
-                <small>Diseño y maquetación de sitios web profesionales.</small>
+                <small>Diseño, maquetación y webs profesionales.</small>
             </button>
 
-        </div>
+            </aside>
 
         <div class="lista-proyectos">
             <!-- JavaScript generará aquí las tarjetas resumen -->
         </div>
 
+        </div>
+
     </section>
+   
 
 </main>
 

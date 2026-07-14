@@ -1,9 +1,13 @@
 <footer class="pie-pagina">
 
-    <p>Siempre aprendiendo, siempre construyendo.</p>
+    <div class="pie-pagina-contenido">
 
-    <small>
-        © <?= date('Y'); ?> Laura Basurto
-    </small>
+        <p>Siempre aprendiendo, siempre construyendo.</p>
+
+        <small>
+            © <?= date('Y'); ?> Laura Basurto
+        </small>
+
+    </div>
 
 </footer>
