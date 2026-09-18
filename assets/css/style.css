@@ -28,7 +28,7 @@ body {
     --accent-coral: #e4606d;
     --accent-pink: #d15086;
     --accent-magenta: #ab2dbc;
-    --accent-gradient: linear-gradient(110deg, var(--accent-coral), var(--accent-pink) 52%, var(--accent-magenta));
+    --accent-gradient: linear-gradient(110deg, var(--accent-coral), var(--accent-pink) 36%, var(--accent-magenta));
     --surface: #ffffff;
     --surface-subtle: #fcfbfd;
     --border: #e4ddec;
