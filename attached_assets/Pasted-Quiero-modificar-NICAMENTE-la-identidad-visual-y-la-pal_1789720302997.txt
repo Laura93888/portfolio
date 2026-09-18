@@ -1,0 +1,216 @@
+Quiero modificar ÚNICAMENTE la identidad visual y la paleta de colores de mi portfolio profesional de DAW para que coincida con la identidad visual de mi currículum.
+
+IMPORTANTE: NO quiero rediseñar el portfolio desde cero ni cambiar su estructura, contenido, distribución, componentes, navegación o funcionalidad. Quiero mantener el diseño y la composición actuales y adaptar su sistema de colores de forma profesional y coherente.
+
+## Paleta de colores del currículum
+
+Colores principales:
+
+* Morado oscuro: #47167d
+* Morado: #765996
+
+Colores de acento:
+
+* Rosa coral: #e4606d
+* Rosa intermedio: #d15086
+* Magenta: #ab2dbc
+
+El degradado característico es:
+
+#e4606d → #d15086 → #ab2dbc
+
+También puedes utilizar blanco, negro y grises neutros cuando sean necesarios para mejorar la legibilidad, el contraste y la apariencia profesional.
+
+## Objetivo visual
+
+Quiero que el portfolio y el currículum parezcan formar parte de la MISMA IDENTIDAD PROFESIONAL.
+
+El portfolio debe transmitir:
+
+* perfil tecnológico;
+* desarrollo web;
+* programación;
+* automatización;
+* integración de herramientas;
+* IA aplicada a procesos;
+* profesionalidad;
+* capacidad técnica;
+* orden y claridad.
+
+Debe verse moderno y atractivo, pero FORMAL.
+
+NO quiero que parezca una web rosa, juvenil, infantil o excesivamente creativa.
+
+El rosa y el magenta deben utilizarse como colores de ACENTO, no como colores dominantes.
+
+## Distribución recomendada de los colores
+
+### Fondos
+
+Priorizar:
+
+* blanco;
+* blanco roto;
+* gris muy claro;
+* gris neutro.
+
+Los fondos principales de las secciones deben ser claros para conseguir una buena lectura y permitir que los morados destaquen.
+
+Evitar utilizar grandes superficies rosas o magenta.
+
+### Textos
+
+Utilizar principalmente:
+
+* #47167d para títulos principales y elementos importantes.
+* #765996 para subtítulos, textos destacados y elementos secundarios.
+* Gris oscuro o negro para el texto corrido cuando proporcione mejor legibilidad.
+
+NO utilizar rosa o magenta como color principal para grandes cantidades de texto.
+
+### Elementos destacados
+
+Utilizar el morado oscuro #47167d como color principal para:
+
+* botones principales;
+* títulos;
+* navegación activa;
+* elementos importantes;
+* iconos destacados;
+* enlaces principales.
+
+Utilizar #765996 como segundo nivel visual.
+
+### Rosa y magenta
+
+Utilizar:
+
+* #e4606d
+* #d15086
+* #ab2dbc
+
+principalmente para:
+
+* pequeños detalles;
+* líneas y separadores;
+* iconos;
+* etiquetas;
+* estados hover;
+* pequeños fondos;
+* bordes;
+* indicadores;
+* elementos decorativos;
+* detalles del hero.
+
+El degradado #e4606d → #d15086 → #ab2dbc puede utilizarse en elementos concretos como botones especiales, líneas decorativas, pequeños fondos, tarjetas destacadas o detalles del hero.
+
+NO utilizar el degradado como fondo de toda la página ni de grandes bloques de contenido.
+
+## Contraste y accesibilidad
+
+Priorizar siempre la legibilidad sobre el efecto visual.
+
+* El texto debe tener suficiente contraste con el fondo.
+* No colocar texto morado oscuro sobre fondos magenta intensos si dificulta la lectura.
+* No utilizar rosa claro sobre blanco para texto.
+* Los botones deben tener contraste suficiente entre fondo y texto.
+* Mantener una jerarquía visual clara entre títulos, subtítulos y texto normal.
+* Los elementos interactivos deben distinguirse claramente.
+* Mantener los espacios en blanco y evitar saturar la interfaz de color.
+
+## Estética
+
+Quiero una estética:
+
+* moderna;
+* tecnológica;
+* profesional;
+* elegante;
+* limpia;
+* minimalista;
+* ligeramente creativa, pero sin perder formalidad.
+
+La referencia visual debe estar más cerca de un portfolio profesional de desarrollo web que de una página de diseño gráfico.
+
+El color debe aportar personalidad sin convertirse en el protagonista.
+
+La combinación visual debería sentirse aproximadamente así:
+
+BLANCO / GRIS CLARO
+↓
+MORADO OSCURO #47167d
+↓
+MORADO #765996
+↓
+PEQUEÑOS ACENTOS ROSA/CORAL
+↓
+MAGENTA SOLO COMO ACENTO
+
+## Mantener el portfolio actual
+
+NO modificar:
+
+* estructura de navegación;
+* secciones;
+* textos;
+* proyectos;
+* imágenes;
+* funcionalidades;
+* enlaces;
+* tarjetas;
+* distribución;
+* animaciones existentes;
+* responsive;
+* contenido técnico.
+
+Solo adaptar colores y, cuando sea estrictamente necesario para mantener el contraste, ajustar tonos secundarios.
+
+Revisar todos los componentes para que utilicen un sistema de colores coherente:
+
+* navbar;
+* hero;
+* botones;
+* tarjetas de proyectos;
+* etiquetas de tecnologías;
+* enlaces;
+* iconos;
+* secciones;
+* formularios;
+* footer;
+* estados hover;
+* bordes;
+* sombras;
+* fondos;
+* elementos interactivos.
+
+## Regla principal
+
+El resultado debe parecer un portfolio de una desarrolladora web con una identidad visual propia.
+
+NO quiero:
+
+* una web rosa;
+* exceso de degradados;
+* fondos magenta grandes;
+* texto rosa;
+* colores chillones;
+* estética infantil;
+* estética demasiado "beauty";
+* apariencia de plantilla genérica.
+
+SÍ quiero:
+
+* fondo claro;
+* morados como identidad principal;
+* rosa/magenta como acento;
+* contraste alto;
+* jerarquía visual;
+* aspecto tecnológico;
+* aspecto profesional;
+* coherencia absoluta con mi currículum.
+
+Antes de aplicar los cambios, analiza los colores actuales del portfolio y sustituye cada color por el equivalente más adecuado dentro de esta nueva paleta, manteniendo la función visual que tenía originalmente.
+
+No hagas una sustitución automática de todos los colores por rosa o morado: decide qué elementos deben ser neutros, cuáles deben utilizar morado y cuáles necesitan únicamente un pequeño acento de color.
+
+El resultado final debe ser visualmente equilibrado y profesional incluso si se visualiza durante mucho tiempo.
