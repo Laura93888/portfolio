@@ -5,49 +5,67 @@ $proyectos = [
     "desarrollo" => [
         [
             "titulo" => "Body & Soul",
-            "descripcion" => "Aplicación web para reservar actividades deportivas y de bienestar, con usuarios, empresas, administrador, reservas, favoritos, reseñas y mapa interactivo.",
+            "descripcion" => "Plataforma web para buscar y reservar actividades deportivas y de bienestar.",
             "tecnologias" => ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
-            "enlace" => "proyectos/desarrollo/body-and-soul.php"
+            "enlace" => "bodyandsoul.php"
         ],
         [
-            "titulo" => "Portfolio personal",
-            "descripcion" => "Portfolio dinámico desarrollado con PHP, JavaScript, HTML y CSS para mostrar proyectos por áreas de trabajo.",
-            "tecnologias" => ["PHP", "JavaScript", "HTML", "CSS"],
-            "enlace" => "proyectos/desarrollo/portfolio.php"
+            "titulo" => "Tienda online",
+            "descripcion" => "Aplicación web de comercio electrónico con productos, categorías y carrito de compra.",
+            "tecnologias" => ["HTML", "CSS", "JavaScript", "PHP", "MySQL", "Make"],
+            "enlace" => "tienda.php"
         ],
         [
-            "titulo" => "Proyecto DAW",
-            "descripcion" => "Proyecto académico desarrollado durante el ciclo, centrado en la práctica de programación web y bases de datos.",
-            "tecnologias" => ["PHP", "MySQL", "HTML", "CSS"],
-            "enlace" => "proyectos/desarrollo/proyecto-daw.php"
+            "titulo" => "Biblioteca digital",
+            "descripcion" => "Aplicación web para gestionar un catálogo de libros y su sistema de préstamos.",
+            "tecnologias" => ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
+            "enlace" => "bookify.php"
+        ],
+        [
+            "titulo" => "Aplicación del tiempo",
+            "descripcion" => "Aplicación web que consulta una API meteorológica y muestra los datos dinámicamente.",
+            "tecnologias" => ["HTML", "CSS", "JavaScript", "PHP", "API", "JSON"],
+            "enlace" => "weatherly.php"
+        ],
+        [
+            "titulo" => "Consulta de colegios",
+            "descripcion" => "Aplicación web para consultar información de centros educativos mediante una API.",
+            "tecnologias" => ["HTML", "CSS", "JavaScript", "PHP", "API", "JSON"],
+            "enlace" => "colegios.php"
         ]
     ],
 
     "automatizaciones" => [
         [
-            "titulo" => "Automatización CRM",
-            "descripcion" => "Flujo digital para organizar contactos, tareas y procesos internos mediante herramientas de automatización.",
-            "tecnologias" => ["n8n", "Google Sheets", "CRM"],
+            "titulo" => "Scraping general",
+            "descripcion" => "Automatización para extraer y procesar información de páginas web.",
+            "tecnologias" => ["n8n", "Apify", "JavaScript", "Web Scraping"],
             "enlace" => "proyectos/automatizaciones/crm.php"
         ],
         [
-            "titulo" => "Gestión de procesos internos",
-            "descripcion" => "Automatización orientada a reducir tareas repetitivas y mejorar la organización de información.",
-            "tecnologias" => ["n8n", "Google Forms", "Sheets"],
+            "titulo" => "Scraping de vivienda",
+            "descripcion" => "Automatización para recopilar y procesar información de anuncios de vivienda.",
+            "tecnologias" => ["n8n", "Apify", "JavaScript", "Web Scraping"],
             "enlace" => "proyectos/automatizaciones/procesos.php"
+        ],
+        [
+            "titulo" => "Agente IA para WhatsApp",
+            "descripcion" => "Agente de IA para gestionar conversaciones, interesados y llamadas de seguimiento por WhatsApp.",
+            "tecnologias" => ["n8n", "JavaScript", "WhatsApp", "Google Sheets", "Google Calendar", "IA"],
+            "enlace" => "proyectos/automatizaciones/crm.php"
         ]
     ],
 
     "wordpress" => [
         [
             "titulo" => "Web corporativa",
-            "descripcion" => "Diseño y maquetación de una web profesional con WordPress, cuidando estructura, diseño responsive y experiencia de usuario.",
+            "descripcion" => "Web profesional desarrollada con WordPress y enfocada en una presentación clara y responsive.",
             "tecnologias" => ["WordPress", "Divi", "CSS"],
             "enlace" => "proyectos/wordpress/web-corporativa.php"
         ],
         [
             "titulo" => "Landing page",
-            "descripcion" => "Página de aterrizaje creada con WordPress para presentar un servicio de forma clara y visual.",
+            "descripcion" => "Landing page creada con WordPress para presentar un servicio de forma clara y visual.",
             "tecnologias" => ["WordPress", "CSS"],
             "enlace" => "proyectos/wordpress/landing-page.php"
         ]

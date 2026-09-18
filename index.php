@@ -60,6 +60,11 @@
                     <h3>CMS</h3>
                     <p>WordPress</p>
                 </div>
+
+                <div class="grupo-tecnologias">
+                    <h3>Automatización</h3>
+                    <p>n8n · Make · Apify</p>
+                </div>
             </div>
 
         </aside>
