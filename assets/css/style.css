@@ -57,7 +57,7 @@ button {
     width: 100%;
     margin: 0 0 18px;
     padding: 12px 0;
-    background: linear-gradient(90deg, var(--brand-dark), var(--brand));
+    background: linear-gradient(110deg, var(--accent-coral), var(--accent-pink) 52%, var(--accent-magenta));
     color: var(--cabecera-foreground);
 }
 
