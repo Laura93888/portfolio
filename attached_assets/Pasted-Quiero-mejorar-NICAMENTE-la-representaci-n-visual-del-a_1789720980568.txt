@@ -1,0 +1,126 @@
+Quiero mejorar ÚNICAMENTE la representación visual del apartado **"Proyectos"** de mi portfolio.
+
+NO quiero cambiar la estructura funcional actual ni rehacer el apartado desde cero.
+
+### Estructura actual
+
+Actualmente tengo:
+
+* 3 tarjetas superiores que representan diferentes **categorías de proyectos**.
+* Estas tarjetas son clicables y funcionan como filtros.
+* Al hacer clic en una categoría, mediante CSS se muestran/ocultan las tarjetas correspondientes a los proyectos de esa categoría.
+* Debajo aparecen las tarjetas individuales de los proyectos.
+
+El problema actual es que las tarjetas de categorías y las tarjetas de proyectos tienen prácticamente la misma identidad visual, por lo que visualmente no queda claro que cumplen funciones diferentes.
+
+### Objetivo
+
+Quiero establecer una jerarquía visual clara:
+
+**CATEGORÍAS = selector/filtro**
+
+**PROYECTOS = contenido mostrado según la categoría seleccionada**
+
+El usuario debe entender inmediatamente que las 3 tarjetas superiores son elementos interactivos que puede seleccionar y que las tarjetas inferiores son los proyectos que pertenecen a la categoría seleccionada.
+
+### Tarjetas de categorías
+
+Las 3 tarjetas superiores deben parecer claramente **botones o filtros interactivos**, no proyectos.
+
+Quiero que tengan:
+
+* una apariencia más compacta y limpia;
+* un diseño más sencillo;
+* un indicador visual de que son clicables;
+* un estado claramente visible para la categoría seleccionada;
+* un estado hover diferente;
+* una jerarquía visual superior respecto a los proyectos.
+
+Pueden utilizar iconos, pequeños indicadores, una línea inferior, borde destacado o algún elemento similar para reforzar que funcionan como selector.
+
+La categoría activa debe quedar claramente marcada.
+
+NO quiero que las categorías parezcan tarjetas de proyecto.
+
+### Tarjetas de proyectos
+
+Las tarjetas inferiores deben tener una apariencia claramente diferente.
+
+Estas sí deben parecer **tarjetas de contenido/proyectos** y pueden tener:
+
+* imagen o elemento visual del proyecto;
+* nombre;
+* breve descripción;
+* tecnologías utilizadas;
+* botones o enlaces;
+* información adicional.
+
+Deben tener más presencia visual que las categorías porque son el contenido que el usuario está explorando.
+
+### Relación visual
+
+Quiero que se perciba claramente esta jerarquía:
+
+CATEGORÍAS
+↓
+"Selecciona una categoría"
+↓
+PROYECTOS DE ESA CATEGORÍA
+
+Las categorías deben funcionar visualmente como una especie de **barra de navegación/filtro**, mientras que los proyectos deben funcionar como **cards de contenido**.
+
+### Animación / cambio de categoría
+
+Cuando el usuario pulse una categoría:
+
+* debe quedar claramente seleccionada;
+* las tarjetas de proyectos correspondientes deben mostrarse;
+* las demás deben ocultarse como ocurre actualmente;
+* NO cambiar la lógica existente;
+* NO sustituir el sistema CSS actual por JavaScript si no es necesario.
+
+Si actualmente el cambio de categorías funciona correctamente mediante CSS, conservar ese sistema.
+
+Se puede añadir una transición visual sutil al cambio de estado, pero sin animaciones excesivas.
+
+### Identidad visual
+
+Mantener la identidad visual actual del portfolio.
+
+Utilizar como referencia:
+
+* Morado oscuro: #47167d
+* Morado: #765996
+* Rosa coral: #e4606d
+* Rosa intermedio: #d15086
+* Magenta: #ab2dbc
+
+Pero mantener un aspecto profesional.
+
+No utilizar demasiado rosa.
+
+Las categorías pueden utilizar principalmente los morados, mientras que el rosa/magenta puede utilizarse como acento para:
+
+* hover;
+* categoría activa;
+* pequeños indicadores;
+* bordes;
+* detalles.
+
+Las tarjetas de proyectos deben apoyarse principalmente en fondos blancos/grises, morados y tonos neutros para mantener claridad y contraste.
+
+### Resultado que busco
+
+Quiero que, al entrar en el apartado Proyectos, sea evidente sin leer ninguna explicación que:
+
+**Las tarjetas de arriba se pueden pulsar para elegir una categoría.**
+
+**Las tarjetas de abajo son los proyectos que aparecen según la categoría elegida.**
+
+No quiero simplemente cambiar colores.
+
+Quiero mejorar la **jerarquía visual, la interacción y la comprensión del usuario**, manteniendo la estructura y funcionalidad actual.
+
+Antes de modificar el código, analiza cómo están implementadas actualmente las tarjetas y conserva las clases, IDs y lógica existentes siempre que sea posible.
+
+Modifica solo el HTML/CSS estrictamente necesario para conseguir esta diferenciación visual y no alteres otras secciones del portfolio.
