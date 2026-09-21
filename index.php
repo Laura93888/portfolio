@@ -24,7 +24,7 @@
             <h1>Desarrolladora Web</h1>
 
             <p class="descripcion">
-               Hola, soy Laura. Soy desarrolladora web Full Stack y disfruto creando aplicaciones web funcionales, intuitivas y con un diseño cuidado. Me gusta participar en todo el proceso de desarrollo, desde la interfaz que ve el usuario hasta la lógica que hace funcionar cada aplicación, siempre buscando un código limpio y soluciones bien estructuradas. Actualmente continúo ampliando mis conocimientos y desarrollando nuevos proyectos para seguir creciendo profesionalmente y afrontar nuevos retos.
+               Hola, soy Laura. Soy desarrolladora web <strong>Full Stack</strong> y disfruto creando aplicaciones web funcionales, intuitivas y con un diseño cuidado. Me gusta participar en todo el proceso de desarrollo, desde la interfaz que ve el usuario hasta la lógica que hace funcionar cada aplicación, siempre buscando un código limpio y soluciones bien estructuradas. Actualmente continúo ampliando mis conocimientos y desarrollando nuevos proyectos para seguir creciendo profesionalmente y afrontar nuevos retos.
             </p>
 
         </div>

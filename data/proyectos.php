@@ -37,22 +37,22 @@ $proyectos = [
 
     "automatizaciones" => [
         [
-            "titulo" => "Scraping general",
-            "descripcion" => "Automatización para extraer y procesar información de páginas web.",
+            "titulo" => "Automatización de extracción de emails",
+            "descripcion" => "Flujo de scraping orientado a localizar empresas e inspeccionar sus páginas web para extraer emails y datos de contacto.",
             "tecnologias" => ["n8n", "Apify", "JavaScript", "Web Scraping"],
-            "enlace" => "proyectos/automatizaciones/crm.php"
+            "enlace" => "extraccionemails.php"
         ],
         [
-            "titulo" => "Scraping de vivienda",
-            "descripcion" => "Automatización para recopilar y procesar información de anuncios de vivienda.",
-            "tecnologias" => ["n8n", "Apify", "JavaScript", "Web Scraping"],
-            "enlace" => "proyectos/automatizaciones/procesos.php"
+            "titulo" => "Scraping avanzado con bots personalizados",
+            "descripcion" => "Actores personalizados capaces de navegar e interactuar con páginas web para acceder y extraer información que no estaría disponible mediante un scraping convencional.",
+            "tecnologias" => ["n8n", "Apify", "Playwright", "JavaScript", "Web Scraping"],
+            "enlace" => "scrappingmultiportal.php"
         ],
         [
             "titulo" => "Agente IA para WhatsApp",
             "descripcion" => "Agente de IA para gestionar conversaciones, interesados y llamadas de seguimiento por WhatsApp.",
             "tecnologias" => ["n8n", "JavaScript", "WhatsApp", "Google Sheets", "Google Calendar", "IA"],
-            "enlace" => "proyectos/automatizaciones/crm.php"
+            "enlace" => "agentewhatsApp.php"
         ]
     ],
 
