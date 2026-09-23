@@ -1,3 +1,4 @@
+```php
 <?php
 
 require_once 'data/proyectos.php';
@@ -62,26 +63,24 @@ $categoria = "Desarrollo Web";
 
         <div class="cabecera-seccion">
             <h2>Sobre el proyecto</h2>
-
         </div>
 
         <p>
             <strong>Weatherly</strong> es una aplicación web desarrollada con
-            <strong>PHP</strong> que permite consultar el tiempo actual de
-            cualquier ubicación mediante <strong>WeatherAPI</strong>.
+            <strong>PHP</strong> para consultar el tiempo actual de una ubicación.
         </p>
 
         <p>
-            El usuario introduce una ciudad y la aplicación realiza una
-            petición a la API para obtener información meteorológica actual,
-            que posteriormente se procesa y se muestra de forma visual en
-            la interfaz.
+            El proyecto integra <strong>dos APIs con funciones diferentes</strong>:
+            <strong>Open-Meteo Geocoding</strong> se utiliza para localizar la
+            ciudad y obtener sus coordenadas, mientras que <strong>WeatherAPI</strong>
+            utiliza esas coordenadas para proporcionar la información meteorológica.
         </p>
 
         <p>
-            Además de la información principal del tiempo, la aplicación
-            permite consultar las últimas búsquedas realizadas y volver a
-            utilizarlas directamente desde la interfaz.
+            Además, las últimas <strong>5 ubicaciones consultadas</strong> se
+            almacenan mediante cookies para poder volver a consultarlas
+            directamente desde la aplicación.
         </p>
 
     </section>
@@ -94,25 +93,23 @@ $categoria = "Desarrollo Web";
             <h2>Funcionalidades</h2>
 
             <p>
-                Algunas de las principales funcionalidades desarrolladas en la aplicación.
+                Principales funcionalidades desarrolladas en la aplicación.
             </p>
         </div>
 
         <div class="funcionalidades-proyecto">
 
             <article class="tarjeta-funcionalidad">
-                <h3>Consulta meteorológica</h3>
+                <h3>Búsqueda de ubicaciones</h3>
 
                 <p>
-                    <strong>Búsqueda del tiempo por ciudad.</strong>
-                    La aplicación obtiene los datos meteorológicos actuales
-                    de la ubicación consultada.
+                    El usuario introduce una ciudad y puede seleccionar entre
+                    diferentes coincidencias cuando es necesario.
                 </p>
             </article>
 
-
             <article class="tarjeta-funcionalidad">
-                <h3>Información del tiempo</h3>
+                <h3>Información meteorológica</h3>
 
                 <p>
                     Muestra <strong>temperatura, sensación térmica, humedad,
@@ -120,37 +117,32 @@ $categoria = "Desarrollo Web";
                 </p>
             </article>
 
-
             <article class="tarjeta-funcionalidad">
                 <h3>Hora local</h3>
 
                 <p>
-                    La información obtenida incluye la <strong>hora local</strong>
-                    correspondiente a la ubicación consultada.
+                    Muestra la <strong>hora local</strong> correspondiente a
+                    la ubicación consultada.
                 </p>
             </article>
-
 
             <article class="tarjeta-funcionalidad">
                 <h3>Historial de búsquedas</h3>
 
                 <p>
-                    Las últimas <strong>5 ubicaciones consultadas</strong> se
-                    almacenan mediante cookies y pueden volver a utilizarse
-                    desde la interfaz.
+                    Las últimas <strong>5 ubicaciones</strong> se almacenan
+                    mediante cookies y pueden volver a consultarse.
                 </p>
             </article>
-
 
             <article class="tarjeta-funcionalidad">
                 <h3>Día y noche</h3>
 
                 <p>
-                    La interfaz cambia su apariencia según si en la ubicación
+                    La interfaz adapta su apariencia según si en la ubicación
                     consultada es <strong>de día o de noche</strong>.
                 </p>
             </article>
-
 
             <article class="tarjeta-funcionalidad">
                 <h3>Gestión de errores</h3>
@@ -158,7 +150,7 @@ $categoria = "Desarrollo Web";
                 <p>
                     La aplicación muestra <strong>mensajes informativos</strong>
                     cuando la ubicación no existe o se produce un problema
-                    durante la conexión con la API.
+                    durante la consulta.
                 </p>
             </article>
 
@@ -174,7 +166,7 @@ $categoria = "Desarrollo Web";
             <h2>Desarrollo</h2>
 
             <p>
-                Tecnologías y principales aspectos técnicos del proyecto.
+                Tecnologías y servicios utilizados para construir la aplicación.
             </p>
         </div>
 
@@ -185,49 +177,32 @@ $categoria = "Desarrollo Web";
                 <h3>Backend</h3>
 
                 <p>
-                    <strong>PHP</strong> se utiliza para gestionar la lógica
-                    de la aplicación y realizar las peticiones a WeatherAPI.
-                </p>
-
-                <p>
-                    La conexión con la API se realiza mediante
-                    <strong>cURL</strong> y la respuesta se recibe en formato
-                    <strong>JSON</strong>.
+                    <strong>PHP</strong> gestiona la lógica de la aplicación,
+                    realiza las peticiones mediante <strong>cURL</strong> y
+                    procesa las respuestas en formato <strong>JSON</strong>.
                 </p>
 
             </article>
 
-
             <article class="bloque-tecnico">
 
-                <h3>Frontend</h3>
+                <h3>Geolocalización</h3>
 
                 <p>
-                    <strong>HTML5, CSS3 y JavaScript</strong> se utilizan para
-                    construir la interfaz, mostrar la información y añadir
-                    pequeñas interacciones.
-                </p>
-
-                <p>
-                    También se utiliza <strong>Bootstrap</strong> para
-                    determinados elementos de la interfaz y el diseño responsive.
+                    <strong>Open-Meteo Geocoding API</strong> permite localizar
+                    ciudades y obtener datos como <strong>nombre, país y
+                    coordenadas</strong>.
                 </p>
 
             </article>
 
-
             <article class="bloque-tecnico">
 
-                <h3>API y datos</h3>
+                <h3>Datos meteorológicos</h3>
 
                 <p>
-                    La aplicación consume <strong>WeatherAPI</strong> y procesa
-                    los datos recibidos mediante <strong>JSON</strong>.
-                </p>
-
-                <p>
-                    PHP convierte la respuesta JSON en un array para poder
-                    utilizar sus diferentes valores en la interfaz.
+                    <strong>WeatherAPI</strong> utiliza las coordenadas obtenidas
+                    previamente para devolver la información meteorológica actual.
                 </p>
 
             </article>
@@ -237,77 +212,61 @@ $categoria = "Desarrollo Web";
     </section>
 
 
-    <!-- API Y FLUJO DE DATOS -->
+    <!-- FLUJO DE CONSULTA -->
     <section class="seccion-proyecto">
 
         <div class="cabecera-seccion">
-            <h2>Consumo de la API</h2>
+            <h2>Flujo de consulta</h2>
 
             <p>
-                Recorrido de los datos desde la búsqueda del usuario hasta su
-                representación en la interfaz.
+                Cómo se conectan las dos APIs para obtener el resultado final.
             </p>
         </div>
 
         <div class="bloques-tecnicos">
 
             <article class="bloque-tecnico">
-                <h3>01 · Búsqueda</h3>
+
+                <h3>01 · Buscar</h3>
 
                 <p>
-                    El usuario introduce una <strong>ciudad o ubicación</strong>
-                    en el buscador y solicita consultar el tiempo.
+                    El usuario introduce una <strong>ciudad</strong> en el
+                    buscador y solicita consultar el tiempo.
                 </p>
+
             </article>
 
-
             <article class="bloque-tecnico">
-                <h3>02 · Petición</h3>
+
+                <h3>02 · Localizar</h3>
 
                 <p>
-                    PHP construye la petición y utiliza <strong>cURL</strong>
-                    para conectarse con WeatherAPI.
+                    <strong>Open-Meteo</strong> busca la ubicación y devuelve
+                    sus <strong>coordenadas</strong> para identificarla con precisión.
                 </p>
+
             </article>
 
-
             <article class="bloque-tecnico">
-                <h3>03 · JSON</h3>
+
+                <h3>03 · Consultar</h3>
 
                 <p>
-                    La API devuelve los datos en formato <strong>JSON</strong>,
-                    que PHP procesa mediante <strong>json_decode()</strong>.
+                    <strong>PHP y cURL</strong> utilizan esas coordenadas para
+                    realizar una segunda petición a <strong>WeatherAPI</strong>.
                 </p>
+
             </article>
 
-
             <article class="bloque-tecnico">
-                <h3>04 · Procesamiento</h3>
+
+                <h3>04 · Mostrar</h3>
 
                 <p>
-                    La aplicación obtiene los datos necesarios, como
-                    <strong>temperatura, humedad, viento o condiciones</strong>.
+                    PHP procesa el <strong>JSON</strong> recibido y muestra
+                    la información meteorológica en la interfaz.
                 </p>
-            </article>
 
-
-            <article class="bloque-tecnico">
-                <h3>05 · Interfaz</h3>
-
-                <p>
-                    Los datos procesados se muestran en la interfaz mediante
-                    los elementos HTML correspondientes.
-                </p>
-            </article>
-
-
-            <article class="bloque-tecnico">
-                <h3>06 · Resultado</h3>
-
-                <p>
-                    El usuario obtiene la información meteorológica de la
-                    ubicación consultada de forma visual y adaptada al dispositivo.
-                </p>
             </article>
 
         </div>
@@ -319,11 +278,11 @@ $categoria = "Desarrollo Web";
     <section class="seccion-proyecto">
 
         <div class="cabecera-seccion">
-            <h2>Cookies y JavaScript</h2>
+            <h2>Cookies e interacción</h2>
 
             <p>
-                Dos elementos utilizados para añadir funcionalidad e interacción
-                a la aplicación.
+                Funcionalidades utilizadas para conservar las búsquedas y mejorar
+                la interacción con la aplicación.
             </p>
         </div>
 
@@ -335,16 +294,12 @@ $categoria = "Desarrollo Web";
 
                 <p>
                     Las últimas búsquedas se almacenan mediante una
-                    <strong>cookie</strong> en formato JSON.
-                </p>
-
-                <p>
-                    El sistema mantiene un máximo de <strong>5 ubicaciones</strong>
-                    y coloca la búsqueda más reciente en primera posición.
+                    <strong>cookie</strong> en formato JSON, manteniendo un
+                    máximo de <strong>5 ubicaciones</strong> junto con sus
+                    coordenadas.
                 </p>
 
             </article>
-
 
             <article class="bloque-tecnico">
 
@@ -352,30 +307,19 @@ $categoria = "Desarrollo Web";
 
                 <p>
                     JavaScript permite interactuar con las tarjetas del
-                    historial y <strong>recuperar automáticamente la ciudad</strong>
-                    almacenada.
-                </p>
-
-                <p>
-                    También permite rellenar el buscador y lanzar una nueva
-                    consulta desde la propia tarjeta.
+                    historial para volver a consultar una ubicación almacenada.
                 </p>
 
             </article>
-
 
             <article class="bloque-tecnico">
 
                 <h3>Modo día y noche</h3>
 
                 <p>
-                    WeatherAPI proporciona información sobre si la ubicación
-                    consultada se encuentra en <strong>día o noche</strong>.
-                </p>
-
-                <p>
-                    Este valor se utiliza para aplicar una clase diferente al
-                    <strong>body</strong> y modificar la apariencia mediante CSS.
+                    WeatherAPI proporciona el valor que indica si la ubicación
+                    se encuentra en <strong>día o noche</strong>. Este valor
+                    permite adaptar la apariencia de la interfaz mediante CSS.
                 </p>
 
             </article>
@@ -392,7 +336,7 @@ $categoria = "Desarrollo Web";
             <h2>Seguridad y gestión de errores</h2>
 
             <p>
-                Aspectos aplicados para proteger las credenciales y gestionar
+                Medidas aplicadas para proteger las credenciales y controlar
                 posibles problemas durante las consultas.
             </p>
         </div>
@@ -401,21 +345,15 @@ $categoria = "Desarrollo Web";
 
             <article class="bloque-tecnico">
 
-                <h3>Protección de la API Key</h3>
+                <h3>Protección de las API Keys</h3>
 
                 <p>
-                    La clave de WeatherAPI no se incluye directamente en el
-                    código fuente.
-                </p>
-
-                <p>
-                    Se almacena mediante una <strong>variable de entorno</strong>
-                    y el archivo correspondiente se mantiene fuera del repositorio
-                    mediante <strong>.gitignore</strong>.
+                    La clave de <strong>WeatherAPI</strong> se almacena mediante
+                    una variable de entorno y el archivo correspondiente se
+                    mantiene fuera del repositorio mediante <strong>.gitignore</strong>.
                 </p>
 
             </article>
-
 
             <article class="bloque-tecnico">
 
@@ -423,13 +361,12 @@ $categoria = "Desarrollo Web";
 
                 <ul>
                     <li>Ubicación no encontrada.</li>
-                    <li>Error de conexión con la API.</li>
+                    <li>Error de conexión con las APIs.</li>
                     <li>Respuesta HTTP incorrecta.</li>
                     <li>Respuesta de la API con error.</li>
                 </ul>
 
             </article>
-
 
             <article class="bloque-tecnico">
 
@@ -448,111 +385,10 @@ $categoria = "Desarrollo Web";
     </section>
 
 
-    <!-- GALERÍA -->
-    <section class="seccion-proyecto">
-
-        <div class="cabecera-seccion">
-            <h2>Capturas del proyecto</h2>
-
-            <p>
-                Algunas vistas de la aplicación y de sus principales funcionalidades.
-            </p>
-        </div>
-
-        <div class="galeria-proyecto">
-
-            <div class="placeholder-imagen">
-                <span>Captura 1</span>
-            </div>
-
-            <div class="placeholder-imagen">
-                <span>Captura 2</span>
-            </div>
-
-            <div class="placeholder-imagen">
-                <span>Captura 3</span>
-            </div>
-
-            <div class="placeholder-imagen">
-                <span>Captura 4</span>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- RETOS Y APRENDIZAJES -->
-    <section class="seccion-proyecto">
-
-        <div class="cabecera-seccion">
-            <h2>Retos y aprendizajes</h2>
-
-
-        </div>
-
-        <p>
-            Uno de los principales retos fue trabajar con una
-            <strong>API externa</strong> y aprender a gestionar el recorrido
-            completo de los datos desde la petición hasta su representación
-            en la interfaz.
-        </p>
-
-        <p>
-            Durante el desarrollo puse en práctica:
-        </p>
-
-        <ul>
-            <li>
-                <strong>Consumo de APIs:</strong> realización de peticiones
-                mediante PHP y cURL.
-            </li>
-
-            <li>
-                <strong>Trabajo con JSON:</strong> procesamiento de las
-                respuestas obtenidas de la API.
-            </li>
-
-            <li>
-                <strong>PHP:</strong> desarrollo de la lógica de la aplicación
-                y gestión de los datos recibidos.
-            </li>
-
-            <li>
-                <strong>JavaScript:</strong> manipulación básica del DOM
-                e incorporación de interacciones.
-            </li>
-
-            <li>
-                <strong>Cookies:</strong> almacenamiento y recuperación de
-                las últimas búsquedas.
-            </li>
-
-            <li>
-                <strong>Seguridad:</strong> uso de variables de entorno para
-                evitar exponer la API Key.
-            </li>
-
-            <li>
-                <strong>Responsive:</strong> adaptación de la interfaz a
-                diferentes tamaños de pantalla.
-            </li>
-        </ul>
-
-        <p>
-            El proyecto me permitió comprender de forma práctica cómo
-            <strong>una aplicación web puede comunicarse con un servicio
-            externo</strong>, procesar la información recibida y transformarla
-            en datos útiles para el usuario.
-        </p>
-
-    </section>
-
-
     <!-- ENLACES -->
     <section class="enlaces-proyecto">
 
-        <a href="#" class="boton-proyecto">
+        <a href="<?= $proyecto["enlace"]; ?>" class="boton-proyecto">
             Ver proyecto
         </a>
 
@@ -572,3 +408,4 @@ $categoria = "Desarrollo Web";
 
 </body>
 </html>
+```

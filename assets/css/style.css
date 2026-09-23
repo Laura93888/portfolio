@@ -514,8 +514,22 @@ button {
 
 .proyecto-imagen-principal {
     margin-bottom: 75px;
+    text-align: center;
 }
 
+.proyecto-imagen-principal img {
+    display: block;
+    width: 100%;
+    max-width: 850px;
+    height: auto;
+    margin: 0 auto;
+
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    box-shadow: 0 10px 28px rgba(71, 22, 125, 0.06);
+
+    cursor: pointer;
+}
 .placeholder-imagen {
     min-height: 330px;
 

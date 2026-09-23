@@ -44,10 +44,6 @@ $categoria = "Automatización e IA";
 <main class="pagina-proyecto">
 
 
-    <!-- =====================================================
-         CABECERA
-         ===================================================== -->
-
     <section class="proyecto-hero">
 
         <span class="etiqueta-bloque">
@@ -69,30 +65,24 @@ $categoria = "Automatización e IA";
     </section>
 
 
-    <!-- =====================================================
-         IMAGEN PRINCIPAL
-         ===================================================== -->
-
     <section class="seccion-proyecto">
 
         <div class="proyecto-imagen-principal">
 
-            <div class="placeholder-imagen">
-
-                <span>
-                    Captura principal del sistema de scraping
-                </span>
-
-            </div>
+            <a
+                href="assets/img/scrappingbots/web_scrapper.png"
+                target="_blank"
+            >
+                <img
+                    src="assets/img/scrappingbots/web_scrapper.png"
+                    alt="Flujo principal de scraping en n8n"
+                >
+            </a>
 
         </div>
 
     </section>
 
-
-    <!-- =====================================================
-         EL RETO
-         ===================================================== -->
 
     <section class="seccion-proyecto">
 
@@ -121,10 +111,6 @@ $categoria = "Automatización e IA";
 
     </section>
 
-
-    <!-- =====================================================
-         LA SOLUCIÓN
-         ===================================================== -->
 
     <section class="seccion-proyecto">
 
@@ -197,23 +183,20 @@ $categoria = "Automatización e IA";
 
         <div class="proyecto-imagen-principal">
 
-            <div class="placeholder-imagen">
-
-                <span>
-                    n8n → Apify → actores personalizados →
-                    procesamiento → Google Sheets
-                </span>
-
-            </div>
+            <a
+                href="assets/img/scrappingbots/preparacion_urls.png"
+                target="_blank"
+            >
+                <img
+                    src="assets/img/scrappingbots/preparacion_urls.png"
+                    alt="Preparación de URLs para el proceso de scraping"
+                >
+            </a>
 
         </div>
 
     </section>
 
-
-    <!-- =====================================================
-         PROCESO DE AUTOMATIZACIÓN
-         ===================================================== -->
 
     <section class="seccion-proyecto">
 
@@ -230,10 +213,6 @@ $categoria = "Automatización e IA";
 
         </div>
 
-
-        <!-- =================================================
-             KELIFY
-             ================================================= -->
 
         <div class="cabecera-proceso">
 
@@ -274,6 +253,20 @@ $categoria = "Automatización e IA";
                     para esa zona y descarta los anuncios ya procesados.
                 </p>
 
+                <div class="proyecto-imagen-principal">
+
+                    <a
+                        href="assets/img/scrappingbots/kelify.png"
+                        target="_blank"
+                    >
+                        <img
+                            src="assets/img/scrappingbots/kelify.png"
+                            alt="Flujo de scraping de Kelify"
+                        >
+                    </a>
+
+                </div>
+
             </article>
 
 
@@ -289,11 +282,17 @@ $categoria = "Automatización e IA";
                     mantiene el estado de autenticación durante la ejecución.
                 </p>
 
-                <div class="placeholder-imagen">
+                <div class="proyecto-imagen-principal">
 
-                    <span>
-                        Captura del actor personalizado con Playwright
-                    </span>
+                    <a
+                        href="assets/img/scrappingbots/actor_personalizado.png"
+                        target="_blank"
+                    >
+                        <img
+                            src="assets/img/scrappingbots/actor_personalizado.png"
+                            alt="Actor personalizado desarrollado con Playwright"
+                        >
+                    </a>
 
                 </div>
 
@@ -332,14 +331,24 @@ $categoria = "Automatización e IA";
                     almacenada en <strong>Google Sheets</strong>.
                 </p>
 
+                <div class="proyecto-imagen-principal">
+
+                    <a
+                        href="assets/img/scrappingbots/limpieza_datos.png"
+                        target="_blank"
+                    >
+                        <img
+                            src="assets/img/scrappingbots/limpieza_datos.png"
+                            alt="Limpieza y procesamiento de los datos obtenidos"
+                        >
+                    </a>
+
+                </div>
+
             </article>
 
         </div>
 
-
-        <!-- =================================================
-             MILANUNCIOS
-             ================================================= -->
 
         <div class="cabecera-proceso">
 
@@ -390,11 +399,17 @@ $categoria = "Automatización e IA";
                     descartar registros duplicados.
                 </p>
 
-                <div class="placeholder-imagen">
+                <div class="proyecto-imagen-principal">
 
-                    <span>
-                        Captura del actor y datos obtenidos
-                    </span>
+                    <a
+                        href="assets/img/scrappingbots/milanuncios.png"
+                        target="_blank"
+                    >
+                        <img
+                            src="assets/img/scrappingbots/milanuncios.png"
+                            alt="Scraping y datos obtenidos de Milanuncios"
+                        >
+                    </a>
 
                 </div>
 
@@ -402,10 +417,6 @@ $categoria = "Automatización e IA";
 
         </div>
 
-
-        <!-- =================================================
-             FOTOCASA
-             ================================================= -->
 
         <div class="cabecera-proceso">
 
@@ -440,6 +451,20 @@ $categoria = "Automatización e IA";
                     nombre, URL y teléfono.
                 </p>
 
+                <div class="proyecto-imagen-principal">
+
+                    <a
+                        href="assets/img/scrappingbots/fotocasa.png"
+                        target="_blank"
+                    >
+                        <img
+                            src="assets/img/scrappingbots/fotocasa.png"
+                            alt="Scraping y datos obtenidos de Fotocasa"
+                        >
+                    </a>
+
+                </div>
+
             </article>
 
 
@@ -461,10 +486,6 @@ $categoria = "Automatización e IA";
 
     </section>
 
-
-    <!-- =====================================================
-         ACTOR PERSONALIZADO
-         ===================================================== -->
 
     <section class="seccion-proyecto">
 
@@ -556,12 +577,23 @@ $categoria = "Automatización e IA";
 
         </div>
 
+
+        <div class="proyecto-imagen-principal">
+
+            <a
+                href="assets/img/scrappingbots/limpiezadatos2.png"
+                target="_blank"
+            >
+                <img
+                    src="assets/img/scrappingbots/limpiezadatos2.png"
+                    alt="Procesamiento y limpieza de los datos obtenidos"
+                >
+            </a>
+
+        </div>
+
     </section>
 
-
-    <!-- =====================================================
-         RESULTADO
-         ===================================================== -->
 
     <section class="seccion-proyecto">
 
@@ -592,10 +624,6 @@ $categoria = "Automatización e IA";
 
     </section>
 
-
-    <!-- =====================================================
-         VALOR TÉCNICO
-         ===================================================== -->
 
     <section class="seccion-proyecto">
 
@@ -675,63 +703,6 @@ $categoria = "Automatización e IA";
 
     </section>
 
-
-    <!-- =====================================================
-         GALERÍA
-         ===================================================== -->
-
-    <section class="seccion-proyecto">
-
-        <div class="cabecera-seccion">
-
-            <h2>
-                Galería
-            </h2>
-
-            <p>
-                Algunas capturas del desarrollo y del resultado de la
-                automatización.
-            </p>
-
-        </div>
-
-
-        <div class="galeria-proyecto">
-
-            <div class="placeholder-imagen">
-
-                <span>
-                    Flujo de automatización en n8n
-                </span>
-
-            </div>
-
-
-            <div class="placeholder-imagen">
-
-                <span>
-                    Actor personalizado con Playwright
-                </span>
-
-            </div>
-
-
-            <div class="placeholder-imagen">
-
-                <span>
-                    Datos obtenidos mediante scraping
-                </span>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         TECNOLOGÍAS
-         ===================================================== -->
 
     <section class="seccion-proyecto">
 
@@ -833,10 +804,6 @@ $categoria = "Automatización e IA";
     </section>
 
 
-    <!-- =====================================================
-         ENLACES
-         ===================================================== -->
-
     <section class="enlaces-proyecto">
 
         <a
@@ -863,3 +830,4 @@ $categoria = "Automatización e IA";
 </body>
 
 </html>
+

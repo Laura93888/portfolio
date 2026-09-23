@@ -40,20 +40,57 @@ $proyectos = [
             "titulo" => "Automatización de extracción de emails",
             "descripcion" => "Flujo de scraping orientado a localizar empresas e inspeccionar sus páginas web para extraer emails y datos de contacto.",
             "tecnologias" => ["n8n", "Apify", "JavaScript", "Web Scraping"],
+            "capturas" => [
+                "actor_maps.png",
+                "extraccion_maps.png",
+                "almacenamiento_sheet.png",
+                "form.png",
+                "datos_form.png",
+                "http_request.png",
+                "extracion_email.png",
+                "serpApi_linkedin.png",
+                "url_linkedin.png",
+                "extraer_email_linkedin.png",
+                "ampliacion_linkedin.png",
+                "actor_linkedin.png"
+            ],
             "enlace" => "extraccionemails.php"
         ],
         [
             "titulo" => "Scraping avanzado con bots personalizados",
             "descripcion" => "Actores personalizados capaces de navegar e interactuar con páginas web para acceder y extraer información que no estaría disponible mediante un scraping convencional.",
             "tecnologias" => ["n8n", "Apify", "Playwright", "JavaScript", "Web Scraping"],
+            "capturas" => [
+                "preparacion_urls.png",
+                "actor_personalizado.png",
+                "web_scrapper.png",
+                "fotocasa.png",
+                "milanuncios.png",
+                "kelify.png",
+                "limpieza_datos.png",
+                "limpiezadatos2.png"
+            ],
             "enlace" => "scrappingmultiportal.php"
         ],
         [
             "titulo" => "Agente IA para WhatsApp",
             "descripcion" => "Agente de IA para gestionar conversaciones, interesados y llamadas de seguimiento por WhatsApp.",
             "tecnologias" => ["n8n", "JavaScript", "WhatsApp", "Google Sheets", "Google Calendar", "IA"],
+            "capturas" => [
+                "flujo completo.png",
+                "normalizacion_datos.png",
+                "procesamiento_por_tipo.png",
+                "ordenacion_unificacion.png",
+                "buffer.png",
+                "prompt_agente.png",
+                "conversacion-ia.png",
+                "historial_conver.png",
+                "opciones_autonomas_agente.png",
+                "envio_proactivo_msjes.png",
+                "reactivacion_automatica_mensaje.png"
+            ],
             "enlace" => "agentewhatsApp.php"
-        ]
+        ],
     ],
 
     "wordpress" => [

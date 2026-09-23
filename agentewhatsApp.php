@@ -163,17 +163,38 @@ $categoria = "Automatización e IA";
 
         </div>
 
+    </section>
+
+
+    <!-- =====================================================
+         ARQUITECTURA DE LA AUTOMATIZACIÓN
+         ===================================================== -->
+
+    <section class="seccion-proyecto">
+
+        <div class="cabecera-seccion">
+
+            <h2>
+                Arquitectura de la automatización
+            </h2>
+
+            <p>
+                El sistema está compuesto por tres flujos independientes pero
+                conectados. Cada uno se encarga de una parte del proceso y
+                comparte la información necesaria para continuar la gestión
+                de los contactos.
+            </p>
+
+        </div>
 
         <div class="proyecto-imagen-principal">
 
-            <div class="placeholder-imagen">
+            <a href="assets/img/agenteWhatsapp/flujo_completo.png" target="_blank">
 
-                <span>
-                    Google Sheets → WhatsApp → Redis → Agente IA →
-                    CRM → Google Calendar → seguimiento
-                </span>
+                <img src="assets/img/agenteWhatsapp/flujo_completo.png"
+                     alt="Flujo completo de la automatización del agente de WhatsApp">
 
-            </div>
+            </a>
 
         </div>
 
@@ -224,119 +245,63 @@ $categoria = "Automatización e IA";
         <div class="bloques-tecnicos pasos-proceso">
 
 
-            <!-- PASO 01 -->
+            <!-- PASOS 01-03 -->
 
             <article class="bloque-tecnico">
 
                 <h3>
-                    01 · Seleccionar los leads
+                    01–03 · Selección, validación y envío
                 </h3>
 
                 <p>
                     Un trigger programado inicia el proceso diariamente a las
                     <strong>10:00</strong>. El workflow consulta Google Sheets
-                    y filtra los registros según su estado, descartando
-                    aquellos que no disponen de teléfono.
+                    y selecciona los leads que cumplen las condiciones
+                    establecidas, descartando aquellos que no disponen de
+                    teléfono.
                 </p>
 
                 <p>
                     Para controlar el volumen de cada ejecución se limita el
-                    procesamiento a <strong>20 contactos</strong>.
-                </p>
-
-                <div class="placeholder-imagen">
-                    <span>
-                        Captura del trigger y selección de leads
-                    </span>
-                </div>
-
-            </article>
-
-
-            <!-- PASO 02 -->
-
-            <article class="bloque-tecnico">
-
-                <h3>
-                    02 · Verificar el número
-                </h3>
-
-                <p>
-                    Antes de enviar ningún mensaje, el sistema consulta
-                    <strong>Evolution API</strong> para comprobar si el
-                    número dispone de WhatsApp.
+                    procesamiento a <strong>20 contactos</strong>. Antes de
+                    enviar el mensaje, <strong>Evolution API</strong> comprueba
+                    si el número dispone de WhatsApp.
                 </p>
 
                 <p>
-                    De esta forma se evita intentar contactar con números que
-                    no pueden recibir el mensaje.
-                </p>
-
-                <div class="placeholder-imagen">
-                    <span>
-                        Captura de la verificación del número
-                    </span>
-                </div>
-
-            </article>
-
-
-            <!-- PASO 03 -->
-
-            <article class="bloque-tecnico">
-
-                <h3>
-                    03 · Enviar el primer mensaje
-                </h3>
-
-                <p>
-                    Si el número es válido, se envía un mensaje personalizado
-                    utilizando los datos del lead, como su nombre y la URL
-                    del anuncio.
+                    Los contactos válidos reciben un primer mensaje
+                    personalizado utilizando datos del lead, como su nombre
+                    y la URL del anuncio. Entre los diferentes envíos se
+                    introduce una espera para controlar el ritmo de contacto.
                 </p>
 
                 <p>
-                    El workflow introduce una espera entre envíos para
-                    controlar el ritmo de contacto.
-                </p>
-
-                <div class="placeholder-imagen">
-                    <span>
-                        Captura del envío mediante Evolution API
-                    </span>
-                </div>
-
-            </article>
-
-
-            <!-- PASO 04 -->
-
-            <article class="bloque-tecnico">
-
-                <h3>
-                    04 · Actualizar el historial
-                </h3>
-
-                <p>
-                    El estado del contacto se actualiza en Google Sheets,
-                    diferenciando los contactos a los que se ha enviado el
-                    mensaje de aquellos que no disponen de WhatsApp.
+                    Una vez realizado el proceso, el estado del contacto se
+                    actualiza en Google Sheets, diferenciando los registros a
+                    los que se ha enviado el mensaje de aquellos que no
+                    disponen de WhatsApp.
                 </p>
 
                 <p>
                     Además, el contacto se copia a una hoja de historial que
-                    funciona como ficha de seguimiento.
+                    funciona como ficha de seguimiento y permite conservar
+                    la información necesaria para las siguientes etapas.
                 </p>
 
-                <div class="placeholder-imagen">
-                    <span>
-                        Captura de los registros actualizados
-                    </span>
+                <div class="proyecto-imagen-principal">
+
+                    <a href="assets/img/agenteWhatsapp/envio_proactivo_msjes.png"
+                       target="_blank">
+
+                        <img src="assets/img/agenteWhatsapp/envio_proactivo_msjes.png"
+                             alt="Flujo de selección, validación y envío proactivo de mensajes por WhatsApp">
+
+                    </a>
+
                 </div>
 
             </article>
 
-        </div>
 
 
         <!-- =================================================
@@ -384,10 +349,16 @@ $categoria = "Automatización e IA";
                     texto y la marca temporal.
                 </p>
 
-                <div class="placeholder-imagen">
-                    <span>
-                        Captura del webhook y normalización
-                    </span>
+                <div class="proyecto-imagen-principal">
+
+                    <a href="assets/img/agenteWhatsapp/normalizacion_datos.png"
+                       target="_blank">
+
+                        <img src="assets/img/agenteWhatsapp/normalizacion_datos.png"
+                             alt="Webhook y normalización de los datos recibidos">
+
+                    </a>
+
                 </div>
 
             </article>
@@ -414,10 +385,16 @@ $categoria = "Automatización e IA";
                     el procesamiento más reciente.
                 </p>
 
-                <div class="placeholder-imagen">
-                    <span>
-                        Captura del buffer de Redis
-                    </span>
+                <div class="proyecto-imagen-principal">
+
+                    <a href="assets/img/agenteWhatsapp/buffer.png"
+                       target="_blank">
+
+                        <img src="assets/img/agenteWhatsapp/buffer.png"
+                             alt="Buffer de mensajes con Redis">
+
+                    </a>
+
                 </div>
 
             </article>
@@ -442,21 +419,27 @@ $categoria = "Automatización e IA";
                     <strong>Whisper</strong>.
                 </p>
 
-                <div class="placeholder-imagen">
-                    <span>
-                        Captura del procesamiento de texto y audio
-                    </span>
+                <div class="proyecto-imagen-principal">
+
+                    <a href="assets/img/agenteWhatsapp/procesamiento_por_tipo.png"
+                       target="_blank">
+
+                        <img src="assets/img/agenteWhatsapp/procesamiento_por_tipo.png"
+                             alt="Procesamiento de mensajes según su tipo de contenido">
+
+                    </a>
+
                 </div>
 
             </article>
 
 
-            <!-- PASO 08 -->
+            <!-- PASOS 08-09 -->
 
             <article class="bloque-tecnico">
 
                 <h3>
-                    08 · Unificar los mensajes
+                    08–09 · Unificar mensajes y recuperar el contexto
                 </h3>
 
                 <p>
@@ -467,29 +450,8 @@ $categoria = "Automatización e IA";
 
                 <p>
                     También se normaliza el número de teléfono al formato
-                    utilizado por Google Sheets.
-                </p>
-
-                <div class="placeholder-imagen">
-                    <span>
-                        Captura de ordenación y unificación
-                    </span>
-                </div>
-
-            </article>
-
-
-            <!-- PASO 09 -->
-
-            <article class="bloque-tecnico">
-
-                <h3>
-                    09 · Recuperar el contexto del cliente
-                </h3>
-
-                <p>
-                    El teléfono se utiliza para localizar la ficha del
-                    contacto en <strong>Google Sheets</strong>.
+                    utilizado por Google Sheets y se utiliza para localizar
+                    la ficha correspondiente al contacto.
                 </p>
 
                 <p>
@@ -498,10 +460,16 @@ $categoria = "Automatización e IA";
                     plataforma de origen y la URL del anuncio.
                 </p>
 
-                <div class="placeholder-imagen">
-                    <span>
-                        Captura de la búsqueda de la ficha
-                    </span>
+                <div class="proyecto-imagen-principal">
+
+                    <a href="assets/img/agenteWhatsapp/ordenacion_unificacion.png"
+                       target="_blank">
+
+                        <img src="assets/img/agenteWhatsapp/ordenacion_unificacion.png"
+                             alt="Ordenación, unificación de mensajes y recuperación del contexto del contacto">
+
+                    </a>
+
                 </div>
 
             </article>
@@ -535,10 +503,16 @@ $categoria = "Automatización e IA";
                     cuando existe interés suficiente.
                 </p>
 
-                <div class="placeholder-imagen">
-                    <span>
-                        Captura del AI Agent, memoria y prompt
-                    </span>
+                <div class="proyecto-imagen-principal">
+
+                    <a href="assets/img/agenteWhatsapp/prompt_agente.png"
+                       target="_blank">
+
+                        <img src="assets/img/agenteWhatsapp/prompt_agente.png"
+                             alt="Configuración del agente de IA y su prompt">
+
+                    </a>
+
                 </div>
 
             </article>
@@ -564,10 +538,16 @@ $categoria = "Automatización e IA";
                     herramienta necesita utilizar y en qué momento.
                 </p>
 
-                <div class="placeholder-imagen">
-                    <span>
-                        Captura de las herramientas conectadas al agente
-                    </span>
+                <div class="proyecto-imagen-principal">
+
+                    <a href="assets/img/agenteWhatsapp/opciones_autonomas_agente.png"
+                       target="_blank">
+
+                        <img src="assets/img/agenteWhatsapp/opciones_autonomas_agente.png"
+                             alt="Herramientas autónomas disponibles para el agente de IA">
+
+                    </a>
+
                 </div>
 
             </article>
@@ -592,10 +572,28 @@ $categoria = "Automatización e IA";
                     log para conservar el histórico de la conversación.
                 </p>
 
-                <div class="placeholder-imagen">
-                    <span>
-                        Captura de la respuesta y registro del log
-                    </span>
+                <div class="proyecto-imagen-principal">
+
+                    <a href="assets/img/agenteWhatsapp/conversacion-ia.png"
+                       target="_blank">
+
+                        <img src="assets/img/agenteWhatsapp/conversacion-ia.png"
+                             alt="Conversación entre el usuario y el agente de IA">
+
+                    </a>
+
+                </div>
+
+                <div class="proyecto-imagen-principal">
+
+                    <a href="assets/img/agenteWhatsapp/historial_conver.png"
+                       target="_blank">
+
+                        <img src="assets/img/agenteWhatsapp/historial_conver.png"
+                             alt="Historial de la conversación registrado en el sistema">
+
+                    </a>
+
                 </div>
 
             </article>
@@ -629,12 +627,12 @@ $categoria = "Automatización e IA";
         <div class="bloques-tecnicos pasos-proceso">
 
 
-            <!-- PASO 13 -->
+            <!-- PASOS 13-16 -->
 
             <article class="bloque-tecnico">
 
                 <h3>
-                    13 · Detectar contactos pendientes
+                    13–16 · Detectar, comprobar, reactivar y registrar
                 </h3>
 
                 <p>
@@ -644,46 +642,12 @@ $categoria = "Automatización e IA";
                     día.
                 </p>
 
-                <div class="placeholder-imagen">
-                    <span>
-                        Captura del trigger y búsqueda de contactos
-                    </span>
-                </div>
-
-            </article>
-
-
-            <!-- PASO 14 -->
-
-            <article class="bloque-tecnico">
-
-                <h3>
-                    14 · Comprobar el estado
-                </h3>
-
                 <p>
                     Antes de contactar nuevamente, se comprueba el estado del
                     registro para evitar enviar mensajes a personas que ya
                     hayan agendado una llamada o que ya hayan sido
-                    reactivadas.
+                    procesadas.
                 </p>
-
-                <div class="placeholder-imagen">
-                    <span>
-                        Captura de las condiciones de filtrado
-                    </span>
-                </div>
-
-            </article>
-
-
-            <!-- PASO 15 -->
-
-            <article class="bloque-tecnico">
-
-                <h3>
-                    15 · Enviar el seguimiento
-                </h3>
 
                 <p>
                     Los contactos que cumplen las condiciones reciben
@@ -691,33 +655,22 @@ $categoria = "Automatización e IA";
                     retomar la conversación.
                 </p>
 
-                <div class="placeholder-imagen">
-                    <span>
-                        Captura del mensaje de reactivación
-                    </span>
-                </div>
-
-            </article>
-
-
-            <!-- PASO 16 -->
-
-            <article class="bloque-tecnico">
-
-                <h3>
-                    16 · Registrar la reactivación
-                </h3>
-
                 <p>
                     Después del envío, Google Sheets se actualiza para dejar
                     constancia de la reactivación y evitar que el mismo
                     contacto vuelva a procesarse de forma duplicada.
                 </p>
 
-                <div class="placeholder-imagen">
-                    <span>
-                        Captura del registro actualizado
-                    </span>
+                <div class="proyecto-imagen-principal">
+
+                    <a href="assets/img/agenteWhatsapp/reactivacion_automatica_mensaje.png"
+                       target="_blank">
+
+                        <img src="assets/img/agenteWhatsapp/reactivacion_automatica_mensaje.png"
+                             alt="Flujo general de reactivación automática de contactos">
+
+                    </a>
+
                 </div>
 
             </article>

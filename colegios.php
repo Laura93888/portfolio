@@ -2,7 +2,6 @@
 
 require_once 'data/proyectos.php';
 
-$proyecto = null;
 $proyecto = $proyectos["desarrollo"][4];
 
 $titulo = $proyecto["titulo"];
@@ -32,7 +31,9 @@ $categoria = "Desarrollo Web";
 
 <main class="pagina-proyecto">
 
+
     <!-- CABECERA -->
+
     <section class="proyecto-hero">
 
         <span class="etiqueta-bloque">
@@ -48,49 +49,50 @@ $categoria = "Desarrollo Web";
     </section>
 
 
-    <!-- IMAGEN PRINCIPAL -->
+    <!-- CAPTURAS -->
+
     <section class="proyecto-imagen-principal">
 
         <div class="placeholder-imagen">
-            <span>Captura principal del proyecto</span>
+            <img src="/assets/img/colegios/paginappal.png" alt="Pantalla de búsqueda de Weatherly">
+        </div>
+
+        <div class="capturas-secundarias">
+
+            <div class="placeholder-imagen">
+                <img src="/assets/img/colegios/busqueda.png" alt="Pantalla de búsqueda de Weatherly">
+            </div>
+
         </div>
 
     </section>
 
 
     <!-- SOBRE EL PROYECTO -->
+
     <section class="seccion-proyecto">
 
         <div class="cabecera-seccion">
-
             <h2>Sobre el proyecto</h2>
-
-
         </div>
 
         <p>
-            Madrid Colegios es una aplicación web desarrollada con
-            <strong>PHP</strong> que utiliza una
+            <strong>Madrid Colegios</strong> es una aplicación web desarrollada
+            con <strong>PHP</strong> que consume una
             <strong>API pública de datos abiertos del Ayuntamiento de Madrid</strong>
             para consultar información sobre colegios públicos.
         </p>
 
         <p>
-            El proyecto permite buscar colegios por nombre, consultar sus
-            principales datos y acceder directamente a su ubicación mediante
-            <strong>Google Maps</strong>.
-        </p>
-
-        <p>
-            El objetivo principal fue trabajar de forma práctica con
-            <strong>APIs externas</strong>, datos en formato
-            <strong>JSON</strong> y generación dinámica de contenido con PHP.
+            Permite <strong>buscar centros, consultar sus datos principales</strong>
+            y acceder a su ubicación mediante <strong>Google Maps</strong>.
         </p>
 
     </section>
 
 
     <!-- FUNCIONALIDADES -->
+
     <section class="seccion-proyecto">
 
         <div class="cabecera-seccion">
@@ -98,7 +100,7 @@ $categoria = "Desarrollo Web";
             <h2>Funcionalidades</h2>
 
             <p>
-                Principales funcionalidades desarrolladas en la aplicación.
+                Principales funcionalidades de la aplicación.
             </p>
 
         </div>
@@ -111,7 +113,7 @@ $categoria = "Desarrollo Web";
 
                 <p>
                     Obtención y visualización de información sobre colegios
-                    públicos de Madrid mediante una API.
+                    públicos mediante una API.
                 </p>
 
             </article>
@@ -122,8 +124,8 @@ $categoria = "Desarrollo Web";
                 <h3>Búsqueda</h3>
 
                 <p>
-                    Búsqueda de colegios por <strong>nombre</strong>
-                    mediante un formulario GET.
+                    Búsqueda de centros por <strong>nombre</strong> mediante
+                    un formulario GET.
                 </p>
 
             </article>
@@ -131,11 +133,11 @@ $categoria = "Desarrollo Web";
 
             <article class="tarjeta-funcionalidad">
 
-                <h3>Información detallada</h3>
+                <h3>Datos del centro</h3>
 
                 <p>
-                    Consulta de localidad, código postal, dirección y
-                    coordenadas del centro.
+                    Visualización de localidad, dirección, código postal y
+                    coordenadas.
                 </p>
 
             </article>
@@ -152,36 +154,13 @@ $categoria = "Desarrollo Web";
 
             </article>
 
-
-            <article class="tarjeta-funcionalidad">
-
-                <h3>Resultados dinámicos</h3>
-
-                <p>
-                    Los colegios se muestran dinámicamente a partir de los
-                    datos obtenidos desde la API.
-                </p>
-
-            </article>
-
-
-            <article class="tarjeta-funcionalidad">
-
-                <h3>Mensajes de error</h3>
-
-                <p>
-                    La aplicación informa cuando no se encuentra ningún
-                    colegio y gestiona errores básicos de conexión.
-                </p>
-
-            </article>
-
         </div>
 
     </section>
 
 
     <!-- DESARROLLO -->
+
     <section class="seccion-proyecto">
 
         <div class="cabecera-seccion">
@@ -189,7 +168,7 @@ $categoria = "Desarrollo Web";
             <h2>Desarrollo</h2>
 
             <p>
-                Tecnologías y principales aspectos técnicos del proyecto.
+                Tecnologías y aspectos técnicos principales.
             </p>
 
         </div>
@@ -201,9 +180,8 @@ $categoria = "Desarrollo Web";
                 <h3>Frontend</h3>
 
                 <p>
-                    <strong>HTML5, CSS3 y Bootstrap</strong> se utilizan
-                    para construir la interfaz y conseguir un diseño
-                    adaptable a diferentes tamaños de pantalla.
+                    <strong>HTML5, CSS3 y Bootstrap</strong> para construir
+                    una interfaz adaptable a diferentes tamaños de pantalla.
                 </p>
 
             </article>
@@ -211,12 +189,12 @@ $categoria = "Desarrollo Web";
 
             <article class="bloque-tecnico">
 
-                <h3>Backend</h3>
+                <h3>PHP + cURL</h3>
 
                 <p>
-                    <strong>PHP</strong> se encarga de realizar las peticiones,
-                    procesar los datos recibidos y generar dinámicamente
-                    el contenido de la aplicación.
+                    <strong>PHP</strong> gestiona la lógica de la aplicación
+                    y utiliza <strong>cURL</strong> para realizar las
+                    peticiones a la API.
                 </p>
 
             </article>
@@ -224,49 +202,32 @@ $categoria = "Desarrollo Web";
 
             <article class="bloque-tecnico">
 
-                <h3>API y cURL</h3>
+                <h3>API + JSON</h3>
 
                 <p>
-                    Se utiliza <strong>cURL</strong> para realizar una
-                    petición HTTP a la API pública de datos abiertos del
-                    Ayuntamiento de Madrid.
+                    La aplicación consume la API de datos abiertos del
+                    Ayuntamiento, procesa la respuesta en
+                    <strong>JSON</strong> y trabaja con datos anidados para
+                    obtener la información de cada centro.
                 </p>
 
             </article>
 
-
-            <article class="bloque-tecnico">
-
-                <h3>JSON</h3>
-
-                <p>
-                    La respuesta de la API se recibe en formato
-                    <strong>JSON</strong> y se convierte en un array asociativo
-                    de PHP mediante <strong>json_decode()</strong>.
-                </p>
-
-                <p>
-                    Además, se trabaja con <strong>datos anidados</strong> para
-                    acceder a información como la localidad y las coordenadas
-                    geográficas de cada colegio.
-                </p>
-
-            </article>
         </div>
 
     </section>
 
 
-    <!-- CÓMO FUNCIONA -->
+    <!-- FLUJO -->
+
     <section class="seccion-proyecto">
 
         <div class="cabecera-seccion">
 
-            <h2>Cómo funciona una búsqueda</h2>
+            <h2>Cómo funciona</h2>
 
             <p>
-                Recorrido de los datos desde la consulta del usuario hasta
-                la información mostrada.
+                Del término de búsqueda al resultado mostrado.
             </p>
 
         </div>
@@ -275,11 +236,11 @@ $categoria = "Desarrollo Web";
 
             <article class="bloque-tecnico">
 
-                <h3>01 · Búsqueda</h3>
+                <h3>01 · Buscar</h3>
 
                 <p>
                     El usuario introduce el nombre del colegio mediante
-                    un formulario.
+                    el formulario.
                 </p>
 
             </article>
@@ -287,22 +248,11 @@ $categoria = "Desarrollo Web";
 
             <article class="bloque-tecnico">
 
-                <h3>02 · GET</h3>
+                <h3>02 · Consultar</h3>
 
                 <p>
-                    El término de búsqueda se envía mediante una petición
-                    <strong>GET</strong>.
-                </p>
-
-            </article>
-
-
-            <article class="bloque-tecnico">
-
-                <h3>03 · API</h3>
-
-                <p>
-                    PHP realiza la petición a la API mediante
+                    PHP recibe el término mediante <strong>GET</strong> y
+                    realiza la petición a la API utilizando
                     <strong>cURL</strong>.
                 </p>
 
@@ -311,11 +261,11 @@ $categoria = "Desarrollo Web";
 
             <article class="bloque-tecnico">
 
-                <h3>04 · JSON</h3>
+                <h3>03 · Procesar</h3>
 
                 <p>
-                    La respuesta JSON se procesa y se obtiene la información
-                    de los colegios.
+                    La respuesta <strong>JSON</strong> se convierte en un
+                    array de PHP y se procesan los datos obtenidos.
                 </p>
 
             </article>
@@ -323,62 +273,14 @@ $categoria = "Desarrollo Web";
 
             <article class="bloque-tecnico">
 
-                <h3>05 · Filtrado</h3>
+                <h3>04 · Mostrar</h3>
 
                 <p>
-                    Se compara el texto introducido con el nombre de cada
-                    colegio utilizando <strong>str_contains()</strong>.
+                    Se muestran los colegios encontrados junto con sus
+                    datos y su ubicación en Google Maps.
                 </p>
 
             </article>
-
-
-            <article class="bloque-tecnico">
-
-                <h3>06 · Resultado</h3>
-
-                <p>
-                    Se muestran los colegios encontrados junto con sus datos
-                    y su ubicación en Google Maps.
-                </p>
-
-            </article>
-
-        </div>
-
-    </section>
-
-
-    <!-- CAPTURAS -->
-    <section class="seccion-proyecto">
-
-        <div class="cabecera-seccion">
-
-            <h2>Capturas del proyecto</h2>
-
-            <p>
-                Algunas vistas de la aplicación y de sus funcionalidades.
-            </p>
-
-        </div>
-
-        <div class="galeria-proyecto">
-
-            <div class="placeholder-imagen">
-                <span>Captura 1</span>
-            </div>
-
-            <div class="placeholder-imagen">
-                <span>Captura 2</span>
-            </div>
-
-            <div class="placeholder-imagen">
-                <span>Captura 3</span>
-            </div>
-
-            <div class="placeholder-imagen">
-                <span>Captura 4</span>
-            </div>
 
         </div>
 
@@ -386,6 +288,7 @@ $categoria = "Desarrollo Web";
 
 
     <!-- RETOS Y APRENDIZAJES -->
+
     <section class="seccion-proyecto">
 
         <div class="cabecera-seccion">
@@ -395,59 +298,24 @@ $categoria = "Desarrollo Web";
         </div>
 
         <p>
-            Uno de los principales retos fue trabajar con una fuente de datos
-            externa y comprender la estructura de la información recibida
-            en formato JSON.
+            El principal reto fue trabajar con una <strong>API externa</strong>
+            y comprender la estructura de los datos recibidos en
+            <strong>JSON</strong>.
         </p>
 
         <p>
-            Durante el desarrollo puse en práctica:
-        </p>
-
-        <ul>
-
-            <li>
-                <strong>Consumo de APIs:</strong> realización de peticiones
-                HTTP a servicios externos.
-            </li>
-
-            <li>
-                <strong>cURL:</strong> conexión con una API desde PHP.
-            </li>
-
-            <li>
-                <strong>JSON:</strong> procesamiento de información recibida
-                desde una API externa.
-            </li>
-
-            <li>
-                <strong>Datos anidados:</strong> acceso a diferentes niveles
-                de una estructura JSON.
-            </li>
-
-            <li>
-                <strong>GET:</strong> utilización de parámetros para realizar
-                búsquedas.
-            </li>
-
-            <li>
-                <strong>Datos geográficos:</strong> utilización de latitud y
-                longitud para generar enlaces a Google Maps.
-            </li>
-
-        </ul>
-
-        <p>
-            El proyecto me permitió consolidar el trabajo con
-            <strong>PHP, APIs externas y JSON</strong>, entendiendo cómo
-            obtener, procesar y mostrar dinámicamente información procedente
-            de una fuente externa.
+            Durante el desarrollo puse en práctica el consumo de APIs mediante
+            <strong>cURL</strong>, el procesamiento de
+            <strong>JSON</strong>, el uso de parámetros <strong>GET</strong>
+            y el trabajo con <strong>datos geográficos</strong> para generar
+            enlaces a Google Maps.
         </p>
 
     </section>
 
 
     <!-- ENLACES -->
+
     <section class="enlaces-proyecto">
 
         <a href="#" class="boton-proyecto">

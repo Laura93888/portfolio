@@ -41,11 +41,6 @@ $categoria = "Automatización e IA";
 
 <main class="pagina-proyecto">
 
-
-    <!-- =====================================================
-         CABECERA
-         ===================================================== -->
-
     <section class="proyecto-hero">
 
         <span class="etiqueta-bloque">
@@ -57,19 +52,15 @@ $categoria = "Automatización e IA";
         </h1>
 
         <p class="proyecto-introduccion">
-            Automatización desarrollada con n8n que conecta la búsqueda de
-            empresas con un proceso de análisis de sus páginas web para
-            localizar direcciones de email. Como vía alternativa, incorpora
-            una búsqueda de perfiles profesionales en LinkedIn cuando el
-            proceso principal no encuentra un correo.
+            Automatización desarrollada con n8n para localizar empresas,
+            recopilar sus datos y analizar automáticamente sus páginas web
+            en busca de direcciones de email. El flujo incorpora además
+            una vía alternativa basada en LinkedIn cuando el proceso
+            principal no encuentra un correo.
         </p>
 
     </section>
 
-
-    <!-- =====================================================
-         EL PROBLEMA
-         ===================================================== -->
 
     <section class="seccion-proyecto">
 
@@ -80,31 +71,27 @@ $categoria = "Automatización e IA";
         </div>
 
         <p>
-            La creación de una base de datos de posibles clientes puede
-            requerir localizar empresas, recopilar sus datos y visitar sus
-            páginas web una por una para comprobar si disponen de información
-            de contacto.
+            Crear una base de datos de posibles clientes puede implicar
+            localizar empresas, recopilar sus datos y acceder a sus páginas
+            web una por una para comprobar si disponen de información de
+            contacto.
         </p>
 
         <p>
-            Cuando se trabaja con muchas empresas, repetir manualmente estas
-            tareas consume tiempo y dificulta mantener la información
-            organizada.
+            Cuando se trabaja con muchas empresas, repetir estas tareas
+            manualmente consume tiempo y dificulta mantener la información
+            organizada y actualizada.
         </p>
 
         <p>
-            Además, cada página web puede mostrar la información de contacto
-            de una forma diferente. Por ello, era necesario crear un proceso
-            capaz de acceder a las webs y analizar su contenido para localizar
-            automáticamente las direcciones de email que aparecen en ellas.
+            Además, cada página web puede presentar la información de contacto
+            de una forma diferente. Por ello, se planteó automatizar tanto
+            la recopilación inicial de empresas como el análisis de sus
+            páginas web.
         </p>
 
     </section>
 
-
-    <!-- =====================================================
-         LA SOLUCIÓN
-         ===================================================== -->
 
     <section class="seccion-proyecto">
 
@@ -113,9 +100,9 @@ $categoria = "Automatización e IA";
             <h2>La solución</h2>
 
             <p>
-                La automatización se estructura en dos procesos principales
-                conectados entre sí y una vía alternativa para los casos en
-                los que el proceso principal no encuentra un email.
+                La automatización conecta varios procesos para pasar de una
+                búsqueda de empresas a una base de datos con información de
+                contacto obtenida automáticamente.
             </p>
 
         </div>
@@ -128,11 +115,10 @@ $categoria = "Automatización e IA";
                 <h3>Captación de empresas</h3>
 
                 <p>
-                    El primer proceso parte de una búsqueda por
-                    <strong>nicho y ubicación</strong>. Apify obtiene los
-                    resultados de Google Maps y recopila los datos disponibles
-                    de cada empresa, incluida su página web cuando está
-                    disponible.
+                    El proceso comienza con una búsqueda definida por
+                    <strong>nicho y ubicación</strong>. Apify utiliza estos
+                    parámetros para localizar empresas en Google Maps y
+                    obtener sus datos disponibles, incluida su página web.
                 </p>
 
             </article>
@@ -140,13 +126,13 @@ $categoria = "Automatización e IA";
 
             <article class="bloque-tecnico">
 
-                <h3>Análisis de las páginas web</h3>
+                <h3>Análisis de páginas web</h3>
 
                 <p>
-                    El segundo proceso utiliza las URLs obtenidas anteriormente.
-                    Accede a cada página, obtiene su contenido HTML y lo
-                    analiza mediante JavaScript para localizar direcciones
-                    de email presentes en ese contenido.
+                    Las URLs obtenidas se utilizan como entrada de un segundo
+                    workflow. Este accede a cada página, obtiene su contenido
+                    HTML y lo analiza mediante <strong>JavaScript</strong>
+                    para localizar direcciones de email.
                 </p>
 
             </article>
@@ -157,11 +143,10 @@ $categoria = "Automatización e IA";
                 <h3>Vía alternativa mediante LinkedIn</h3>
 
                 <p>
-                    Cuando el proceso principal no encuentra un email,
-                    SerpAPI permite localizar la página profesional de la
-                    empresa en LinkedIn. Apify obtiene perfiles profesionales
-                    relacionados y, cuando contienen emails públicos, estos
-                    pueden utilizarse como otra fuente de contacto.
+                    Si el análisis de la página web no encuentra un email,
+                    se puede realizar una búsqueda de la empresa en LinkedIn
+                    y obtener perfiles profesionales relacionados para
+                    localizar información pública de contacto.
                 </p>
 
             </article>
@@ -171,24 +156,20 @@ $categoria = "Automatización e IA";
 
         <div class="proyecto-imagen-principal">
 
-            <div class="placeholder-imagen">
+            <a href="assets/img/extraccion_emails/extraccion_maps.png"
+               target="_blank">
 
-                <span>
-                    Google Maps → Apify → Google Sheets →
-                    análisis de webs → emails →
-                    LinkedIn como vía alternativa
-                </span>
+                <img
+                    src="assets/img/extraccion_emails/extraccion_maps.png"
+                    alt="Flujo de captación y extracción de datos de empresas"
+                    loading="lazy">
 
-            </div>
+            </a>
 
         </div>
 
     </section>
 
-
-    <!-- =====================================================
-         PROCESO DE AUTOMATIZACIÓN
-         ===================================================== -->
 
     <section class="seccion-proyecto">
 
@@ -197,17 +178,14 @@ $categoria = "Automatización e IA";
             <h2>Proceso de automatización</h2>
 
             <p>
-                El proceso principal está formado por dos workflows
-                relacionados. El primero obtiene las empresas y sus páginas
-                web; el segundo utiliza esas URLs para analizar su contenido.
+                El proceso principal se divide en dos workflows conectados.
+                El primero localiza empresas y recopila sus datos; el segundo
+                utiliza las páginas web obtenidas para buscar información de
+                contacto.
             </p>
 
         </div>
 
-
-        <!-- =================================================
-             PROCESO 1
-             ================================================= -->
 
         <div class="cabecera-proceso">
 
@@ -220,10 +198,9 @@ $categoria = "Automatización e IA";
             </h3>
 
             <p>
-                Este workflow localiza empresas a partir de un nicho y una
-                ubicación y almacena sus datos. La URL de la página web es
-                especialmente importante porque será utilizada como entrada
-                en el segundo proceso.
+                Este workflow parte de una búsqueda definida por nicho y
+                ubicación, utiliza Apify para localizar empresas y almacena
+                los resultados en Google Sheets.
             </p>
 
         </div>
@@ -232,120 +209,129 @@ $categoria = "Automatización e IA";
         <div class="bloques-tecnicos pasos-proceso">
 
 
-            <!-- PASO 1 -->
-
             <article class="bloque-tecnico">
 
                 <h3>
-                    01 · Definir la búsqueda
+                    01–02 · Definir y preparar la búsqueda
                 </h3>
 
                 <p>
-                    El proceso comienza indicando el
-                    <strong>nicho y la ubicación</strong> que se quieren
-                    investigar.
+                    El proceso comienza indicando el <strong>nicho y la
+                    ubicación</strong> que se quieren investigar.
                 </p>
 
                 <p>
-                    Estos datos se utilizan como parámetros para realizar la
-                    búsqueda de empresas.
+                    Los datos introducidos se preparan para utilizarlos como
+                    parámetros de entrada en la búsqueda de empresas.
                 </p>
 
-                <div class="placeholder-imagen">
+                <div class="proyecto-imagen-principal">
 
-                    <span>
-                        Captura del formulario de entrada
-                    </span>
+                    <a href="assets/img/extraccion_emails/form.png"
+                       target="_blank">
+
+                        <img
+                            src="assets/img/extraccion_emails/form.png"
+                            alt="Formulario de búsqueda"
+                            loading="lazy">
+
+                    </a>
+
+                    <a href="assets/img/extraccion_emails/datos_form.png"
+                       target="_blank">
+
+                        <img
+                            src="assets/img/extraccion_emails/datos_form.png"
+                            alt="Preparación de los datos de búsqueda"
+                            loading="lazy">
+
+                    </a>
 
                 </div>
 
             </article>
 
 
-            <!-- PASO 2 -->
-
             <article class="bloque-tecnico">
 
                 <h3>
-                    02 · Preparar los datos de entrada
-                </h3>
-
-                <p>
-                    La información introducida se prepara y transforma para
-                    utilizarla como entrada del proceso de búsqueda.
-                </p>
-
-                <div class="placeholder-imagen">
-
-                    <span>
-                        Captura del nodo de preparación de datos
-                    </span>
-
-                </div>
-
-            </article>
-
-
-            <!-- PASO 3 -->
-
-            <article class="bloque-tecnico">
-
-                <h3>
-                    03 · Localizar empresas en Google Maps
+                    03–04 · Localizar empresas y extraer sus datos
                 </h3>
 
                 <p>
                     <strong>Apify</strong> ejecuta un actor especializado en
-                    Google Maps para localizar empresas que coincidan con los
-                    criterios definidos.
+                    Google Maps utilizando los parámetros definidos
+                    anteriormente.
                 </p>
 
                 <p>
-                    Entre los datos obtenidos pueden encontrarse el nombre,
-                    dirección, teléfono y página web de cada empresa.
+                    El proceso localiza las empresas y obtiene la información
+                    disponible, incluyendo datos como nombre, ubicación,
+                    teléfono y página web.
                 </p>
 
                 <p>
-                    La URL de la página web será posteriormente utilizada por
-                    el segundo proceso para acceder a ella y analizar su
-                    contenido.
+                    La información obtenida queda preparada para continuar
+                    con el siguiente workflow, que utilizará las URLs de las
+                    páginas web para realizar el análisis.
                 </p>
 
-                <div class="placeholder-imagen">
+                <div class="proyecto-imagen-principal">
 
-                    <span>
-                        Captura del input y output de Apify
-                    </span>
+                    <a href="assets/img/extraccion_emails/actor_maps.png"
+                       target="_blank">
+
+                        <img
+                            src="assets/img/extraccion_emails/actor_maps.png"
+                            alt="Actor de Apify para la búsqueda en Google Maps"
+                            loading="lazy">
+
+                    </a>
+
+                    <a href="assets/img/extraccion_emails/extraccion_maps.png"
+                       target="_blank">
+
+                        <img
+                            src="assets/img/extraccion_emails/extraccion_maps.png"
+                            alt="Datos extraídos mediante el proceso de Google Maps"
+                            loading="lazy">
+
+                    </a>
 
                 </div>
 
             </article>
 
 
-            <!-- PASO 4 -->
-
             <article class="bloque-tecnico">
 
                 <h3>
-                    04 · Almacenar los resultados
+                    05 · Almacenar los resultados
                 </h3>
 
                 <p>
                     Los resultados obtenidos se incorporan automáticamente a
-                    <strong>Google Sheets</strong>, creando una base de datos
-                    estructurada con la información de las empresas.
+                    <strong>Google Sheets</strong>, donde cada empresa queda
+                    registrada junto con la información recopilada y su
+                    página web cuando está disponible.
                 </p>
 
                 <p>
-                    La URL de la página web queda almacenada junto al resto
-                    de los datos para poder utilizarla posteriormente.
+                    Esta hoja funciona como punto de conexión entre el primer
+                    y el segundo workflow.
                 </p>
 
-                <div class="placeholder-imagen">
+                <div class="proyecto-imagen-principal">
 
-                    <span>
-                        Captura de los registros en Google Sheets
-                    </span>
+                    <a href="assets/img/extraccion_emails/almacenamiento_sheet.png"
+                       target="_blank">
+
+                        <img
+                            src="assets/img/extraccion_emails/almacenamiento_sheet.png"
+                            alt="Almacenamiento de empresas en Google Sheets"
+                            loading="lazy">
+
+                    </a>
 
                 </div>
 
@@ -353,10 +339,6 @@ $categoria = "Automatización e IA";
 
         </div>
 
-
-        <!-- =================================================
-             PROCESO 2
-             ================================================= -->
 
         <div class="cabecera-proceso">
 
@@ -369,9 +351,9 @@ $categoria = "Automatización e IA";
             </h3>
 
             <p>
-                Este workflow utiliza los registros generados por el primero.
-                Su objetivo actual es acceder a las páginas web obtenidas y
-                localizar direcciones de email presentes en su contenido HTML.
+                El segundo workflow utiliza las URLs almacenadas para acceder
+                a las páginas web y analizar su contenido en busca de
+                direcciones de email.
             </p>
 
         </div>
@@ -380,160 +362,70 @@ $categoria = "Automatización e IA";
         <div class="bloques-tecnicos pasos-proceso">
 
 
-            <!-- PASO 5 -->
-
             <article class="bloque-tecnico">
 
                 <h3>
-                    05 · Detectar nuevos registros
+                    06–07 · Procesar cada página web
                 </h3>
 
                 <p>
-                    El segundo flujo se activa cuando se detectan nuevos
-                    registros en <strong>Google Sheets</strong>.
+                    El workflow trabaja con los nuevos registros disponibles
+                    y procesa las empresas individualmente para utilizar la
+                    URL de cada una como entrada.
                 </p>
 
                 <p>
-                    Antes de continuar, se comprueba que el registro tenga
-                    una página web disponible y que todavía no disponga de un
-                    email obtenido por el proceso.
+                    Mediante <strong>HTTP Request</strong>, se realiza una
+                    petición a la página web y se obtiene el contenido HTML
+                    disponible.
                 </p>
 
-                <div class="placeholder-imagen">
+                <div class="proyecto-imagen-principal">
 
-                    <span>
-                        Captura del trigger y las condiciones de filtrado
-                    </span>
+                    <a href="assets/img/extraccion_emails/http_request.png"
+                       target="_blank">
+
+                        <img
+                            src="assets/img/extraccion_emails/http_request.png"
+                            alt="Petición HTTP para obtener el contenido de una página web"
+                            loading="lazy">
+
+                    </a>
 
                 </div>
 
             </article>
 
 
-            <!-- PASO 6 -->
-
             <article class="bloque-tecnico">
 
                 <h3>
-                    06 · Procesar cada empresa
+                    08–09 · Analizar el HTML y actualizar el registro
                 </h3>
 
                 <p>
-                    Las URLs se procesan mediante
-                    <strong>Loop Over Items</strong>, permitiendo tratar cada
-                    empresa individualmente.
+                    El contenido HTML obtenido se procesa mediante
+                    <strong>JavaScript</strong> para localizar direcciones
+                    de email presentes en la página.
                 </p>
 
                 <p>
-                    De esta forma, el mismo proceso puede aplicarse de manera
-                    sucesiva a los diferentes registros obtenidos.
-                </p>
-
-                <div class="placeholder-imagen">
-
-                    <span>
-                        Captura del Loop Over Items
-                    </span>
-
-                </div>
-
-            </article>
-
-
-            <!-- PASO 7 -->
-
-            <article class="bloque-tecnico">
-
-                <h3>
-                    07 · Obtener el HTML de la página
-                </h3>
-
-                <p>
-                    Para cada URL, el nodo
-                    <strong>HTTP Request</strong> realiza una petición a la
-                    página web y obtiene el contenido HTML disponible.
-                </p>
-
-                <p>
-                    Este contenido será la entrada que posteriormente
-                    analizará el código JavaScript.
-                </p>
-
-                <div class="placeholder-imagen">
-
-                    <span>
-                        Captura del nodo HTTP Request y su respuesta
-                    </span>
-
-                </div>
-
-            </article>
-
-
-            <!-- PASO 8 -->
-
-            <article class="bloque-tecnico">
-
-                <h3>
-                    08 · Analizar el HTML y localizar emails
-                </h3>
-
-                <p>
-                    El HTML obtenido se procesa mediante
-                    <strong>JavaScript</strong>. El código analiza el
-                    contenido y busca patrones que correspondan a direcciones
-                    de email.
-                </p>
-
-                <p>
-                    Actualmente el proceso está diseñado para localizar
-                    correos electrónicos, aunque la misma lógica podría
-                    adaptarse para buscar otros datos presentes en el HTML.
-                </p>
-
-                <div class="placeholder-imagen">
-
-                    <span>
-                        Captura del código JavaScript
-                    </span>
-
-                </div>
-
-                <div class="placeholder-imagen">
-
-                    <span>
-                        Captura del resultado obtenido
-                    </span>
-
-                </div>
-
-            </article>
-
-
-            <!-- PASO 9 -->
-
-            <article class="bloque-tecnico">
-
-                <h3>
-                    09 · Actualizar el registro
-                </h3>
-
-                <p>
-                    Cuando se encuentra una dirección de email, el dato se
-                    incorpora automáticamente al registro correspondiente de
+                    Cuando se encuentra información de contacto, el resultado
+                    se incorpora al registro correspondiente en
                     <strong>Google Sheets</strong>.
                 </p>
 
-                <p>
-                    De esta forma, la información obtenida durante el análisis
-                    de la página queda asociada a la empresa original.
-                </p>
+                <div class="proyecto-imagen-principal">
 
-                <div class="placeholder-imagen">
+                    <a href="assets/img/extraccion_emails/extracion_email.png"
+                       target="_blank">
 
-                    <span>
-                        Captura del registro final actualizado
-                    </span>
+                        <img
+                            src="assets/img/extraccion_emails/extracion_email.png"
+                            alt="Extracción de emails a partir del contenido HTML"
+                            loading="lazy">
+
+                    </a>
 
                 </div>
 
@@ -544,22 +436,18 @@ $categoria = "Automatización e IA";
     </section>
 
 
-    <!-- =====================================================
-         VÍA ALTERNATIVA · LINKEDIN
-         ===================================================== -->
-
     <section class="seccion-proyecto">
 
         <div class="cabecera-seccion">
 
             <h2>
-                Vía alternativa · Búsqueda de perfiles profesionales
+                Vía alternativa · LinkedIn
             </h2>
 
             <p>
-                Cuando el proceso principal no consigue encontrar un email en
-                la página web, se puede utilizar una segunda vía basada en
-                LinkedIn.
+                Cuando el análisis de la página web no permite localizar un
+                email, el sistema incorpora una segunda vía para buscar
+                información pública de contacto relacionada con la empresa.
             </p>
 
         </div>
@@ -568,58 +456,63 @@ $categoria = "Automatización e IA";
         <div class="bloques-tecnicos">
 
 
-            <!-- LINKEDIN 01 -->
-
             <article class="bloque-tecnico">
 
                 <h3>
-                    01 · Localizar la empresa en LinkedIn
+                    01 · Localizar la empresa
                 </h3>
 
                 <p>
-                    A partir del nombre de la empresa,
-                    <strong>SerpAPI</strong> realiza una búsqueda en Google
-                    para localizar su página profesional en LinkedIn.
+                    <strong>SerpAPI</strong> realiza una búsqueda para
+                    localizar la página profesional de la empresa en
+                    LinkedIn.
                 </p>
 
-                <div class="placeholder-imagen">
+                <div class="proyecto-imagen-principal">
 
-                    <span>
-                        Captura de la búsqueda mediante SerpAPI
-                    </span>
+                    <a href="assets/img/extraccion_emails/serpApi_linkedin.png"
+                       target="_blank">
+
+                        <img
+                            src="assets/img/extraccion_emails/serpApi_linkedin.png"
+                            alt="Búsqueda de una empresa en LinkedIn mediante SerpAPI"
+                            loading="lazy">
+
+                    </a>
 
                 </div>
 
             </article>
 
 
-            <!-- LINKEDIN 02 -->
-
             <article class="bloque-tecnico">
 
                 <h3>
-                    02 · Validar la página encontrada
+                    02 · Obtener y validar la URL
                 </h3>
 
                 <p>
                     La respuesta obtenida se procesa mediante
-                    <strong>JavaScript</strong> para filtrar los resultados
-                    y comprobar que la URL encontrada corresponde con la
-                    empresa buscada.
+                    <strong>JavaScript</strong> para seleccionar la URL de
+                    LinkedIn correspondiente a la empresa buscada.
                 </p>
 
-                <div class="placeholder-imagen">
+                <div class="proyecto-imagen-principal">
 
-                    <span>
-                        Captura del procesamiento y filtrado
-                    </span>
+                    <a href="assets/img/extraccion_emails/url_linkedin.png"
+                       target="_blank">
+
+                        <img
+                            src="assets/img/extraccion_emails/url_linkedin.png"
+                            alt="URL de LinkedIn obtenida y validada"
+                            loading="lazy">
+
+                    </a>
 
                 </div>
 
             </article>
 
-
-            <!-- LINKEDIN 03 -->
 
             <article class="bloque-tecnico">
 
@@ -628,47 +521,61 @@ $categoria = "Automatización e IA";
                 </h3>
 
                 <p>
-                    La página de empresa encontrada se utiliza como entrada
-                    para un actor de <strong>Apify</strong> especializado en
-                    obtener perfiles profesionales relacionados con esa
-                    empresa.
+                    La URL de la empresa se utiliza como entrada para un
+                    actor de <strong>Apify</strong> encargado de obtener
+                    perfiles profesionales relacionados con ella.
                 </p>
 
-                <div class="placeholder-imagen">
+                <div class="proyecto-imagen-principal">
 
-                    <span>
-                        Captura del actor de Apify
-                    </span>
+                    <a href="assets/img/extraccion_emails/actor_linkedin.png"
+                       target="_blank">
+
+                        <img
+                            src="assets/img/extraccion_emails/actor_linkedin.png"
+                            alt="Actor de Apify para obtener perfiles profesionales"
+                            loading="lazy">
+
+                    </a>
 
                 </div>
 
             </article>
 
 
-            <!-- LINKEDIN 04 -->
-
             <article class="bloque-tecnico">
 
                 <h3>
-                    04 · Filtrar la información obtenida
+                    04 · Extraer información de contacto
                 </h3>
 
                 <p>
-                    Los perfiles obtenidos se procesan mediante un nodo de
-                    código para seleccionar la información que interesa
-                    incorporar al registro.
-                </p>
-
-                <p>
-                    Cuando un perfil contiene un email público, este dato
+                    Los perfiles obtenidos se procesan para seleccionar la
+                    información relevante. Cuando existe un email público,
                     puede utilizarse como una fuente adicional de contacto.
                 </p>
 
-                <div class="placeholder-imagen">
+                <div class="proyecto-imagen-principal">
 
-                    <span>
-                        Captura del código y resultado final
-                    </span>
+                    <a href="assets/img/extraccion_emails/extraer_email_linkedin.png"
+                       target="_blank">
+
+                        <img
+                            src="assets/img/extraccion_emails/extraer_email_linkedin.png"
+                            alt="Extracción de información de contacto de perfiles profesionales"
+                            loading="lazy">
+
+                    </a>
+
+                    <a href="assets/img/extraccion_emails/ampliacion_linkedin.png"
+                       target="_blank">
+
+                        <img
+                            src="assets/img/extraccion_emails/ampliacion_linkedin.png"
+                            alt="Información ampliada de los perfiles obtenidos"
+                            loading="lazy">
+
+                    </a>
 
                 </div>
 
@@ -678,18 +585,14 @@ $categoria = "Automatización e IA";
 
 
         <p>
-            Esta vía no sustituye al proceso principal, sino que funciona
-            como una alternativa para los casos en los que no se ha
-            encontrado un correo electrónico directamente en la página web
-            de la empresa.
+            Esta vía funciona como alternativa al análisis directo de la web.
+            No siempre habrá información pública disponible, pero permite
+            ampliar las fuentes consultadas cuando el primer proceso no
+            encuentra un correo.
         </p>
 
     </section>
 
-
-    <!-- =====================================================
-         RESULTADO
-         ===================================================== -->
 
     <section class="seccion-proyecto">
 
@@ -702,37 +605,32 @@ $categoria = "Automatización e IA";
         </div>
 
         <p>
-            El resultado es un proceso que parte de una búsqueda de empresas,
-            recopila sus datos y utiliza las páginas web obtenidas para
-            buscar automáticamente direcciones de email.
+            El resultado es un proceso automatizado que parte de una búsqueda
+            de empresas, recopila sus datos y utiliza las páginas web
+            obtenidas para localizar direcciones de email.
         </p>
 
         <p>
-            Cuando una empresa no proporciona un correo que pueda localizarse
-            mediante el análisis de su página web, el sistema dispone de una
-            segunda vía basada en perfiles profesionales de LinkedIn, siempre
-            que exista información pública disponible.
+            Cuando el análisis de la web no encuentra información de contacto,
+            se dispone de una segunda vía basada en la búsqueda de perfiles
+            profesionales y datos públicos relacionados con la empresa.
         </p>
 
         <p>
-            Los datos obtenidos quedan centralizados en
-            <strong>Google Sheets</strong>, donde pueden utilizarse
+            Toda la información obtenida queda centralizada en
+            <strong>Google Sheets</strong>, permitiendo utilizar estos datos
             posteriormente en otros procesos de automatización.
         </p>
 
     </section>
 
 
-    <!-- =====================================================
-         VALOR PARA LA EMPRESA
-         ===================================================== -->
-
     <section class="seccion-proyecto">
 
         <div class="cabecera-seccion">
 
             <h2>
-                ¿Qué puede aportar a una empresa?
+                Valor técnico
             </h2>
 
         </div>
@@ -742,13 +640,13 @@ $categoria = "Automatización e IA";
             <article class="bloque-tecnico">
 
                 <h3>
-                    Reduce tareas manuales
+                    Workflows conectados
                 </h3>
 
                 <p>
-                    Automatiza parte del proceso de búsqueda de empresas,
-                    acceso a sus páginas web y localización de información
-                    de contacto.
+                    El segundo proceso utiliza directamente los datos
+                    generados por el primero, creando un flujo de trabajo
+                    encadenado.
                 </p>
 
             </article>
@@ -757,13 +655,12 @@ $categoria = "Automatización e IA";
             <article class="bloque-tecnico">
 
                 <h3>
-                    Conecta diferentes procesos
+                    Scraping automatizado
                 </h3>
 
                 <p>
-                    El segundo workflow aprovecha directamente los datos
-                    generados por el primero, utilizando las páginas web
-                    obtenidas como entrada.
+                    Apify permite automatizar la obtención de información
+                    tanto de empresas como de perfiles profesionales.
                 </p>
 
             </article>
@@ -772,13 +669,12 @@ $categoria = "Automatización e IA";
             <article class="bloque-tecnico">
 
                 <h3>
-                    Centraliza la información
+                    Procesamiento de datos
                 </h3>
 
                 <p>
-                    Los datos obtenidos se almacenan y actualizan en
-                    <strong>Google Sheets</strong>, facilitando su posterior
-                    utilización en otros procesos.
+                    JavaScript se utiliza para preparar, filtrar y analizar
+                    los datos obtenidos durante los diferentes procesos.
                 </p>
 
             </article>
@@ -787,13 +683,41 @@ $categoria = "Automatización e IA";
             <article class="bloque-tecnico">
 
                 <h3>
-                    Dispone de una vía alternativa
+                    Análisis de contenido web
                 </h3>
 
                 <p>
-                    Cuando el análisis de la web no encuentra un email, el
-                    proceso puede recurrir a información pública disponible
-                    en perfiles profesionales.
+                    El sistema obtiene HTML mediante peticiones HTTP y lo
+                    procesa para localizar información de contacto.
+                </p>
+
+            </article>
+
+
+            <article class="bloque-tecnico">
+
+                <h3>
+                    Múltiples fuentes de información
+                </h3>
+
+                <p>
+                    El proceso combina Google Maps, páginas web y LinkedIn
+                    para ampliar las fuentes desde las que obtener
+                    información empresarial.
+                </p>
+
+            </article>
+
+
+            <article class="bloque-tecnico">
+
+                <h3>
+                    Datos centralizados
+                </h3>
+
+                <p>
+                    Google Sheets actúa como punto de almacenamiento y
+                    conexión entre los diferentes procesos.
                 </p>
 
             </article>
@@ -802,10 +726,6 @@ $categoria = "Automatización e IA";
 
     </section>
 
-
-    <!-- =====================================================
-         TECNOLOGÍAS
-         ===================================================== -->
 
     <section class="seccion-proyecto">
 
@@ -826,7 +746,8 @@ $categoria = "Automatización e IA";
                 </h3>
 
                 <p>
-                    Diseño, conexión y ejecución de los diferentes workflows.
+                    Diseño y conexión de los diferentes workflows de
+                    automatización.
                 </p>
 
             </article>
@@ -839,8 +760,8 @@ $categoria = "Automatización e IA";
                 </h3>
 
                 <p>
-                    Obtención automatizada de información de Google Maps y
-                    de perfiles profesionales.
+                    Automatización de la extracción de información de
+                    empresas y perfiles profesionales.
                 </p>
 
             </article>
@@ -853,7 +774,7 @@ $categoria = "Automatización e IA";
                 </h3>
 
                 <p>
-                    Almacenamiento y actualización de los registros obtenidos
+                    Almacenamiento y actualización de los datos obtenidos
                     durante el proceso.
                 </p>
 
@@ -867,9 +788,8 @@ $categoria = "Automatización e IA";
                 </h3>
 
                 <p>
-                    Preparación, procesamiento y filtrado de datos,
-                    incluyendo el análisis del HTML para localizar
-                    direcciones de email.
+                    Preparación, filtrado y procesamiento de los datos,
+                    incluido el análisis del contenido HTML.
                 </p>
 
             </article>
@@ -882,8 +802,8 @@ $categoria = "Automatización e IA";
                 </h3>
 
                 <p>
-                    Petición de páginas web y obtención de su contenido HTML
-                    para su posterior procesamiento.
+                    Obtención del contenido HTML de las páginas web para su
+                    posterior análisis.
                 </p>
 
             </article>
@@ -896,8 +816,8 @@ $categoria = "Automatización e IA";
                 </h3>
 
                 <p>
-                    Búsqueda de páginas profesionales de empresas en Google
-                    para utilizar LinkedIn como vía alternativa.
+                    Búsqueda de páginas profesionales de empresas para
+                    utilizar LinkedIn como fuente alternativa.
                 </p>
 
             </article>
@@ -906,10 +826,6 @@ $categoria = "Automatización e IA";
 
     </section>
 
-
-    <!-- =====================================================
-         ENLACES
-         ===================================================== -->
 
     <section class="enlaces-proyecto">
 
