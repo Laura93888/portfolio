@@ -7,38 +7,45 @@ $proyectos = [
             "titulo" => "Body & Soul",
             "descripcion" => "Plataforma web para buscar y reservar actividades deportivas y de bienestar.",
             "tecnologias" => ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
-            "enlace" => "bodyandsoul.php"
+            "enlace" => "bodyandsoul.php",
+            "descripcionlarga" => "Plataforma web para buscar, consultar y reservar actividades deportivas y de bienestar según diferentes criterios como categoría, fecha o ubicación. Los usuarios pueden consultar la disponibilidad, gestionar sus reservas, guardar actividades favoritas y dejar reseñas, mientras que empresas y administradores disponen de sus propios paneles de gestión."
         ],
         [
             "titulo" => "Tienda online",
             "descripcion" => "Aplicación web de comercio electrónico con productos, categorías y carrito de compra.",
             "tecnologias" => ["HTML", "CSS", "JavaScript", "PHP", "MySQL", "Make"],
-            "enlace" => "tienda.php"
+            "enlace" => "tienda.php",
+        "descripcionlarga" => "Aplicación web de comercio electrónico desarrollada con PHP y MariaDB, con catálogo de productos, categorías, carrito de compra, gestión de sesiones y diferentes funcionalidades para la gestión de la tienda."
         ],
         [
             "titulo" => "Biblioteca digital",
             "descripcion" => "Aplicación web para gestionar un catálogo de libros y su sistema de préstamos.",
             "tecnologias" => ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
-            "enlace" => "bookify.php"
+            "enlace" => "bookify.php",
+            "descripcionlarga" => "Aplicación web de gestión de biblioteca desarrollada con PHP y MariaDB, que permite consultar el catálogo, gestionar libros y autores y controlar el préstamo y devolución de ejemplares mediante una interfaz orientada a la gestión de la información"
         ],
         [
             "titulo" => "Aplicación del tiempo",
             "descripcion" => "Aplicación web que consulta una API meteorológica y muestra los datos dinámicamente.",
             "tecnologias" => ["HTML", "CSS", "JavaScript", "PHP", "API", "JSON"],
-            "enlace" => "weatherly.php"
+            "enlace" => "weatherly.php",
+            "descripcionlarga" => "Aplicación web desarrollada con PHP que conecta con una API meteorológica para obtener datos en tiempo real y mostrar información del tiempo de forma dinámica, trabajando con peticiones externas y procesamiento de datos."
         ],
         [
             "titulo" => "Consulta de colegios",
             "descripcion" => "Aplicación web para consultar información de centros educativos mediante una API.",
             "tecnologias" => ["HTML", "CSS", "JavaScript", "PHP", "API", "JSON"],
-            "enlace" => "colegios.php"
+            "enlace" => "colegios.php",
+            "descripcionlarga" => "Aplicación web desarrollada con PHP que utiliza datos abiertos del Ayuntamiento de Madrid para consultar y localizar centros educativos mediante un sistema de búsqueda y filtrado.",
+    
         ]
     ],
 
     "automatizaciones" => [
         [
             "titulo" => "Automatización de extracción de emails",
-            "descripcion" => "Flujo de scraping orientado a localizar empresas e inspeccionar sus páginas web para extraer emails y datos de contacto.",
+            "descripcion" => "Flujo automatizado para localizar empresas y acceder a sus páginas webp para extraer emails y datos de contacto, enriquecido con LinkedIn.",
+            "descripcionlarga" => "Flujo automatizado que parte de la búsqueda de empresas y analiza sus páginas web para localizar emails y otros datos de contacto. Cuando esta información no está disponible, utiliza LinkedIn como fuente adicional.",
             "tecnologias" => ["n8n", "Apify", "JavaScript", "Web Scraping"],
             "capturas" => [
                 "actor_maps.png",
@@ -58,7 +65,8 @@ $proyectos = [
         ],
         [
             "titulo" => "Scraping avanzado con bots personalizados",
-            "descripcion" => "Actores personalizados capaces de navegar e interactuar con páginas web para acceder y extraer información que no estaría disponible mediante un scraping convencional.",
+            "descripcion" => "Sistema automatizado con bots capaces de navegar e interactuar con diferentes páginas web para extraer información.",
+            "descripcionlarga" => "Sistema de scraping automatizado con bots capaces de navegar e interactuar con páginas web para obtener información que no puede extraerse mediante un scraping convencional, reduciendo así el trabajo manual necesario para recopilar y preparar estos datos.",
             "tecnologias" => ["n8n", "Apify", "Playwright", "JavaScript", "Web Scraping"],
             "capturas" => [
                 "preparacion_urls.png",
@@ -74,7 +82,8 @@ $proyectos = [
         ],
         [
             "titulo" => "Agente IA para WhatsApp",
-            "descripcion" => "Agente de IA para gestionar conversaciones, interesados y llamadas de seguimiento por WhatsApp.",
+            "descripcion" => "Agente de IA autónomo que contacta con potenciales clientes por WhatsApp, mantiene conversaciones y concierta llamadas automáticamente.",
+            "descripcionlarga" => "Agente de IA autónomo que inicia conversaciones con potenciales clientes a través de WhatsApp, responde de forma automática, identifica su interés y concierta llamadas. Además, registra la información de los contactos y las llamadas en una hoja de cálculo y en el calendario.",
             "tecnologias" => ["n8n", "JavaScript", "WhatsApp", "Google Sheets", "Google Calendar", "IA"],
             "capturas" => [
                 "flujo completo.png",

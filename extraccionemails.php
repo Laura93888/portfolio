@@ -15,6 +15,7 @@ $titulo = $proyecto["titulo"];
 $descripcion = $proyecto["descripcion"];
 $tecnologias = $proyecto["tecnologias"];
 $categoria = "Automatización e IA";
+$descripcionlarga=$proyecto["descripcionlarga"];
 
 ?>
 
@@ -48,15 +49,11 @@ $categoria = "Automatización e IA";
         </span>
 
         <h1>
-            Automatización de captación y extracción de emails
+            <?=$titulo?>
         </h1>
 
         <p class="proyecto-introduccion">
-            Automatización desarrollada con n8n para localizar empresas,
-            recopilar sus datos y analizar automáticamente sus páginas web
-            en busca de direcciones de email. El flujo incorpora además
-            una vía alternativa basada en LinkedIn cuando el proceso
-            principal no encuentra un correo.
+            <?=$descripcionlarga?>
         </p>
 
     </section>

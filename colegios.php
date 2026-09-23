@@ -8,6 +8,7 @@ $titulo = $proyecto["titulo"];
 $descripcion = $proyecto["descripcion"];
 $tecnologias = $proyecto["tecnologias"];
 $categoria = "Desarrollo Web";
+$descripcionlarga=$proyecto["descripcionlarga"];
 
 ?>
 
@@ -43,7 +44,7 @@ $categoria = "Desarrollo Web";
         <h1><?= $titulo; ?></h1>
 
         <p class="proyecto-introduccion">
-            <?= $descripcion; ?>
+            <?= $descripcionlarga; ?>
         </p>
 
     </section>

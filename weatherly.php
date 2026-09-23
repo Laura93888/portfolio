@@ -1,4 +1,3 @@
-```php
 <?php
 
 require_once 'data/proyectos.php';
@@ -9,6 +8,7 @@ $titulo = $proyecto["titulo"];
 $descripcion = $proyecto["descripcion"];
 $tecnologias = $proyecto["tecnologias"];
 $categoria = "Desarrollo Web";
+$descripcionlarga=$proyecto["descripcionlarga"];
 
 ?>
 
@@ -42,19 +42,44 @@ $categoria = "Desarrollo Web";
         <h1><?= $titulo; ?></h1>
 
         <p class="proyecto-introduccion">
-            <?= $descripcion; ?>
+            <?= $descripcionlarga; ?>
         </p>
 
     </section>
 
 
-    <!-- CAPTURA PRINCIPAL -->
+    <!-- CAPTURAS DEL PROYECTO -->
     <section class="proyecto-imagen-principal">
 
-        <div class="placeholder-imagen">
-            <span>Captura principal del proyecto</span>
+        <div>
+            <img 
+                src="/assets/img/weatherly/busqueda.png" 
+                alt="Pantalla de búsqueda de Weatherly">
+
+            <p>Pantalla de búsqueda</p>
         </div>
 
+        <div class="galeria-proyecto">
+
+            <div>
+                <img 
+                    src="/assets/img/weatherly/resultado-dia.png" 
+                    alt="Resultado meteorológico de Weatherly durante el día">
+
+                <p>Resultado durante el día</p>
+            </div>
+
+            <div>
+                <img 
+                    src="/assets/img/weatherly/resultado-noche.png" 
+                    alt="Resultado meteorológico de Weatherly durante la noche">
+
+                <p>Resultado durante la noche</p>
+            </div>
+
+        </div>
+
+    </section>
     </section>
 
 
@@ -408,4 +433,3 @@ $categoria = "Desarrollo Web";
 
 </body>
 </html>
-```

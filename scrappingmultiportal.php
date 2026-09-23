@@ -15,6 +15,8 @@ $titulo = $proyecto["titulo"];
 $descripcion = $proyecto["descripcion"];
 $tecnologias = $proyecto["tecnologias"];
 $categoria = "Automatización e IA";
+$descripcionlarga = $proyecto["descripcionlarga"];
+
 
 ?>
 
@@ -51,15 +53,11 @@ $categoria = "Automatización e IA";
         </span>
 
         <h1>
-            Scraping avanzado con bots personalizados
+            <?= $titulo ?> 
         </h1>
 
         <p class="proyecto-introduccion">
-            Sistema de scraping desarrollado con n8n y Apify que utiliza
-            actores personalizados para acceder, navegar y extraer información
-            de diferentes páginas web. El proyecto combina scraping convencional
-            con procesos más avanzados mediante Playwright cuando la información
-            requiere autenticación o una navegación específica.
+            <?= $descripcionlarga ?> 
         </p>
 
     </section>

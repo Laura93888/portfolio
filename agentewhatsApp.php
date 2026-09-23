@@ -15,6 +15,7 @@ $titulo = $proyecto["titulo"];
 $descripcion = $proyecto["descripcion"];
 $tecnologias = $proyecto["tecnologias"];
 $categoria = "Automatización e IA";
+$descripcionlarga=$proyecto["descripcionlarga"];
 
 ?>
 
@@ -53,14 +54,11 @@ $categoria = "Automatización e IA";
         </span>
 
         <h1>
-            Agente de WhatsApp proactivo
+            <?=$titulo?>
         </h1>
 
         <p class="proyecto-introduccion">
-            Agente conversacional desarrollado con n8n para automatizar la
-            captación y el seguimiento de propietarios mediante WhatsApp,
-            desde el primer contacto hasta la posibilidad de agendar una
-            llamada, sin intervención humana.
+           <?=$descripcionlarga?>
         </p>
 
     </section>
