@@ -413,8 +413,8 @@ $descripcionlarga=$proyecto["descripcionlarga"];
     <!-- ENLACES -->
     <section class="enlaces-proyecto">
 
-        <a href="<?= $proyecto["enlace"]; ?>" class="boton-proyecto">
-            Ver proyecto
+        <a href="http://weatherly.infinityfreeapp.com/" class="boton-proyecto">
+            Ver página web
         </a>
 
         <a href="#" class="boton-proyecto">

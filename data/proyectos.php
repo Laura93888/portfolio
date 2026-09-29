@@ -15,7 +15,7 @@ $proyectos = [
             "descripcion" => "Aplicación web de comercio electrónico con productos, categorías y carrito de compra.",
             "tecnologias" => ["HTML", "CSS", "JavaScript", "PHP", "MySQL", "Make"],
             "enlace" => "tienda.php",
-        "descripcionlarga" => "Aplicación web de comercio electrónico desarrollada con PHP y MariaDB, con catálogo de productos, categorías, carrito de compra, gestión de sesiones y diferentes funcionalidades para la gestión de la tienda."
+        "descripcionlarga" => "Aplicación web de comercio electrónico desarrollada con PHP y MariaDB, con catálogo de productos, categorías, carrito de compra, gestión de sesiones y diferentes funcionalidades para la gestión de la tienda.",
         ],
         [
             "titulo" => "Biblioteca digital",

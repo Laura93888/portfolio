@@ -627,8 +627,8 @@ $descripcionlarga=$proyecto["descripcionlarga"];
 
     <section class="enlaces-proyecto">
 
-        <a href="#" class="boton-proyecto">
-            Ver proyecto
+        <a href="http://bodyandsoul.infinityfreeapp.com/publico/index.php" class="boton-proyecto">
+            Ver página web
         </a>
 
         <a href="#" class="boton-proyecto">

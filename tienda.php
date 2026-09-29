@@ -560,8 +560,8 @@ $descripcionlarga=$proyecto["descripcionlarga"];
     <!-- ENLACES -->
     <section class="enlaces-proyecto">
 
-        <a href="#" class="boton-proyecto">
-            Ver proyecto
+        <a href="https://nuvia.infinityfreeapp.com/?i=1" class="boton-proyecto">
+            Ver página web
         </a>
 
         <a href="#" class="boton-proyecto">
