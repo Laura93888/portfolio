@@ -518,11 +518,11 @@ $descripcionlarga=$proyecto["descripcionlarga"];
     <!-- ENLACES -->
     <section class="enlaces-proyecto">
 
-        <a href="#" class="boton-proyecto">
-            Ver proyecto
+        <a href="https://bookify.infinityfreeapp.com/" class="boton-proyecto">
+            Ver página web
         </a>
 
-        <a href="#" class="boton-proyecto">
+        <a href="https://github.com/Laura93888/Biblioteca-Digital" class="boton-proyecto">
             Ver código en GitHub
         </a>
 

@@ -417,7 +417,7 @@ $descripcionlarga=$proyecto["descripcionlarga"];
             Ver página web
         </a>
 
-        <a href="#" class="boton-proyecto">
+        <a href="https://github.com/Laura93888/API-El-tiempo" class="boton-proyecto">
             Ver código en GitHub
         </a>
 

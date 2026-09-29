@@ -319,11 +319,11 @@ $descripcionlarga=$proyecto["descripcionlarga"];
 
     <section class="enlaces-proyecto">
 
-        <a href="#" class="boton-proyecto">
+        <a href="https://colegiosmadrid.infinityfreeapp.com/" class="boton-proyecto">
             Ver proyecto
         </a>
 
-        <a href="#" class="boton-proyecto">
+        <a href="https://github.com/Laura93888/ColegiosMadrid" class="boton-proyecto">
             Ver código en GitHub
         </a>
 
