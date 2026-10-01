@@ -13,19 +13,12 @@
 
 <body>
 
-<?php require_once 'includes/header.php'; ?>
-    <?php 
+<?php require_once 'includes/header.php'; 
+     
     // Cargamos los proyectos al principio para tenerlos disponibles en PHP
     require_once 'data/proyectos.php'; 
-
-    // Diccionario opcional por si quieres nombres más bonitos o capitalizados
-    $nombresBonitos = [
-        'desarrollo' => 'Desarrollo Web',
-        'automatizaciones' => 'Automatización',
-        'wordpress' => 'WordPress'
-    ];
-    ?>
-
+?>
+    
 <main>
 
     <section class="proyectos">
@@ -43,27 +36,18 @@
 
        <div class="contenedor-proyectos">
 
-            <aside class="menu-categorias">
-
-            <button class="tarjeta-categoria activa" data-categoria="desarrollo">
-                <span class="icono-categoria">💻</span>
-                <strong>Desarrollo Web</strong>
-                <small>Aplicaciones y proyectos con código.</small>
-            </button>
-
-            <button class="tarjeta-categoria" data-categoria="automatizaciones">
-                <span class="icono-categoria">⚙️</span>
-                <strong>Automatizaciones</strong>
-                <small>Workflows y optimización de tareas.</small>
-            </button>
-
-            <button class="tarjeta-categoria" data-categoria="wordpress">
-                <span class="icono-categoria">🌐</span>
-                <strong>WordPress</strong>
-                <small>Diseño, maquetación y webs profesionales.</small>
-            </button>
-
-            </aside>
+           <aside class="menu-categorias">
+               <?php $primero = true; ?>
+               <?php foreach ($categorias as $clave => $cat): ?>
+                   <?php if (empty($proyectos[$clave])) continue; ?>
+                   <button class="tarjeta-categoria <?= $primero ? ' activa' : '' ?>" data-categoria="<?= $clave ?>">
+                       <span class="icono-categoria"><?= $cat['icono'] ?></span>
+                       <strong><?= htmlspecialchars($cat['nombre']) ?></strong>
+                       <small><?= htmlspecialchars($cat['descripcion']) ?></small>
+                   </button>
+                <?php $primero = false; ?>
+               <?php endforeach; ?>
+           </aside>
 
         <div class="lista-proyectos">
             <!-- JavaScript generará aquí las tarjetas resumen -->
@@ -78,10 +62,9 @@
 
 <?php require_once 'includes/footer.php'; ?>
 
-<?php require_once 'data/proyectos.php'; ?>
-
 <script>
     const proyectos = <?= json_encode($proyectos, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>;
+
 </script>
 
 <script src="assets/js/script.js"></script>

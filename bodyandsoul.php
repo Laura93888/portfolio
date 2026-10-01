@@ -57,7 +57,7 @@ $descripcionlarga=$proyecto["descripcionlarga"];
 
     <section class="proyecto-imagen-principal">
 
-        <div class="galeria-proyecto">
+        <div class="galeria-proyecto captura-principal">
 
             <div>
 

@@ -80,7 +80,6 @@ $descripcionlarga=$proyecto["descripcionlarga"];
         </div>
 
     </section>
-    </section>
 
 
     <!-- SOBRE EL PROYECTO -->

@@ -1,5 +1,11 @@
 <?php
 
+$categorias = [
+    'desarrollo'       => ['nombre' => 'Desarrollo Web',   'icono' => '💻', 'descripcion' => 'Aplicaciones y proyectos con código.'],
+    'automatizaciones' => ['nombre' => 'Automatizaciones', 'icono' => '⚙️', 'descripcion' => 'Workflows y optimización de tareas.'],
+    'wordpress'        => ['nombre' => 'WordPress',        'icono' => '🌐', 'descripcion' => 'Diseño, maquetación y webs profesionales.'],
+];
+
 $proyectos = [
 
     "desarrollo" => [

@@ -1,36 +1,32 @@
 const botonesCategoria = document.querySelectorAll(".tarjeta-categoria");
 const listaProyectos = document.querySelector(".lista-proyectos");
 
-const nombres = {
-    desarrollo: "Desarrollo Web",
-    automatizaciones: "Automatización",
-    wordpress: "WordPress"
-};
+// Los nombres se leen de los botones que pinta PHP
+const nombres = {};
+    botonesCategoria.forEach(b => {
+    nombres[b.dataset.categoria] = b.querySelector("strong").textContent;
+});
 
-const todos = Object.entries(proyectos).flatMap(([clave, lista]) =>
-    lista.map(p => ({
-        ...p,
-        categorias: [nombres[clave], p.categoriaextra].filter(Boolean)
-    }))
-);
 
 function mostrarProyectos(categoria) {
     listaProyectos.innerHTML = "";
 
-    const categoriaTraducida = nombres[categoria];
+    for (const clave in proyectos) {
+    // Filtro, por el grupo de PHP
+         if (categoria !== clave) continue;
 
-    const filtrados = categoria === "todos"
-        ? todos
-        : todos.filter(p => p.categorias.includes(categoriaTraducida));
+        proyectos[clave].forEach(proyecto => {
 
-    filtrados.forEach(proyecto => {
+        // las etiquetas se calculan aquí
+        const categorias = [nombres[clave], proyecto.categoriaextra].filter(Boolean);
+
         const tarjeta = document.createElement("article");
         tarjeta.classList.add("tarjeta-proyecto");
 
         tarjeta.innerHTML = `
             <div>
             <div class="categorias-proyecto">
-                    ${proyecto.categorias.map(c => `<span data-categoria="${c}">${c}</span>`).join("")}
+                    ${categorias.map(c => `<span data-categoria="${c}">${c}</span>`).join("")}
                 </div>
                 <h3>${proyecto.titulo}</h3>
                 <p>${proyecto.descripcion}</p>
@@ -48,6 +44,8 @@ function mostrarProyectos(categoria) {
         listaProyectos.appendChild(tarjeta);
     });
 }
+                                      }
+
 
 botonesCategoria.forEach(boton => {
     boton.addEventListener("click", () => {
@@ -60,4 +58,4 @@ botonesCategoria.forEach(boton => {
     });
 });
 
-mostrarProyectos("todos");
+mostrarProyectos(document.querySelector(".tarjeta-categoria.activa").dataset.categoria);
