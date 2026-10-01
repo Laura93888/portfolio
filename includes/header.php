@@ -17,7 +17,7 @@
         <nav class="navegacion">
 
             <a
-                href="https://github.com/TU_USUARIO"
+                href="https://github.com/Laura93888"
                 target="_blank"
                 rel="noopener noreferrer">
 
@@ -26,7 +26,7 @@
             </a>
 
             <a
-                href="https://linkedin.com/in/TU_USUARIO"
+                href="https://linkedin.com/in/laura-basurto-teno"
                 target="_blank"
                 rel="noopener noreferrer">
 
@@ -35,7 +35,7 @@
             </a>
 
             <a
-                href="assets/documentos/CV_Laura_Basurto.pdf"
+                href="assets/Curriculum_2026.pdf"
                 target="_blank"
                 class="boton-cv">
 

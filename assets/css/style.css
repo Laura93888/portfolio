@@ -909,3 +909,34 @@ button {
         width: 100%;
     }
 }
+
+.categorias-proyecto {
+    display: flex;
+    justify-content: flex-end;
+    gap: 6px;
+    margin-bottom: 10px;
+}
+
+.categorias-proyecto span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 2px 9px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    color: var(--text-soft);
+    font-size: 0.6rem;
+    font-weight: 600;
+}
+
+.categorias-proyecto span::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--brand);
+}
+
+.categorias-proyecto span[data-categoria="Automatización"]::before {
+    background: var(--accent-magenta);
+}

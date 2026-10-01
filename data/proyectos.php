@@ -8,21 +8,24 @@ $proyectos = [
             "descripcion" => "Plataforma web para buscar y reservar actividades deportivas y de bienestar.",
             "tecnologias" => ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
             "enlace" => "bodyandsoul.php",
+            "destacado" => true,
             "descripcionlarga" => "Plataforma web para buscar, consultar y reservar actividades deportivas y de bienestar según diferentes criterios como categoría, fecha o ubicación. Los usuarios pueden consultar la disponibilidad, gestionar sus reservas, guardar actividades favoritas y dejar reseñas, mientras que empresas y administradores disponen de sus propios paneles de gestión."
         ],
         [
             "titulo" => "Tienda online",
             "descripcion" => "Aplicación web de comercio electrónico con productos, categorías y carrito de compra.",
-            "tecnologias" => ["HTML", "CSS", "JavaScript", "PHP", "MySQL", "Make"],
+            "tecnologias" => ["HTML", "CSS", "JavaScript", "PHP", "MySQL", "n8n"],
             "enlace" => "tienda.php",
-        "descripcionlarga" => "Aplicación web de comercio electrónico desarrollada con PHP y MariaDB, con catálogo de productos, categorías, carrito de compra, gestión de sesiones y diferentes funcionalidades para la gestión de la tienda.",
+        "destacado" => true,
+        "descripcionlarga" => "Aplicación web de comercio electrónico desarrollada con PHP y MySQL, con catálogo de productos, categorías, carrito de compra, gestión de sesiones y diferentes funcionalidades para la gestión de la tienda. Los pedidos se automatizan con n8n, que envía el email de confirmación correspondiente y registra el pedido para su preparación en almacén.",
+    "categoriaextra" => "Automatización"
         ],
         [
             "titulo" => "Biblioteca digital",
-            "descripcion" => "Aplicación web para gestionar un catálogo de libros y su sistema de préstamos.",
+            "descripcion" => "Aplicación web para consultar un catálogo de libros y gestionar sus préstamos.",
             "tecnologias" => ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
             "enlace" => "bookify.php",
-            "descripcionlarga" => "Aplicación web de gestión de biblioteca desarrollada con PHP y MariaDB, que permite consultar el catálogo, gestionar libros y autores y controlar el préstamo y devolución de ejemplares mediante una interfaz orientada a la gestión de la información"
+            "descripcionlarga" => "Aplicación web de gestión de biblioteca desarrollada con PHP y MySql, que permite consultar el catálogo y gestionar préstamos y devoluciones, con perfiles diferenciados de usuario y administrador."
         ],
         [
             "titulo" => "Aplicación del tiempo",
@@ -78,7 +81,8 @@ $proyectos = [
                 "limpieza_datos.png",
                 "limpiezadatos2.png"
             ],
-            "enlace" => "scrappingmultiportal.php"
+            "enlace" => "scrappingmultiportal.php",
+            "destacado" => true
         ],
         [
             "titulo" => "Agente IA para WhatsApp",
@@ -101,7 +105,8 @@ $proyectos = [
             "enlace" => "agentewhatsApp.php"
         ],
     ],
-
+    
+/* WordPress en pausa
     "wordpress" => [
         [
             "titulo" => "Web corporativa",
@@ -116,5 +121,7 @@ $proyectos = [
             "enlace" => "proyectos/wordpress/landing-page.php"
         ]
     ]
+
+    */
 
 ];
