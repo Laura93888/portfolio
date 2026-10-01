@@ -1,0 +1,46 @@
+Quiero reestructurar SOLO el archivo tienda.php de mi portfolio (página individual del proyecto "Tienda online"). Antes de tocar nada, lee bodyandsoul.php y tienda.php: Body & Soul es la referencia de estructura, tono y clases CSS.
+
+REGLAS
+- Modifica únicamente tienda.php. No toques style.css, includes/, data/ ni ningún otro archivo.
+- Usa solo las clases CSS que ya existen (las de bodyandsoul.php y las que ya tiene tienda.php). No inventes clases nuevas.
+- No inventes contenido ni funcionalidades. Si algo no está en este prompt, no lo escribas.
+- Tono igual que bodyandsoul.php: directo y concreto, nada académico ni de plantilla. Sin frases como "el proyecto fue desarrollado como práctica", sin repetir la misma idea en varias secciones.
+- Si no estás seguro de algo, no lo incluyas y dímelo al final. No dejes comentarios TODO en el código.
+
+CAMBIOS EN EL PHP DE ARRIBA
+1. Sustituye `$proyectos["desarrollo"][1]` por una búsqueda por el campo 'enlace' (== 'tienda.php') recorriendo todos los grupos de $proyectos, y guarda también la clave del grupo donde lo encuentra. Así no depende del orden del array.
+2. Quita `$categoria = "Desarrollo Web"` escrito a mano: el nombre sale de `$categorias[$clave]['nombre']` (ya está definido en data/proyectos.php; si no existe, avísame en lugar de crearlo).
+3. En la cabecera del proyecto, además del nombre de la categoría, muestra `categoriaextra` si existe, y las tecnologías ($tecnologias, que ahora se carga y no se usa) reutilizando las clases de las tarjetas.
+4. Quita `$proyecto = null;` (sobra). El <title> y la meta description deben salir de $titulo y $descripcion, no escritos a mano.
+
+IMÁGENES
+Todas las imágenes van como <img> normal con su alt y su pie de foto, igual que en bodyandsoul.php, aunque el archivo todavía no exista (yo los subiré después). Ruta: /assets/img/tienda/ con estos nombres exactos:
+- principal.png → página principal de la tienda
+- catalogo.png → catálogo de productos
+- carrito.png → carrito de compra
+- email-pedido.png → email de confirmación del pedido
+- almacen.png → hoja de almacén con los pedidos registrados
+- n8n-flujo.png → flujo de n8n que procesa el pedido
+No uses placeholder-imagen en ningún sitio. Escribe alts y pies de foto reales, no genéricos.
+
+NUEVA ESTRUCTURA (en este orden)
+1. Cabecera (hero): igual que ahora, con $descripcionlarga.
+2. Captura principal: como en bodyandsoul.php (galeria-proyecto captura-principal con principal.png).
+3. Sobre el proyecto: máximo 2 párrafos. Tienda online en PHP con base de datos MySQL, catálogo por categorías y carrito de compra. Menciona que los pedidos se automatizan con n8n (email de confirmación y registro del pedido para almacén). Sin "práctica", sin "MariaDB".
+4. Funcionalidades: 3 tarjetas distintas, sin solaparse: Catálogo y categorías, Carrito y sesión, Pedidos automatizados con n8n.
+5. Capturas con pie de foto, intercaladas como en la sección "Interfaces y perfiles" de bodyandsoul.php: catalogo.png, carrito.png, email-pedido.png, almacen.png y n8n-flujo.png.
+6. Desarrollo: 4 bloques (bloque-tecnico): Frontend, Backend, Base de datos y Automatización. Base de datos: MySQL con PDO y consultas preparadas. Automatización: n8n envía el email de confirmación y registra el pedido para almacén. En TODA la página sustituye "MariaDB" por "MySQL".
+7. Arquitectura y seguridad: UNA sola sección (como "Arquitectura y seguridad" de bodyandsoul.php) con: arquitectura en lista (presentación: HTML, CSS y JavaScript; lógica: PHP; datos: MySQL con PDO), consultas preparadas, validación de datos y sesiones PHP.
+8. Cómo funciona un pedido: 4 o 5 pasos (catálogo → carrito en sesión → pedido → n8n → email de confirmación y registro para almacén). Con el formato de "Cómo funciona una reserva".
+9. Enlaces: igual que ahora (Ver página web, GitHub, volver al portfolio).
+
+QUITAR
+- La sección "Retos y aprendizajes" completa.
+- La sección "Carrito y gestión de sesión" (su contenido se integra en Funcionalidades).
+- La sección "Cómo funciona el carrito" (sustituida por la de pedido).
+- Las 4 tarjetas "Catálogo / Categorías / Productos / Base de datos" que repetían lo mismo.
+- La galería con 4 placeholders ("Captura 1... 4").
+- Cualquier párrafo que repita lo que ya se dijo en otra sección (las sesiones solo se explican una vez).
+
+AL TERMINAR
+Dime en una lista corta qué has quitado, qué has movido y qué dudas has tenido. No me expliques lo que no hayas cambiado.
