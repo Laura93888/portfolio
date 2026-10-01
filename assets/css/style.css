@@ -770,6 +770,22 @@ button {
     grid-template-columns: 1fr;
 }
 
+#flujo-pedido .bloque-tecnico:not(:last-child) {
+    position: relative;
+}
+
+#flujo-pedido .bloque-tecnico:not(:last-child)::after {
+    content: "↓";
+    position: absolute;
+    bottom: -9px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--brand);
+    font-size: var(--fs-md);
+    font-weight: 700;
+    line-height: 1;
+}
+
 .bloque-tecnico {
     padding: 24px;
 

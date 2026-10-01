@@ -75,36 +75,6 @@ $descripcionlarga=$proyecto["descripcionlarga"];
     </section>
 
 
-    <!-- SOBRE EL PROYECTO -->
-
-    <section class="seccion-proyecto">
-
-        <div class="cabecera-seccion">
-
-            <h2>Sobre el proyecto</h2>
-
-        </div>
-
-        <p>
-            <strong>Body &amp; Soul</strong> es una aplicación web de búsqueda
-            y reserva de actividades relacionadas con el <strong>deporte y el bienestar</strong>.
-            El proyecto conecta a usuarios que buscan actividades con empresas
-            que ofrecen estos servicios.
-        </p>
-
-        <p>
-            Los usuarios pueden buscar actividades, consultar su información
-            y disponibilidad, guardar sus favoritas y realizar y gestionar
-            reservas.
-        </p>
-
-        <p>
-            La aplicación cuenta con <strong>tres perfiles diferenciados</strong>:
-            usuario, empresa y administrador, cada uno con sus propias
-            funcionalidades y permisos.
-        </p>
-
-    </section>
 
 
     <!-- FUNCIONALIDADES -->

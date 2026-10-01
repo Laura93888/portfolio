@@ -72,12 +72,6 @@ $categoriaextra = $proyecto['categoriaextra'] ?? null;
             <?= htmlspecialchars($descripcionlarga, ENT_QUOTES, 'UTF-8'); ?>
         </p>
 
-        <div class="tecnologias-proyecto">
-            <?php foreach ($tecnologias as $tecnologia): ?>
-                <span><?= htmlspecialchars($tecnologia, ENT_QUOTES, 'UTF-8'); ?></span>
-            <?php endforeach; ?>
-        </div>
-
     </section>
 
 
@@ -99,29 +93,6 @@ $categoriaextra = $proyecto['categoriaextra'] ?? null;
 
     </section>
 
-
-    <!-- SOBRE EL PROYECTO -->
-    <section class="seccion-proyecto">
-
-        <div class="cabecera-seccion">
-            <h2>Sobre el proyecto</h2>
-        </div>
-
-        <p>
-            <strong>Tienda online</strong> desarrollada con PHP y MySQL.
-            Incluye un catálogo de productos organizado por categorías y un
-            carrito de compra.
-        </p>
-
-        <p>
-            Los pedidos se automatizan con <strong>n8n</strong>, que envía el
-            email de confirmación y registra el pedido para su preparación
-            en almacén.
-        </p>
-
-    </section>
-
-
     <!-- FUNCIONALIDADES -->
     <section class="seccion-proyecto">
 
@@ -139,7 +110,7 @@ $categoriaextra = $proyecto['categoriaextra'] ?? null;
             </article>
 
             <article class="tarjeta-funcionalidad">
-                <h3>Carrito y sesión</h3>
+                <h3>Carrito</h3>
                 <p>
                     Permite añadir productos y gestionar el contenido del
                     carrito durante la navegación.
@@ -149,8 +120,7 @@ $categoriaextra = $proyecto['categoriaextra'] ?? null;
             <article class="tarjeta-funcionalidad">
                 <h3>Pedidos automatizados con n8n</h3>
                 <p>
-                    n8n envía el email de confirmación y registra el pedido
-                    para el almacén.
+                    Cada pedido realizado activa un flujo en n8n.
                 </p>
             </article>
 
@@ -158,12 +128,12 @@ $categoriaextra = $proyecto['categoriaextra'] ?? null;
 
     </section>
 
-
-    <!-- CAPTURAS DEL PROYECTO -->
+    <!-- CATÁLOGO Y CARRITO -->
     <section class="seccion-proyecto">
 
         <div class="cabecera-seccion">
-            <h2>Capturas del proyecto</h2>
+            <h2>Catálogo y carrito</h2>
+            <p>Así ve la tienda el cliente.</p>
         </div>
 
         <div class="galeria-proyecto">
@@ -173,7 +143,10 @@ $categoriaextra = $proyecto['categoriaextra'] ?? null;
                     src="/assets/img/tienda/catalogo.png"
                     alt="Catálogo de productos de la tienda organizado por categorías"
                 >
-                <p>Catálogo de productos organizado por categorías.</p>
+                <p>
+                    <strong>Catálogo.</strong>
+                    Productos organizados por categorías.
+                </p>
             </div>
 
             <div>
@@ -181,15 +154,36 @@ $categoriaextra = $proyecto['categoriaextra'] ?? null;
                     src="/assets/img/tienda/carrito.png"
                     alt="Carrito de compra con los productos seleccionados"
                 >
-                <p>Carrito de compra con los productos seleccionados.</p>
+                <p>
+                    <strong>Carrito de compra.</strong>
+                    Productos seleccionados durante la navegación.
+                </p>
             </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PEDIDOS Y AUTOMATIZACIÓN -->
+    <section class="seccion-proyecto">
+
+        <div class="cabecera-seccion">
+            <h2>Pedidos y automatización</h2>
+            <p>Lo que ocurre después de confirmar la compra.</p>
+        </div>
+
+        <div class="galeria-proyecto">
 
             <div>
                 <img
                     src="/assets/img/tienda/email-pedido.png"
                     alt="Email de confirmación enviado tras realizar un pedido"
                 >
-                <p>Email de confirmación del pedido enviado al cliente.</p>
+                <p>
+                    <strong>Email de confirmación.</strong>
+                    El cliente lo recibe al hacer el pedido.
+                </p>
             </div>
 
             <div>
@@ -197,17 +191,20 @@ $categoriaextra = $proyecto['categoriaextra'] ?? null;
                     src="/assets/img/tienda/almacen.png"
                     alt="Hoja de almacén con los pedidos registrados"
                 >
-                <p>Registro de pedidos para su preparación en almacén.</p>
+                <p>
+                    <strong>Hoja de almacén.</strong>
+                    Cada pedido y sus productos quedan registrados.
+                </p>
             </div>
 
             <div>
                 <img
                     src="/assets/img/tienda/n8n-flujo.png"
-                    alt="Flujo de n8n para procesar el pedido"
+                    alt="Flujo de n8n que procesa el pedido"
                 >
                 <p>
-                    Flujo de n8n que envía la confirmación y registra el pedido
-                    para almacén.
+                    <strong>Flujo en n8n.</strong>
+                    Recibe el pedido, lo registra y envía el email.
                 </p>
             </div>
 
@@ -252,8 +249,7 @@ $categoriaextra = $proyecto['categoriaextra'] ?? null;
             <article class="bloque-tecnico">
                 <h3>Automatización</h3>
                 <p>
-                    n8n envía el email de confirmación y registra el pedido
-                    para el almacén.
+                    Flujo en n8n con webhook, Google Sheets y envío de email.
                 </p>
             </article>
 
@@ -262,25 +258,36 @@ $categoriaextra = $proyecto['categoriaextra'] ?? null;
     </section>
 
 
-    <!-- ARQUITECTURA Y SEGURIDAD -->
+    <!-- SEGURIDAD -->
     <section class="seccion-proyecto">
 
         <div class="cabecera-seccion">
-            <h2>Arquitectura y seguridad</h2>
+            <h2>Seguridad</h2>
         </div>
 
         <div class="bloques-tecnicos">
 
             <article class="bloque-tecnico">
-                <h3>Arquitectura</h3>
-                <ul>
-                    <li><strong>Presentación:</strong> HTML, CSS y JavaScript.</li>
-                    <li><strong>Lógica:</strong> PHP.</li>
-                    <li><strong>Datos:</strong> MySQL con PDO.</li>
-                    <li>Consultas preparadas para acceder a los datos.</li>
-                    <li>Validación de datos antes de procesarlos.</li>
-                    <li>Sesiones PHP para gestionar el estado del carrito.</li>
-                </ul>
+                <h3>Acceso a datos</h3>
+                <p>
+                    Las consultas a la base de datos usan <strong>PDO con
+                    consultas preparadas</strong>.
+                </p>
+            </article>
+
+            <article class="bloque-tecnico">
+                <h3>Validación</h3>
+                <p>
+                    Los datos que llegan a la aplicación se validan en el
+                    servidor antes de procesarlos.
+                </p>
+            </article>
+
+            <article class="bloque-tecnico">
+                <h3>Acceso al pedido</h3>
+                <p>
+                    Solo un cliente identificado puede finalizar un pedido.
+                </p>
             </article>
 
         </div>
@@ -295,33 +302,47 @@ $categoriaextra = $proyecto['categoriaextra'] ?? null;
             <h2>Cómo funciona un pedido</h2>
         </div>
 
-        <div class="bloques-tecnicos">
+        <div id="flujo-pedido" class="bloques-tecnicos pasos-proceso">
 
             <article class="bloque-tecnico">
-                <h3>01 · Catálogo</h3>
-                <p>El cliente consulta los productos y sus categorías.</p>
+                <span class="numero-proceso">01</span>
+                <h3>Catálogo</h3>
+                <p>Consulta los productos y navega por las categorías.</p>
             </article>
 
             <article class="bloque-tecnico">
-                <h3>02 · Carrito en sesión</h3>
-                <p>El cliente añade al carrito los productos que quiere comprar.</p>
-            </article>
-
-            <article class="bloque-tecnico">
-                <h3>03 · Pedido</h3>
-                <p>El cliente confirma el pedido desde la tienda.</p>
-            </article>
-
-            <article class="bloque-tecnico">
-                <h3>04 · n8n</h3>
-                <p>n8n procesa la automatización del pedido.</p>
-            </article>
-
-            <article class="bloque-tecnico">
-                <h3>05 · Confirmación y almacén</h3>
+                <span class="numero-proceso">02</span>
+                <h3>Carrito</h3>
                 <p>
-                    Se envía el email de confirmación y se registra el pedido
-                    para el almacén.
+                    Añade productos; la selección se conserva mediante cookies
+                    o sesión.
+                </p>
+            </article>
+
+            <article class="bloque-tecnico">
+                <span class="numero-proceso">03</span>
+                <h3>Inicio de sesión</h3>
+                <p>
+                    Para finalizar el pedido, el cliente debe identificarse y
+                    el carrito pasa a la sesión de PHP.
+                </p>
+            </article>
+
+            <article class="bloque-tecnico">
+                <span class="numero-proceso">04</span>
+                <h3>Pedido</h3>
+                <p>
+                    Se registra el pedido. La pasarela de pago quedaría en
+                    esta etapa como ampliación.
+                </p>
+            </article>
+
+            <article class="bloque-tecnico">
+                <span class="numero-proceso">05</span>
+                <h3>Automatización</h3>
+                <p>
+                    n8n registra el pedido y sus productos en Google Sheets y
+                    envía el email de confirmación al cliente.
                 </p>
             </article>
 

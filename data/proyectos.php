@@ -15,15 +15,15 @@ $proyectos = [
             "tecnologias" => ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
             "enlace" => "bodyandsoul.php",
             "destacado" => true,
-            "descripcionlarga" => "Plataforma web para buscar, consultar y reservar actividades deportivas y de bienestar según diferentes criterios como categoría, fecha o ubicación. Los usuarios pueden consultar la disponibilidad, gestionar sus reservas, guardar actividades favoritas y dejar reseñas, mientras que empresas y administradores disponen de sus propios paneles de gestión."
+            "descripcionlarga" => "Aplicación web de búsqueda y reserva de actividades relacionadas con el deporte y el bienestar. El proyecto conecta a usuarios que buscan actividades con empresas que ofrecen estos servicios. Los usuarios pueden buscar actividades, consultar su información y disponibilidad, guardar sus favoritas y realizar y gestionar reservas. La aplicación cuenta con tres perfiles diferenciados: usuario, empresa y administrador, cada uno con sus propias funcionalidades y permisos"
         ],
         [
             "titulo" => "Tienda online",
-            "descripcion" => "Aplicación web de comercio electrónico con productos, categorías y carrito de compra.",
+            "descripcion" => "Aplicación web de comercio electrónico con productos ordenados por categorías y carrito de compra.",
             "tecnologias" => ["HTML", "CSS", "JavaScript", "PHP", "MySQL", "n8n"],
             "enlace" => "tienda.php",
         "destacado" => true,
-        "descripcionlarga" => "Aplicación web de comercio electrónico desarrollada con PHP y MySQL, con catálogo de productos, categorías, carrito de compra, gestión de sesiones y diferentes funcionalidades para la gestión de la tienda. Los pedidos se automatizan con n8n, que envía el email de confirmación correspondiente y registra el pedido para su preparación en almacén.",
+        "descripcionlarga" => "Plataforma web de comercio electrónico especializada en moda desarrollada con PHP y MySQL, con catálogo de productos organizados por categorías,y un carrito de compra que permite mantener los productos seleccionados mediante cookies para usuarios invitados y sesiones para usuarios identificados. Los pedidos se automatizan con n8n, que envía el email de confirmación correspondiente y registra el pedido para su preparación en almacén.",
     "categoriaextra" => "Automatización"
         ],
         [
