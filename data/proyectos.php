@@ -31,7 +31,8 @@ $proyectos = [
             "descripcion" => "Aplicación web para consultar un catálogo de libros y gestionar sus préstamos.",
             "tecnologias" => ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
             "enlace" => "bookify.php",
-            "descripcionlarga" => "Aplicación web de gestión de biblioteca desarrollada con PHP y MySql, que permite consultar el catálogo y gestionar préstamos y devoluciones, con perfiles diferenciados de usuario y administrador."
+            "descripcionlarga" => "Aplicación web de gestión de biblioteca digital desarrollada con PHP y MySql, que permite consultar el catálogo de libros y gestionar préstamos y devoluciones, con perfiles diferenciados de usuario y administrador."
+   
         ],
         [
             "titulo" => "Aplicación del tiempo",

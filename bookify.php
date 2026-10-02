@@ -52,42 +52,28 @@ $descripcionlarga=$proyecto["descripcionlarga"];
 
     <!-- CAPTURA PRINCIPAL -->
     <section class="proyecto-imagen-principal">
+        <div class="galeria-proyecto captura-principal">
 
-        <div class="placeholder-imagen">
-            <span>Captura principal del proyecto</span>
+        <div>
+
+            <img
+                src="/assets/img/biblioteca/portada1.png"
+                alt="Página de inicio de Bookify"
+            >
+
+            <p>Página de inicio de la aplicación</p>
+        </br>
+            <img
+                src="/assets/img/biblioteca/portada2.png"
+                alt="Página de inicio de Bookify"
+            >
+
+            <p>Página de inicio de la aplicación | Categorias</p>
+
         </div>
 
     </section>
 
-
-    <!-- SOBRE EL PROYECTO -->
-    <section class="seccion-proyecto">
-
-        <div class="cabecera-seccion">
-
-            <h2>Sobre el proyecto</h2>
-        </div>
-
-        <p>
-            <strong>Bookify</strong> es una aplicación web de gestión de una
-            biblioteca digital. El proyecto permite consultar un catálogo de
-            libros, acceder a su información y gestionar préstamos desde
-            diferentes perfiles de usuario.
-        </p>
-
-        <p>
-            La aplicación está conectada a una <strong>base de datos
-            relacional MariaDB</strong>, donde se almacena la información
-            relacionada con libros, autores, categorías, usuarios y préstamos.
-        </p>
-
-        <p>
-            El sistema diferencia entre <strong>usuarios y administradores</strong>,
-            de manera que cada perfil dispone de diferentes funcionalidades
-            y permisos.
-        </p>
-
-    </section>
 
 
     <!-- FUNCIONALIDADES -->
@@ -239,7 +225,7 @@ $descripcionlarga=$proyecto["descripcionlarga"];
                 <h3>Base de datos</h3>
 
                 <p>
-                    <strong>MariaDB</strong> almacena la información de la
+                    Se almacena la información de la
                     biblioteca mediante diferentes tablas relacionadas:
                     usuarios, autores, categorías, libros y préstamos.
                 </p>
@@ -375,8 +361,8 @@ $descripcionlarga=$proyecto["descripcionlarga"];
                 <h3>04 · Base de datos</h3>
 
                 <p>
-                    PHP realiza la operación correspondiente sobre
-                    <strong>MariaDB mediante PDO</strong>.
+                    PHP realiza la consulta correspondiente sobre
+                    <strong>la base de datos mediante PDO</strong>.
                 </p>
 
             </article>
@@ -408,112 +394,6 @@ $descripcionlarga=$proyecto["descripcionlarga"];
         </div>
 
     </section>
-
-
-    <!-- GALERÍA -->
-    <section class="seccion-proyecto">
-
-        <div class="cabecera-seccion">
-
-            <h2>Capturas del proyecto</h2>
-
-            <p>
-                Algunas vistas de la aplicación y de sus principales funcionalidades.
-            </p>
-
-        </div>
-
-        <div class="galeria-proyecto">
-
-            <div class="placeholder-imagen">
-                <span>Captura 1</span>
-            </div>
-
-            <div class="placeholder-imagen">
-                <span>Captura 2</span>
-            </div>
-
-            <div class="placeholder-imagen">
-                <span>Captura 3</span>
-            </div>
-
-            <div class="placeholder-imagen">
-                <span>Captura 4</span>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- RETOS Y APRENDIZAJES -->
-    <section class="seccion-proyecto">
-
-        <div class="cabecera-seccion">
-
-            <h2>Retos y aprendizajes</h2>
-
-
-        </div>
-
-        <p>
-            Uno de los principales retos fue trabajar con una
-            <strong>base de datos relacional</strong> y conectar la información
-            almacenada con las diferentes funcionalidades de la aplicación.
-        </p>
-
-        <p>
-            Durante el desarrollo puse en práctica:
-        </p>
-
-        <ul>
-
-            <li>
-                <strong>PHP:</strong> desarrollo de la lógica de la aplicación
-                y creación de funciones para trabajar con los datos.
-            </li>
-
-            <li>
-                <strong>MariaDB:</strong> diseño y gestión de una base de datos
-                relacional para almacenar la información de la biblioteca.
-            </li>
-
-            <li>
-                <strong>SQL y PDO:</strong> realización de consultas y
-                comunicación entre PHP y la base de datos.
-            </li>
-
-            <li>
-                <strong>Sesiones:</strong> identificación de usuarios y
-                mantenimiento de la sesión durante la navegación.
-            </li>
-
-            <li>
-                <strong>Roles:</strong> diferenciación entre usuarios y
-                administradores y control de acceso.
-            </li>
-
-            <li>
-                <strong>Lógica de negocio:</strong> control de disponibilidad,
-                préstamos activos, devoluciones y estados.
-            </li>
-
-            <li>
-                <strong>Seguridad:</strong> protección de contraseñas,
-                consultas preparadas y comprobación de permisos en el backend.
-            </li>
-
-        </ul>
-
-        <p>
-            El proyecto me permitió trabajar de forma práctica la conexión
-            entre <strong>frontend, backend y base de datos</strong>, desarrollando
-            una aplicación en la que las acciones realizadas por el usuario
-            modifican y consultan información almacenada en MariaDB.
-        </p>
-
-    </section>
-
 
     <!-- ENLACES -->
     <section class="enlaces-proyecto">

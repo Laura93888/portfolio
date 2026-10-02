@@ -295,60 +295,7 @@ $categoriaextra = $proyecto['categoriaextra'] ?? null;
     </section>
 
 
-    <!-- CÓMO FUNCIONA UN PEDIDO -->
-    <section class="seccion-proyecto">
-
-        <div class="cabecera-seccion">
-            <h2>Cómo funciona un pedido</h2>
-        </div>
-
-        <div id="flujo-pedido" class="bloques-tecnicos pasos-proceso">
-
-            <article class="bloque-tecnico">
-                <span class="numero-proceso">01</span>
-                <h3>Catálogo</h3>
-                <p>Consulta los productos y navega por las categorías.</p>
-            </article>
-
-            <article class="bloque-tecnico">
-                <span class="numero-proceso">02</span>
-                <h3>Carrito</h3>
-                <p>
-                    Añade productos; la selección se conserva mediante cookies
-                    o sesión.
-                </p>
-            </article>
-
-            <article class="bloque-tecnico">
-                <span class="numero-proceso">03</span>
-                <h3>Inicio de sesión</h3>
-                <p>
-                    Para finalizar el pedido, el cliente debe identificarse y
-                    el carrito pasa a la sesión de PHP.
-                </p>
-            </article>
-
-            <article class="bloque-tecnico">
-                <span class="numero-proceso">04</span>
-                <h3>Pedido</h3>
-                <p>
-                    Se registra el pedido. La pasarela de pago quedaría en
-                    esta etapa como ampliación.
-                </p>
-            </article>
-
-            <article class="bloque-tecnico">
-                <span class="numero-proceso">05</span>
-                <h3>Automatización</h3>
-                <p>
-                    n8n registra el pedido y sus productos en Google Sheets y
-                    envía el email de confirmación al cliente.
-                </p>
-            </article>
-
-        </div>
-
-    </section>
+    <!-- CÓMO FUNCIONA UN PEDIDO --> <section class="seccion-proyecto"> <div class="cabecera-seccion"> <h2>Cómo funciona un pedido</h2> </div> <div class="bloques-tecnicos"> <article class="bloque-tecnico"> <h3>01 · Catálogo</h3> <p>El cliente puede navegar por las diferentes categorías de la tienda y consultar la información de los productos existentes. </p> </article> <article class="bloque-tecnico"> <h3>02 · Carrito</h3> <p>El cliente añade al carrito los productos que quiere comprar. Si navega como invitado, la información se conserva mediante cookies. Si ya está identificado se gestiona mediante la sesión de PHP. </p> </article> <article class="bloque-tecnico"> <h3>03 · Pedido</h3> <p>Para finalizarlo hay que iniciar sesión como cliente. En ese momento, el carrito de las cookies pasa a la sesión y no se pierde la selección. Aquí es donde se redirigiría a la pasarela de pago, que queda fuera del alcance del proyecto.</p> </article> <article class="bloque-tecnico"> <h3>04 · n8n</h3> <p>Al confirmar el pedido n8n guarda el pedido y cada uno de sus productos en Google Sheets, así el almacén puede prepararlo. También envia un email al cliente con los datos del pedido. </p> </article> </div> </section>
 
 
     <!-- ENLACES -->

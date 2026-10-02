@@ -40,10 +40,6 @@ $descripcionlarga=$proyecto["descripcionlarga"];
 
     <section class="proyecto-hero">
 
-        <span class="etiqueta-bloque">
-            <?= $categoria; ?>
-        </span>
-
         <h1><?= $titulo; ?></h1>
 
         <p class="proyecto-introduccion">
