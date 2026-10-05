@@ -709,15 +709,14 @@ button {
 /* ---------------------------------------------------------
    FUNCIONALIDADES
    --------------------------------------------------------- */
-
 .funcionalidades-proyecto {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 18px;
 }
 
 .tarjeta-funcionalidad {
-    padding: 22px;
+    padding: 18px;
 
     background: var(--surface);
     border: 1px solid var(--border);
@@ -725,6 +724,11 @@ button {
     border-radius: 18px;
 
     box-shadow: 0 10px 28px rgba(71, 22, 125, 0.06);
+
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
 
     transition:
         transform 180ms ease,
@@ -736,6 +740,19 @@ button {
     transform: translateY(-3px);
     border-top-color: var(--accent-magenta);
     box-shadow: 0 16px 34px rgba(71, 22, 125, 0.12);
+}
+
+.tarjeta-funcionalidad img {
+    display: block;
+
+    width: 100%;
+    height: 260px;
+
+    object-fit: cover;
+
+    margin: 0 0 18px;
+
+    border-radius: 12px;
 }
 
 .tarjeta-funcionalidad h3 {
@@ -755,7 +772,6 @@ button {
 .tarjeta-funcionalidad strong {
     color: var(--brand-dark);
 }
-
 
 /* ---------------------------------------------------------
    DESARROLLO TÉCNICO

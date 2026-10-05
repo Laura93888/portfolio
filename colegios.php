@@ -50,116 +50,78 @@ $descripcionlarga=$proyecto["descripcionlarga"];
     </section>
 
 
-    <!-- CAPTURAS -->
-
     <section class="proyecto-imagen-principal">
 
-        <div class="placeholder-imagen">
-            <img src="/assets/img/colegios/paginappal.png" alt="Pantalla de búsqueda de Weatherly">
-        </div>
+        <div class="galeria-proyecto captura-principal">
 
-        <div class="capturas-secundarias">
+            <div>
 
-            <div class="placeholder-imagen">
-                <img src="/assets/img/colegios/busqueda.png" alt="Pantalla de búsqueda de Weatherly">
+                <img
+                    src="/assets/img/colegios/paginappal.png"
+                    alt="Página principal de Madrid Colegios"
+                >
+
+                <p>Página principal de la aplicación</p>
+
             </div>
 
         </div>
 
     </section>
+                <!-- CONSULTA DE CENTROS -->
+
+                <section class="seccion-proyecto">
+
+                    <div class="cabecera-seccion">
+
+                        <h2>Consulta de centros</h2>
+
+                        <p>
+                            La aplicación permite consultar información de los centros
+                            educativos a partir de los datos obtenidos mediante la API.
+                        </p>
+
+                    </div>
 
 
-    <!-- SOBRE EL PROYECTO -->
+                    <div class="galeria-proyecto">
 
-    <section class="seccion-proyecto">
+                        <div>
 
-        <div class="cabecera-seccion">
-            <h2>Sobre el proyecto</h2>
-        </div>
+                            <img
+                                src="/assets/img/colegios/datoscentro.png"
+                                alt="Información de un colegio en Madrid Colegios"
+                                style="height: auto;"
+                            >
 
-        <p>
-            <strong>Madrid Colegios</strong> es una aplicación web desarrollada
-            con <strong>PHP</strong> que consume una
-            <strong>API pública de datos abiertos del Ayuntamiento de Madrid</strong>
-            para consultar información sobre colegios públicos.
-        </p>
-
-        <p>
-            Permite <strong>buscar centros, consultar sus datos principales</strong>
-            y acceder a su ubicación mediante <strong>Google Maps</strong>.
-        </p>
-
-    </section>
+                        </div>
 
 
-    <!-- FUNCIONALIDADES -->
+                        <div>
 
-    <section class="seccion-proyecto">
+                            <h3>Información del centro</h3>
 
-        <div class="cabecera-seccion">
+                            <p>
+                                Una vez realizada la búsqueda, la aplicación muestra los
+                                principales datos disponibles del colegio.
+                            </p>
 
-            <h2>Funcionalidades</h2>
+                            <p>
+                                Se muestran datos como
+                                <strong>localidad, información general, código postal y dirección</strong>,
+                                junto con las coordenadas necesarias para su localización.
+                            </p>
 
-            <p>
-                Principales funcionalidades de la aplicación.
-            </p>
+                            <p>
+                                La información se obtiene directamente de la
+                                <strong>API de datos abiertos del Ayuntamiento de Madrid</strong>.
+                            </p>
 
-        </div>
+                        </div>
 
-        <div class="funcionalidades-proyecto">
+                    </div>
 
-            <article class="tarjeta-funcionalidad">
-
-                <h3>Consulta de colegios</h3>
-
-                <p>
-                    Obtención y visualización de información sobre colegios
-                    públicos mediante una API.
-                </p>
-
-            </article>
-
-
-            <article class="tarjeta-funcionalidad">
-
-                <h3>Búsqueda</h3>
-
-                <p>
-                    Búsqueda de centros por <strong>nombre</strong> mediante
-                    un formulario GET.
-                </p>
-
-            </article>
-
-
-            <article class="tarjeta-funcionalidad">
-
-                <h3>Datos del centro</h3>
-
-                <p>
-                    Visualización de localidad, dirección, código postal y
-                    coordenadas.
-                </p>
-
-            </article>
-
-
-            <article class="tarjeta-funcionalidad">
-
-                <h3>Localización</h3>
-
-                <p>
-                    Acceso directo a la ubicación del colegio mediante
-                    <strong>Google Maps</strong>.
-                </p>
-
-            </article>
-
-        </div>
-
-    </section>
-
-
+                </section>
     <!-- DESARROLLO -->
 
     <section class="seccion-proyecto">

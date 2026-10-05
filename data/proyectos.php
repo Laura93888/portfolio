@@ -42,11 +42,11 @@ $proyectos = [
             "descripcionlarga" => "Aplicación web desarrollada con PHP que conecta con una API meteorológica para obtener datos en tiempo real y mostrar información del tiempo de forma dinámica, trabajando con peticiones externas y procesamiento de datos."
         ],
         [
-            "titulo" => "Consulta de colegios",
+            "titulo" => "Madrid Colegios",
             "descripcion" => "Aplicación web para consultar información de centros educativos mediante una API.",
             "tecnologias" => ["HTML", "CSS", "JavaScript", "PHP", "API", "JSON"],
             "enlace" => "colegios.php",
-            "descripcionlarga" => "Aplicación web desarrollada con PHP que utiliza datos abiertos del Ayuntamiento de Madrid para consultar y localizar centros educativos mediante un sistema de búsqueda y filtrado.",
+            "descripcionlarga" => "Aplicación web desarrollada con PHP que utiliza datos abiertos del Ayuntamiento de Madrid para buscar centros educativos mediante un sistema de búsqueda y filtrado. Permite consultar sus datos principales y acceder a su ubicación mediante Google Maps.",
     
         ]
     ],

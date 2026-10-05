@@ -92,74 +92,72 @@ $descripcionlarga=$proyecto["descripcionlarga"];
 
             <article class="tarjeta-funcionalidad">
 
-                <h3>Búsqueda y filtros</h3>
+                <img
+                    src="/assets/img/bodyandsoul/busqueda.png"
+                    alt="Buscador y filtros de actividades de Body & Soul"
+                >
+
+                <h3>Búsqueda y filtros con mapa interactivo</h3>
 
                 <p>
                     Buscador dinámico mediante criterios como
-                    <strong>categoría, fecha y localización</strong>.
+                    <strong>categoría, fecha y localización</strong> para
+                    encontrar actividades según las preferencias del usuario.
                 </p>
 
             </article>
 
 
             <article class="tarjeta-funcionalidad">
+
+                <img
+                    src="/assets/img/bodyandsoul/detalleact.png"
+                    alt="Detalle de una actividad de Body & Soul"
+                >
 
                 <h3>Actividades</h3>
 
                 <p>
-                    Consulta de información, disponibilidad y detalles de cada
-                    actividad antes de realizar una reserva.
+                    Consulta de información, características y
+                    <strong>disponibilidad</strong> de cada actividad antes
+                    de realizar una reserva. 
                 </p>
 
             </article>
 
 
             <article class="tarjeta-funcionalidad">
+
+                <img
+                    src="/assets/img/bodyandsoul/actreservadas.png"
+                    alt="Actividades reservadas por el usuario de Body & Soul"
+                >
 
                 <h3>Reservas</h3>
 
                 <p>
-                    Creación y gestión de reservas con control de
-                    <strong>disponibilidad y plazas</strong>.
+                    El usuario puede
+                    consultar las actividades que tiene reservadas filtrando por diferentes estados, cancelarlas o modificarlas.</strong>. 
                 </p>
 
             </article>
 
-
             <article class="tarjeta-funcionalidad">
+
+                <img
+                    src="/assets/img/bodyandsoul/reseñas.png"
+                    alt="Favoritos y reseñas"
+                >
 
                 <h3>Favoritos y reseñas</h3>
 
-                <p>
-                    Los usuarios pueden guardar actividades de interés y
-                    compartir su experiencia mediante valoraciones y reseñas.
+                <p>Las actividades pueden recibir <strong>reseñas y valoraciones</strong>
+                de los usuarios que las han realizado.
                 </p>
 
             </article>
 
 
-            <article class="tarjeta-funcionalidad">
-
-                <h3>Gestión de empresas</h3>
-
-                <p>
-                    Las empresas pueden administrar sus actividades y
-                    consultar las reservas realizadas por los usuarios.
-                </p>
-
-            </article>
-
-
-            <article class="tarjeta-funcionalidad">
-
-                <h3>Mapa interactivo</h3>
-
-                <p>
-                    Localización de actividades mediante un mapa para facilitar
-                    la búsqueda según la ubicación.
-                </p>
-
-            </article>
 
         </div>
 
@@ -175,8 +173,7 @@ $descripcionlarga=$proyecto["descripcionlarga"];
             <h2>Interfaces y perfiles</h2>
 
             <p>
-                La aplicación adapta las funcionalidades disponibles según
-                el perfil de cada usuario.
+                La aplicación cuenta con diferentes perfiles de usuario, cada uno con funcionalidades y permisos específicos. De esta forma, usuarios, empresas y administradores disponen de interfaces adaptadas a las acciones que pueden realizar dentro de la plataforma.
             </p>
 
         </div>
@@ -193,7 +190,7 @@ $descripcionlarga=$proyecto["descripcionlarga"];
 
                 <p>
                     <strong>Panel de empresa.</strong>
-                    Gestión de actividades y reservas recibidas.
+                    Permite gestionar las actividades ofrecidas, consultar las reservas recibidas y administrar la información asociada a cada actividad.
                 </p>
 
             </div>
@@ -208,7 +205,7 @@ $descripcionlarga=$proyecto["descripcionlarga"];
 
                 <p>
                     <strong>Panel de administración.</strong>
-                    Gestión y supervisión de los elementos de la plataforma.
+                    Permite supervisar y gestionar los diferentes elementos de la plataforma, con acceso a funcionalidades reservadas al administrador.
                 </p>
 
             </div>
@@ -223,97 +220,16 @@ $descripcionlarga=$proyecto["descripcionlarga"];
 
                 <p>
                     <strong>Panel de usuario.</strong>
-                    Gestión de cuenta, actividades y reservas.
+                    Permite gestionar la cuenta personal, consultar y gestionar las actividades reservada y acceder a los favoritos y las valoracions realizadas.
                 </p>
 
             </div>
+
+            
 
         </div>
 
     </section>
-
-
-    <!-- BÚSQUEDA Y RESERVAS -->
-
-    <section class="seccion-proyecto">
-
-        <div class="cabecera-seccion">
-
-            <h2>Búsqueda y reservas</h2>
-
-            <p>
-                El usuario puede descubrir actividades, consultar sus detalles
-                y gestionar el proceso de reserva desde la aplicación.
-            </p>
-
-        </div>
-
-
-        <div class="galeria-proyecto">
-
-            <div>
-
-                <img
-                    src="/assets/img/bodyandsoul/busqueda.png"
-                    alt="Buscador y filtros de actividades de Body & Soul"
-                >
-
-                <p>
-                    <strong>Búsqueda y filtros.</strong>
-                    El usuario puede localizar actividades según diferentes criterios.
-                </p>
-
-            </div>
-
-
-            <div>
-
-                <img
-                    src="/assets/img/bodyandsoul/detalleact.png"
-                    alt="Detalle de una actividad de Body & Soul"
-                >
-
-                <p>
-                    <strong>Detalle de actividad.</strong>
-                    Información y disponibilidad antes de realizar la reserva.
-                </p>
-
-            </div>
-
-
-            <div>
-
-                <img
-                    src="/assets/img/bodyandsoul/actreservadas (2).png"
-                    alt="Actividades reservadas por el usuario"
-                >
-
-                <p>
-                    <strong>Actividades reservadas.</strong>
-                    El usuario puede consultar las reservas realizadas.
-                </p>
-
-            </div>
-
-
-            <div>
-
-                <img
-                    src="/assets/img/bodyandsoul/detallereservas.png"
-                    alt="Detalle y gestión de reservas de Body & Soul"
-                >
-
-                <p>
-                    <strong>Gestión de reservas.</strong>
-                    Consulta del detalle y estado de las reservas.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
 
     <!-- DESARROLLO -->
 

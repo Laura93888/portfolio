@@ -74,30 +74,69 @@ $descripcionlarga=$proyecto["descripcionlarga"];
 
     </section>
 
+            <div class="cabecera-seccion">
 
+                <h2>Funcionalidades</h2>
+
+                <p>
+                    La aplicación integra las principales funcionalidades necesarias
+                    para consultar el catálogo y gestionar los préstamos.
+                </p>
+
+            </div>
 
     <!-- FUNCIONALIDADES -->
     <section class="seccion-proyecto">
 
-        <div class="cabecera-seccion">
-
-            <h2>Funcionalidades</h2>
-
-            <p>
-                Algunas de las principales funcionalidades desarrolladas en la aplicación.
-            </p>
-
-        </div>
-
         <div class="funcionalidades-proyecto">
+            <article class="tarjeta-funcionalidad">
+
+                <img
+                    src="/assets/img/biblioteca/registro.png"
+                    alt="Registro de usuarios de Bookify"
+                >
+
+                <h3>Registro</h3>
+
+                <p>
+                    Los nuevos usuarios pueden crear una cuenta mediante un
+                    formulario de <strong>registro</strong> para acceder a las
+                    funcionalidades de la aplicación.
+                </p>
+
+            </article>
+
 
             <article class="tarjeta-funcionalidad">
+
+                <img
+                    src="/assets/img/biblioteca/iniciosesion.png"
+                    alt="Inicio de sesión de Bookify"
+                >
+
+                <h3>Inicio de sesión</h3>
+
+                <p>
+                    El sistema permite a los usuarios identificarse mediante
+                    <strong>inicio de sesión</strong> y mantener su cuenta
+                    activa durante la navegación.
+                </p>
+
+            </article>
+
+            <article class="tarjeta-funcionalidad">
+
+                <img
+                    src="/assets/img/biblioteca/catalogo.png"
+                    alt="Catálogo de libros de Bookify"
+                >
 
                 <h3>Catálogo</h3>
 
                 <p>
-                    Consulta de los <strong>libros disponibles</strong> y
-                    acceso a la información asociada a cada uno.
+                    Consulta de los <strong>libros disponibles</strong> y acceso
+                    a la información asociada a cada uno mediante un catálogo
+                    organizado por categorías.
                 </p>
 
             </article>
@@ -105,60 +144,35 @@ $descripcionlarga=$proyecto["descripcionlarga"];
 
             <article class="tarjeta-funcionalidad">
 
-                <h3>Búsqueda y categorías</h3>
+                <img
+                    src="/assets/img/biblioteca/detallelibro.png"
+                    alt="Detalle de un libro de Bookify"
+                >
+
+                <h3>Consulta y disponibilidad</h3>
 
                 <p>
-                    Organización de los libros mediante
-                    <strong>categorías y diferentes criterios de búsqueda</strong>
-                    para facilitar la consulta del catálogo.
+                    Cada libro dispone de una página de detalle donde se puede
+                    consultar su información y comprobar su
+                    <strong>disponibilidad para realizar un préstamo</strong>.
                 </p>
 
-            </article>
+            </article>       
 
 
             <article class="tarjeta-funcionalidad">
 
-                <h3>Usuarios</h3>
-
-                <p>
-                    <strong>Registro, inicio de sesión y gestión de la cuenta</strong>
-                    mediante sesiones PHP.
-                </p>
-
-            </article>
-
-
-            <article class="tarjeta-funcionalidad">
+                <img
+                    src="/assets/img/biblioteca/confirmacionreserva.png"
+                    alt="Confirmación de préstamo de Bookify"
+                >
 
                 <h3>Préstamos</h3>
 
                 <p>
-                    Gestión de préstamos asociados a cada usuario, incluyendo
-                    <strong>fechas y estado del préstamo</strong>.
-                </p>
-
-            </article>
-
-
-            <article class="tarjeta-funcionalidad">
-
-                <h3>Disponibilidad</h3>
-
-                <p>
-                    El sistema comprueba la <strong>disponibilidad del libro</strong>
-                    antes de registrar un nuevo préstamo.
-                </p>
-
-            </article>
-
-
-            <article class="tarjeta-funcionalidad">
-
-                <h3>Administración</h3>
-
-                <p>
-                    El perfil administrador permite consultar y gestionar los
-                    <strong>préstamos activos</strong> y registrar las devoluciones.
+                    Una vez seleccionado un libro disponible, el usuario puede
+                    solicitar el préstamo y recibir una
+                    <strong>confirmación de la operación</strong>.
                 </p>
 
             </article>
@@ -167,6 +181,7 @@ $descripcionlarga=$proyecto["descripcionlarga"];
 
     </section>
 
+            <!-- INTERFACES Y PERFILES --> <section class="seccion-proyecto"> <div class="cabecera-seccion"> <h2>Interfaces y perfiles</h2> <p> La aplicación adapta las funcionalidades y permisos disponibles según el perfil del usuario. </p> </div> <div class="galeria-proyecto"> <div> <img src="/assets/img/biblioteca/paneladmin.png" alt="Panel de administración de Bookify" > <p> <strong>Panel de administración.</strong> Permite consultar los préstamos activos y gestionar las devoluciones de los libros. </p> </div> <div> <img src="/assets/img/biblioteca/perfil.png" alt="Perfil de usuario de Bookify" > <p> <strong>Perfil de usuario.</strong> Permite consultar la información de la cuenta y gestionar los préstamos realizados. </p> </div> </div> </section>
 
     <!-- DESARROLLO -->
     <section class="seccion-proyecto">
@@ -338,7 +353,7 @@ $descripcionlarga=$proyecto["descripcionlarga"];
 
                 <p>
                     PHP comprueba que el usuario esté
-                    <strong>identificado mediante su sesión</strong>.
+                    <strong>identificado mediante su sesión</strong>. Si no lo está no le dejará reservar redigiéndole directamente a la página de inicio de sesión. 
                 </p>
 
             </article>
@@ -349,8 +364,7 @@ $descripcionlarga=$proyecto["descripcionlarga"];
                 <h3>03 · Disponibilidad</h3>
 
                 <p>
-                    El sistema comprueba si el libro está disponible y
-                    si no existe un préstamo activo incompatible.
+                    El sistema comprueba si el libro está disponible, es decir, si no existe un préstamo activo.
                 </p>
 
             </article>
@@ -358,19 +372,7 @@ $descripcionlarga=$proyecto["descripcionlarga"];
 
             <article class="bloque-tecnico">
 
-                <h3>04 · Base de datos</h3>
-
-                <p>
-                    PHP realiza la consulta correspondiente sobre
-                    <strong>la base de datos mediante PDO</strong>.
-                </p>
-
-            </article>
-
-
-            <article class="bloque-tecnico">
-
-                <h3>05 · Registro</h3>
+                <h3>04 · Préstamo</h3>
 
                 <p>
                     Se registra el préstamo asociado al usuario y al libro,
@@ -382,11 +384,21 @@ $descripcionlarga=$proyecto["descripcionlarga"];
 
             <article class="bloque-tecnico">
 
-                <h3>06 · Resultado</h3>
+                <h3>05 · Resultado</h3>
 
                 <p>
                     La aplicación actualiza la información mostrada y permite
-                    consultar el estado del préstamo.
+                    consultar el estado del préstamo tanto en el perfil del usuario como en el del administrador. 
+                </p>
+
+            </article>
+
+            <article class="bloque-tecnico">
+
+                <h3>06 · Devoluciones</h3>
+
+                <p>
+                    Cuando el usuario devuelva físicamente el libro, el administrador podrá marcarlo como devuelto, permitiendo así que se vuelva a poder prestar. Quedará registrado si se ha devuelto con retraso para posibles penalizaciones. 
                 </p>
 
             </article>
