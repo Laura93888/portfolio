@@ -152,7 +152,7 @@ $descripcionlarga=$proyecto["descripcionlarga"];
 
             <article class="bloque-tecnico">
 
-                <h3>PHP + cURL</h3>
+                <h3>Backend</h3>
 
                 <p>
                     <strong>PHP</strong> gestiona la lógica de la aplicación
@@ -165,7 +165,7 @@ $descripcionlarga=$proyecto["descripcionlarga"];
 
             <article class="bloque-tecnico">
 
-                <h3>API + JSON</h3>
+                <h3>APIs y servicios externos</h3>
 
                 <p>
                     La aplicación consume la API de datos abiertos del

@@ -53,59 +53,11 @@ $descripcionlarga=$proyecto["descripcionlarga"];
 
         <div>
             <img 
-                src="/assets/img/weatherly/busqueda.png" 
-                alt="Pantalla de búsqueda de Weatherly">
+                src="/assets/img/weatherly/pantallappal.png" 
+                alt="Pantalla de inicio de Weatherly">
 
-            <p>Pantalla de búsqueda</p>
+            <p>Pantalla de inicio</p>
         </div>
-
-        <div class="galeria-proyecto">
-
-            <div>
-                <img 
-                    src="/assets/img/weatherly/resultado-dia.png" 
-                    alt="Resultado meteorológico de Weatherly durante el día">
-
-                <p>Resultado durante el día</p>
-            </div>
-
-            <div>
-                <img 
-                    src="/assets/img/weatherly/resultado-noche.png" 
-                    alt="Resultado meteorológico de Weatherly durante la noche">
-
-                <p>Resultado durante la noche</p>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- SOBRE EL PROYECTO -->
-    <section class="seccion-proyecto">
-
-        <div class="cabecera-seccion">
-            <h2>Sobre el proyecto</h2>
-        </div>
-
-        <p>
-            <strong>Weatherly</strong> es una aplicación web desarrollada con
-            <strong>PHP</strong> para consultar el tiempo actual de una ubicación.
-        </p>
-
-        <p>
-            El proyecto integra <strong>dos APIs con funciones diferentes</strong>:
-            <strong>Open-Meteo Geocoding</strong> se utiliza para localizar la
-            ciudad y obtener sus coordenadas, mientras que <strong>WeatherAPI</strong>
-            utiliza esas coordenadas para proporcionar la información meteorológica.
-        </p>
-
-        <p>
-            Además, las últimas <strong>5 ubicaciones consultadas</strong> se
-            almacenan mediante cookies para poder volver a consultarlas
-            directamente desde la aplicación.
-        </p>
 
     </section>
 
@@ -114,74 +66,80 @@ $descripcionlarga=$proyecto["descripcionlarga"];
     <section class="seccion-proyecto">
 
         <div class="cabecera-seccion">
+
             <h2>Funcionalidades</h2>
 
             <p>
                 Principales funcionalidades desarrolladas en la aplicación.
             </p>
+
         </div>
 
         <div class="funcionalidades-proyecto">
 
             <article class="tarjeta-funcionalidad">
-                <h3>Búsqueda de ubicaciones</h3>
+
+                <img src="/assets/img/weatherly/busqueda.png" alt="Búsqueda y selección de ubicación en Weatherly" >
+
+                <h3>Búsqueda y selección de ubicación</h3>
 
                 <p>
-                    El usuario introduce una ciudad y puede seleccionar entre
-                    diferentes coincidencias cuando es necesario.
+                    El usuario introduce una <strong>ciudad</strong> y la aplicación
+                    muestra las coincidencias encontradas para que pueda seleccionar
+                    la <strong>ubicación correcta</strong> antes de realizar la
+                    consulta meteorológica. Si no se encuentra ninguna coincidencia,
+                    se informa al usuario mediante un <strong>mensaje</strong>.
                 </p>
+
             </article>
 
+
             <article class="tarjeta-funcionalidad">
+
+                <img src="/assets/img/weatherly/resultado-dia.png" alt="Información meteorológica en Weatherly" >
+
                 <h3>Información meteorológica</h3>
 
                 <p>
-                    Muestra <strong>temperatura, sensación térmica, humedad,
-                    viento, nubosidad y precipitación</strong>, entre otros datos.
+                    Una vez seleccionada la ubicación, la aplicación muestra
+                    diferentes datos meteorológicos como
+                    <strong>temperatura, sensación térmica, humedad, viento,
+                    nubosidad y precipitación</strong>, además de la
+                    <strong>hora local</strong>.
                 </p>
+
             </article>
 
             <article class="tarjeta-funcionalidad">
-                <h3>Hora local</h3>
+
+                <img src="/assets/img/weatherly/resultado-noche.png" alt="Adaptación a noche" >
+
+                <h3>Adaptación día y noche</h3>
 
                 <p>
-                    Muestra la <strong>hora local</strong> correspondiente a
-                    la ubicación consultada.
+                    La aplicación identifica si en la ubicación consultada es
+                    <strong>de día o de noche</strong> y adapta la apariencia de
+                    la interfaz en función de esta información.
                 </p>
+
             </article>
 
             <article class="tarjeta-funcionalidad">
+
+                <img src="/assets/img/weatherly/ultimasbusquedas.png" alt="Historial de búsquedas en Weatherly" style="height: auto; width: 100%;" >
+
                 <h3>Historial de búsquedas</h3>
 
                 <p>
-                    Las últimas <strong>5 ubicaciones</strong> se almacenan
-                    mediante cookies y pueden volver a consultarse.
+                    Las últimas <strong>5 ubicaciones consultadas</strong> se
+                    almacenan mediante cookies para poder recuperarlas y volver a consultar su información directamente. Si el usuario realiza una búsqueda que ya está guardada, esta se actualiza y pasa a ocupar el primer lugar del historial, <strong>evitando duplicados</strong>. 
                 </p>
-            </article>
 
-            <article class="tarjeta-funcionalidad">
-                <h3>Día y noche</h3>
-
-                <p>
-                    La interfaz adapta su apariencia según si en la ubicación
-                    consultada es <strong>de día o de noche</strong>.
-                </p>
-            </article>
-
-            <article class="tarjeta-funcionalidad">
-                <h3>Gestión de errores</h3>
-
-                <p>
-                    La aplicación muestra <strong>mensajes informativos</strong>
-                    cuando la ubicación no existe o se produce un problema
-                    durante la consulta.
-                </p>
             </article>
 
         </div>
 
     </section>
-
 
     <!-- DESARROLLO -->
     <section class="seccion-proyecto">
@@ -198,152 +156,42 @@ $descripcionlarga=$proyecto["descripcionlarga"];
 
             <article class="bloque-tecnico">
 
+                <h3>Frontend</h3>
+
+                <p>
+                    <strong>HTML, CSS y JavaScript</strong> se utilizan para
+                    construir la interfaz, gestionar la interacción con el usuario
+                    y adaptar la presentación de la información según los datos
+                    obtenidos.
+                </p>
+
+            </article>
+
+
+            <article class="bloque-tecnico">
+
                 <h3>Backend</h3>
 
                 <p>
-                    <strong>PHP</strong> gestiona la lógica de la aplicación,
-                    realiza las peticiones mediante <strong>cURL</strong> y
-                    procesa las respuestas en formato <strong>JSON</strong>.
+                    <strong>PHP</strong> gestiona la lógica de la aplicación y
+                    utiliza <strong>cURL</strong> para realizar las peticiones a
+                    las APIs. Las respuestas recibidas se procesan en formato
+                    <strong>JSON</strong> antes de generar la información que se
+                    muestra en la interfaz.
                 </p>
 
             </article>
 
-            <article class="bloque-tecnico">
-
-                <h3>Geolocalización</h3>
-
-                <p>
-                    <strong>Open-Meteo Geocoding API</strong> permite localizar
-                    ciudades y obtener datos como <strong>nombre, país y
-                    coordenadas</strong>.
-                </p>
-
-            </article>
 
             <article class="bloque-tecnico">
 
-                <h3>Datos meteorológicos</h3>
+                <h3>APIs y servicios externos</h3>
 
                 <p>
-                    <strong>WeatherAPI</strong> utiliza las coordenadas obtenidas
-                    previamente para devolver la información meteorológica actual.
-                </p>
-
-            </article>
-
-        </div>
-
-    </section>
-
-
-    <!-- FLUJO DE CONSULTA -->
-    <section class="seccion-proyecto">
-
-        <div class="cabecera-seccion">
-            <h2>Flujo de consulta</h2>
-
-            <p>
-                Cómo se conectan las dos APIs para obtener el resultado final.
-            </p>
-        </div>
-
-        <div class="bloques-tecnicos">
-
-            <article class="bloque-tecnico">
-
-                <h3>01 · Buscar</h3>
-
-                <p>
-                    El usuario introduce una <strong>ciudad</strong> en el
-                    buscador y solicita consultar el tiempo.
-                </p>
-
-            </article>
-
-            <article class="bloque-tecnico">
-
-                <h3>02 · Localizar</h3>
-
-                <p>
-                    <strong>Open-Meteo</strong> busca la ubicación y devuelve
-                    sus <strong>coordenadas</strong> para identificarla con precisión.
-                </p>
-
-            </article>
-
-            <article class="bloque-tecnico">
-
-                <h3>03 · Consultar</h3>
-
-                <p>
-                    <strong>PHP y cURL</strong> utilizan esas coordenadas para
-                    realizar una segunda petición a <strong>WeatherAPI</strong>.
-                </p>
-
-            </article>
-
-            <article class="bloque-tecnico">
-
-                <h3>04 · Mostrar</h3>
-
-                <p>
-                    PHP procesa el <strong>JSON</strong> recibido y muestra
-                    la información meteorológica en la interfaz.
-                </p>
-
-            </article>
-
-        </div>
-
-    </section>
-
-
-    <!-- COOKIES Y JAVASCRIPT -->
-    <section class="seccion-proyecto">
-
-        <div class="cabecera-seccion">
-            <h2>Cookies e interacción</h2>
-
-            <p>
-                Funcionalidades utilizadas para conservar las búsquedas y mejorar
-                la interacción con la aplicación.
-            </p>
-        </div>
-
-        <div class="bloques-tecnicos">
-
-            <article class="bloque-tecnico">
-
-                <h3>Historial con cookies</h3>
-
-                <p>
-                    Las últimas búsquedas se almacenan mediante una
-                    <strong>cookie</strong> en formato JSON, manteniendo un
-                    máximo de <strong>5 ubicaciones</strong> junto con sus
-                    coordenadas.
-                </p>
-
-            </article>
-
-            <article class="bloque-tecnico">
-
-                <h3>Interacciones con JavaScript</h3>
-
-                <p>
-                    JavaScript permite interactuar con las tarjetas del
-                    historial para volver a consultar una ubicación almacenada.
-                </p>
-
-            </article>
-
-            <article class="bloque-tecnico">
-
-                <h3>Modo día y noche</h3>
-
-                <p>
-                    WeatherAPI proporciona el valor que indica si la ubicación
-                    se encuentra en <strong>día o noche</strong>. Este valor
-                    permite adaptar la apariencia de la interfaz mediante CSS.
+                    <strong>Open-Meteo Geocoding API</strong> permite obtener las
+                    coordenadas de la ubicación seleccionada, que posteriormente
+                    se utilizan para consultar <strong>WeatherAPI</strong> y
+                    obtener la información meteorológica actual.
                 </p>
 
             </article>

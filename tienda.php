@@ -92,121 +92,97 @@ $categoriaextra = $proyecto['categoriaextra'] ?? null;
         </div>
 
     </section>
-
+   
     <!-- FUNCIONALIDADES -->
     <section class="seccion-proyecto">
 
         <div class="cabecera-seccion">
+
             <h2>Funcionalidades</h2>
+
+            <p>
+                Principales funcionalidades desarrolladas en la tienda online.
+            </p>
+
         </div>
 
         <div class="funcionalidades-proyecto">
 
             <article class="tarjeta-funcionalidad">
-                <h3>Catálogo y categorías</h3>
-                <p>
-                    Consulta de los productos organizados por categorías.
-                </p>
-            </article>
 
-            <article class="tarjeta-funcionalidad">
-                <h3>Carrito</h3>
-                <p>
-                    Permite añadir productos y gestionar el contenido del
-                    carrito durante la navegación.
-                </p>
-            </article>
-
-            <article class="tarjeta-funcionalidad">
-                <h3>Pedidos automatizados con n8n</h3>
-                <p>
-                    Cada pedido realizado activa un flujo en n8n.
-                </p>
-            </article>
-
-        </div>
-
-    </section>
-
-    <!-- CATÁLOGO Y CARRITO -->
-    <section class="seccion-proyecto">
-
-        <div class="cabecera-seccion">
-            <h2>Catálogo y carrito</h2>
-            <p>Así ve la tienda el cliente.</p>
-        </div>
-
-        <div class="galeria-proyecto">
-
-            <div>
                 <img
                     src="/assets/img/tienda/catalogo.png"
                     alt="Catálogo de productos de la tienda organizado por categorías"
                 >
-                <p>
-                    <strong>Catálogo.</strong>
-                    Productos organizados por categorías.
-                </p>
-            </div>
 
-            <div>
+                <h3>Catálogo y categorías</h3>
+
+                <p>
+                    Los productos se muestran organizados por
+                    <strong>categorías</strong>, permitiendo al cliente consultar
+                    el catálogo y acceder a la información de cada producto.
+                </p>
+
+            </article>
+
+
+            <article class="tarjeta-funcionalidad">
+
                 <img
                     src="/assets/img/tienda/carrito.png"
-                    alt="Carrito de compra con los productos seleccionados"
+                    alt="Carrito de compra con productos seleccionados"
                 >
+
+                <h3>Carrito de compra</h3>
+
                 <p>
-                    <strong>Carrito de compra.</strong>
-                    Productos seleccionados durante la navegación.
+                    El cliente puede añadir productos y gestionar el contenido
+                    del carrito durante la navegación. Para los usuarios
+                    invitados, la selección se conserva mediante
+                    <strong>cookies</strong>, mientras que los usuarios
+                    identificados utilizan la <strong>sesión de PHP</strong>.
                 </p>
-            </div>
 
-        </div>
-
-    </section>
+            </article>
 
 
-    <!-- PEDIDOS Y AUTOMATIZACIÓN -->
-    <section class="seccion-proyecto">
+            <article class="tarjeta-funcionalidad">
 
-        <div class="cabecera-seccion">
-            <h2>Pedidos y automatización</h2>
-            <p>Lo que ocurre después de confirmar la compra.</p>
-        </div>
+                <img
+                    src="/assets/img/tienda/iniciosesion.png"
+                    alt="Inicio de sesión de cliente en la tienda online"
+                >
 
-        <div class="galeria-proyecto">
+                <h3>Usuarios y pedidos</h3>
 
-            <div>
+                <p>
+                    Los clientes pueden registrarse e iniciar sesión para
+                    <strong>finalizar sus pedidos</strong>. Al identificarse,
+                    el carrito almacenado como invitado se recupera en la
+                    <strong>sesión de PHP</strong> sin perder los productos
+                    seleccionados.
+                </p>
+
+            </article>
+
+
+            <article class="tarjeta-funcionalidad">
+
                 <img
                     src="/assets/img/tienda/email-pedido.png"
                     alt="Email de confirmación enviado tras realizar un pedido"
                 >
-                <p>
-                    <strong>Email de confirmación.</strong>
-                    El cliente lo recibe al hacer el pedido.
-                </p>
-            </div>
 
-            <div>
-                <img
-                    src="/assets/img/tienda/almacen.png"
-                    alt="Hoja de almacén con los pedidos registrados"
-                >
-                <p>
-                    <strong>Hoja de almacén.</strong>
-                    Cada pedido y sus productos quedan registrados.
-                </p>
-            </div>
+                <h3>Pedidos automatizados</h3>
 
-            <div>
-                <img
-                    src="/assets/img/tienda/n8n-flujo.png"
-                    alt="Flujo de n8n que procesa el pedido"
-                >
                 <p>
-                    <strong>Flujo en n8n.</strong>
-                    Recibe el pedido, lo registra y envía el email.
+                    Al confirmar un pedido, se activa un flujo de
+                    <strong>n8n</strong> que registra la información en
+                    <strong>Google Sheets</strong> y envía un
+                    <strong>email de confirmación</strong> al cliente.
                 </p>
-            </div>
+
+            </article>
 
         </div>
 
@@ -223,33 +199,23 @@ $categoriaextra = $proyecto['categoriaextra'] ?? null;
         <div class="bloques-tecnicos">
 
             <article class="bloque-tecnico">
-                <h3>Frontend</h3>
-                <p>
-                    HTML, CSS y JavaScript para construir la interfaz y
-                    gestionar la interacción con la tienda.
-                </p>
-            </article>
-
-            <article class="bloque-tecnico">
                 <h3>Backend</h3>
                 <p>
-                    PHP gestiona la lógica de la tienda, el carrito y el
-                    procesamiento de los pedidos.
+                    PHP gestiona usuarios, sesiones, carrito y pedidos. El carrito utiliza la base de datos para usuarios identificados y cookies para usuarios invitados.
                 </p>
             </article>
-
+            
             <article class="bloque-tecnico">
                 <h3>Base de datos</h3>
                 <p>
-                    MySQL se conecta con PHP mediante PDO y consultas
-                    preparadas.
+                    Se utiliza MySQL y una clase propia db para centralizar el acceso a los datos. Se gestionan productos, categorías, usuarios y carritos, además de las diferentes operaciones necesarias para la tienda.
                 </p>
             </article>
 
             <article class="bloque-tecnico">
-                <h3>Automatización</h3>
+                <h3>Automatización de pedidos</h3>
                 <p>
-                    Flujo en n8n con webhook, Google Sheets y envío de email.
+                    PHP envía los datos del pedido mediante <strong>cURL</strong> a un <strong>webhook de n8n</strong>, que registra la información en Google Sheets y envía el email de confirmación al cliente.
                 </p>
             </article>
 

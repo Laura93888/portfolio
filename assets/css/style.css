@@ -423,7 +423,6 @@ button {
 
     .presentacion {
         margin-top: 45px;
-        flex-direction: column;
         align-items: stretch;
     }
 
@@ -514,7 +513,7 @@ button {
    --------------------------------------------------------- */
 
 .proyecto-imagen-principal {
-    margin-bottom: 75px;
+    margin-bottom: 50px;
     text-align: center;
 }
 

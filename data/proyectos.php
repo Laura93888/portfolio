@@ -39,7 +39,8 @@ $proyectos = [
             "descripcion" => "Aplicación web que consulta una API meteorológica y muestra los datos dinámicamente.",
             "tecnologias" => ["HTML", "CSS", "JavaScript", "PHP", "API", "JSON"],
             "enlace" => "weatherly.php",
-            "descripcionlarga" => "Aplicación web desarrollada con PHP que conecta con una API meteorológica para obtener datos en tiempo real y mostrar información del tiempo de forma dinámica, trabajando con peticiones externas y procesamiento de datos."
+            "descripcionlarga" => "Aplicación web desarrollada con PHP que integra dos APIs con funciones diferentes, Open-Meteo Geocoding se utiliza para localizar la ciudad y obtener sus coordenadas, mientras que WeatherAPI
+    utiliza esas coordenadas para para proporcionar la información meteorológica en tiempo real."
         ],
         [
             "titulo" => "Madrid Colegios",

@@ -61,8 +61,8 @@ $descripcionlarga=$proyecto["descripcionlarga"];
                 alt="Página de inicio de Bookify"
             >
 
-            <p>Página de inicio de la aplicación</p>
-        </br>
+            <p style="margin-bottom:25px;">Página de inicio de la aplicación</p>
+        
             <img
                 src="/assets/img/biblioteca/portada2.png"
                 alt="Página de inicio de Bookify"
@@ -71,6 +71,7 @@ $descripcionlarga=$proyecto["descripcionlarga"];
             <p>Página de inicio de la aplicación | Categorias</p>
 
         </div>
+            </div>
 
     </section>
 
