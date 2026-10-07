@@ -66,6 +66,16 @@ $descripcionlarga=$proyecto["descripcionlarga"];
 
             </div>
 
+            <div>
+
+                <img
+                    src="/assets/img/bodyandsoul/masreservadas.png"
+                    alt="Página principal de Body & Soul"
+                >
+
+                <p>Página principal de la aplicación | Más reservadas</p>
+
+            </div>
         </div>
 
     </section>

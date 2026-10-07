@@ -52,7 +52,7 @@ $descripcionlarga=$proyecto["descripcionlarga"];
 
     <section class="proyecto-imagen-principal">
 
-        <div class="galeria-proyecto captura-principal">
+        <div class="captura-principal">
 
             <div>
 
@@ -123,63 +123,51 @@ $descripcionlarga=$proyecto["descripcionlarga"];
 
                 </section>
     <!-- DESARROLLO -->
-
     <section class="seccion-proyecto">
 
         <div class="cabecera-seccion">
-
             <h2>Desarrollo</h2>
-
             <p>
-                Tecnologías y aspectos técnicos principales.
+                Principales aspectos técnicos desarrollados para integrar la API,
+                gestionar las consultas y mostrar la información de los centros.
             </p>
-
         </div>
 
         <div class="bloques-tecnicos">
 
             <article class="bloque-tecnico">
-
-                <h3>Frontend</h3>
-
+                <h3>Consulta dinámica</h3>
                 <p>
-                    <strong>HTML5, CSS3 y Bootstrap</strong> para construir
-                    una interfaz adaptable a diferentes tamaños de pantalla.
+                    La búsqueda se realiza de forma dinámica mediante
+                    <strong>JavaScript</strong>, mostrando los resultados a medida
+                    que el usuario introduce el nombre del centro, sin necesidad
+                    de recargar la página ni pulsar un botón de búsqueda.
                 </p>
-
             </article>
 
-
             <article class="bloque-tecnico">
-
-                <h3>Backend</h3>
-
+                <h3>Integración de la API</h3>
                 <p>
-                    <strong>PHP</strong> gestiona la lógica de la aplicación
-                    y utiliza <strong>cURL</strong> para realizar las
-                    peticiones a la API.
+                    <strong>PHP</strong> realiza las peticiones a la
+                    <strong>API de datos abiertos del Ayuntamiento de Madrid</strong>
+                    mediante <strong>cURL</strong>. La respuesta se recibe en
+                    formato <strong>JSON</strong> y se procesan los datos necesarios
+                    para mostrar la información de cada centro.
                 </p>
-
             </article>
 
-
             <article class="bloque-tecnico">
-
-                <h3>APIs y servicios externos</h3>
-
+                <h3>Localización en Google Maps</h3>
                 <p>
-                    La aplicación consume la API de datos abiertos del
-                    Ayuntamiento, procesa la respuesta en
-                    <strong>JSON</strong> y trabaja con datos anidados para
-                    obtener la información de cada centro.
+                    Las coordenadas obtenidas de los centros se utilizan para
+                    generar dinámicamente los enlaces de localización mediante
+                    <strong>JavaScript</strong>, permitiendo acceder directamente
+                    a su ubicación en <strong>Google Maps</strong>.
                 </p>
-
             </article>
 
         </div>
-
     </section>
-
 
     <!-- FLUJO -->
 
@@ -246,33 +234,6 @@ $descripcionlarga=$proyecto["descripcionlarga"];
             </article>
 
         </div>
-
-    </section>
-
-
-    <!-- RETOS Y APRENDIZAJES -->
-
-    <section class="seccion-proyecto">
-
-        <div class="cabecera-seccion">
-
-            <h2>Retos y aprendizajes</h2>
-
-        </div>
-
-        <p>
-            El principal reto fue trabajar con una <strong>API externa</strong>
-            y comprender la estructura de los datos recibidos en
-            <strong>JSON</strong>.
-        </p>
-
-        <p>
-            Durante el desarrollo puse en práctica el consumo de APIs mediante
-            <strong>cURL</strong>, el procesamiento de
-            <strong>JSON</strong>, el uso de parámetros <strong>GET</strong>
-            y el trabajo con <strong>datos geográficos</strong> para generar
-            enlaces a Google Maps.
-        </p>
 
     </section>
 

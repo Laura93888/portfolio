@@ -148,7 +148,8 @@ $descripcionlarga=$proyecto["descripcionlarga"];
             <h2>Desarrollo</h2>
 
             <p>
-                Tecnologías y servicios utilizados para construir la aplicación.
+                Principales aspectos técnicos desarrollados para integrar las APIs
+                y procesar la información meteorológica.
             </p>
         </div>
 
@@ -156,13 +157,14 @@ $descripcionlarga=$proyecto["descripcionlarga"];
 
             <article class="bloque-tecnico">
 
-                <h3>Frontend</h3>
+                <h3>Integración de APIs</h3>
 
                 <p>
-                    <strong>HTML, CSS y JavaScript</strong> se utilizan para
-                    construir la interfaz, gestionar la interacción con el usuario
-                    y adaptar la presentación de la información según los datos
-                    obtenidos.
+                    La aplicación combina dos servicios externos:
+                    <strong>Open-Meteo Geocoding API</strong> para obtener las
+                    coordenadas de la ubicación seleccionada y
+                    <strong>WeatherAPI</strong> para consultar la información
+                    meteorológica correspondiente.
                 </p>
 
             </article>
@@ -170,14 +172,13 @@ $descripcionlarga=$proyecto["descripcionlarga"];
 
             <article class="bloque-tecnico">
 
-                <h3>Backend</h3>
+                <h3>Procesamiento de datos</h3>
 
                 <p>
-                    <strong>PHP</strong> gestiona la lógica de la aplicación y
-                    utiliza <strong>cURL</strong> para realizar las peticiones a
-                    las APIs. Las respuestas recibidas se procesan en formato
-                    <strong>JSON</strong> antes de generar la información que se
-                    muestra en la interfaz.
+                    <strong>PHP</strong> realiza las peticiones mediante
+                    <strong>cURL</strong>, procesa las respuestas en formato
+                    <strong>JSON</strong> y transforma los datos recibidos para
+                    adaptarlos a la información que necesita mostrar la aplicación.
                 </p>
 
             </article>
@@ -185,13 +186,13 @@ $descripcionlarga=$proyecto["descripcionlarga"];
 
             <article class="bloque-tecnico">
 
-                <h3>APIs y servicios externos</h3>
+                <h3>Interfaz dinámica</h3>
 
                 <p>
-                    <strong>Open-Meteo Geocoding API</strong> permite obtener las
-                    coordenadas de la ubicación seleccionada, que posteriormente
-                    se utilizan para consultar <strong>WeatherAPI</strong> y
-                    obtener la información meteorológica actual.
+                    <strong>JavaScript</strong> gestiona la interacción con el
+                    usuario y actualiza la interfaz según los datos obtenidos,
+                    permitiendo adaptar la información mostrada y la apariencia
+                    de la aplicación a cada consulta.
                 </p>
 
             </article>

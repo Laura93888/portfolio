@@ -56,16 +56,6 @@ $categoriaextra = $proyecto['categoriaextra'] ?? null;
     <!-- CABECERA DEL PROYECTO -->
     <section class="proyecto-hero">
 
-        <span class="etiqueta-bloque">
-            <?= htmlspecialchars($categoria, ENT_QUOTES, 'UTF-8'); ?>
-        </span>
-
-        <?php if (!empty($categoriaextra)): ?>
-            <span class="etiqueta-bloque">
-                <?= htmlspecialchars($categoriaextra, ENT_QUOTES, 'UTF-8'); ?>
-            </span>
-        <?php endif; ?>
-
         <h1><?= htmlspecialchars($titulo, ENT_QUOTES, 'UTF-8'); ?></h1>
 
         <p class="proyecto-introduccion">
@@ -78,11 +68,11 @@ $categoriaextra = $proyecto['categoriaextra'] ?? null;
     <!-- CAPTURA PRINCIPAL -->
     <section class="proyecto-imagen-principal">
 
-        <div class="galeria-proyecto captura-principal">
+        <div class="captura-principal">
 
             <div>
                 <img
-                    src="/assets/img/tienda/principal.png"
+                    src="/assets/img/tienda/pantallappal.png"
                     alt="Página principal de la tienda online"
                 >
 
@@ -111,16 +101,29 @@ $categoriaextra = $proyecto['categoriaextra'] ?? null;
             <article class="tarjeta-funcionalidad">
 
                 <img
-                    src="/assets/img/tienda/catalogo.png"
+                    src="/assets/img/tienda/categorias.png"
                     alt="Catálogo de productos de la tienda organizado por categorías"
                 >
 
                 <h3>Catálogo y categorías</h3>
 
+                <p> El cliente puede consultar <strong>todos los productos</strong> o seleccionar una <strong>categoría</strong> desde el menú desplegable. También puede consultar los <strong>más vendidos</strong> desde la página principal. </p>
+
+            </article>
+
+            <article class="tarjeta-funcionalidad">
+
+                <img
+                    src="/assets/img/tienda/producto.png"
+                    alt="Página de detalle de un producto de la tienda"
+                >
+
+                <h3>Detalle del producto</h3>
+
                 <p>
-                    Los productos se muestran organizados por
-                    <strong>categorías</strong>, permitiendo al cliente consultar
-                    el catálogo y acceder a la información de cada producto.
+                    Cada producto dispone de una página propia donde el cliente
+                    puede consultar su <strong>información, precio y disponibilidad</strong>
+                    antes de añadirlo al carrito.
                 </p>
 
             </article>
@@ -149,27 +152,7 @@ $categoriaextra = $proyecto['categoriaextra'] ?? null;
             <article class="tarjeta-funcionalidad">
 
                 <img
-                    src="/assets/img/tienda/iniciosesion.png"
-                    alt="Inicio de sesión de cliente en la tienda online"
-                >
-
-                <h3>Usuarios y pedidos</h3>
-
-                <p>
-                    Los clientes pueden registrarse e iniciar sesión para
-                    <strong>finalizar sus pedidos</strong>. Al identificarse,
-                    el carrito almacenado como invitado se recupera en la
-                    <strong>sesión de PHP</strong> sin perder los productos
-                    seleccionados.
-                </p>
-
-            </article>
-
-
-            <article class="tarjeta-funcionalidad">
-
-                <img
-                    src="/assets/img/tienda/email-pedido.png"
+                    src="/assets/img/tienda/confirmacioncorreo.png"
                     alt="Email de confirmación enviado tras realizar un pedido"
                 >
 
@@ -261,7 +244,12 @@ $categoriaextra = $proyecto['categoriaextra'] ?? null;
     </section>
 
 
-    <!-- CÓMO FUNCIONA UN PEDIDO --> <section class="seccion-proyecto"> <div class="cabecera-seccion"> <h2>Cómo funciona un pedido</h2> </div> <div class="bloques-tecnicos"> <article class="bloque-tecnico"> <h3>01 · Catálogo</h3> <p>El cliente puede navegar por las diferentes categorías de la tienda y consultar la información de los productos existentes. </p> </article> <article class="bloque-tecnico"> <h3>02 · Carrito</h3> <p>El cliente añade al carrito los productos que quiere comprar. Si navega como invitado, la información se conserva mediante cookies. Si ya está identificado se gestiona mediante la sesión de PHP. </p> </article> <article class="bloque-tecnico"> <h3>03 · Pedido</h3> <p>Para finalizarlo hay que iniciar sesión como cliente. En ese momento, el carrito de las cookies pasa a la sesión y no se pierde la selección. Aquí es donde se redirigiría a la pasarela de pago, que queda fuera del alcance del proyecto.</p> </article> <article class="bloque-tecnico"> <h3>04 · n8n</h3> <p>Al confirmar el pedido n8n guarda el pedido y cada uno de sus productos en Google Sheets, así el almacén puede prepararlo. También envia un email al cliente con los datos del pedido. </p> </article> </div> </section>
+    <!-- CÓMO FUNCIONA UN PEDIDO --> 
+    <section class="seccion-proyecto"> <div class="cabecera-seccion"> <h2>Cómo funciona un pedido</h2> </div> <div class="bloques-tecnicos"> <article class="bloque-tecnico"> 
+        <h3>01 · Catálogo</h3> <p>El cliente puede navegar por las diferentes categorías de la tienda y consultar la información de los productos existentes. </p> </article> <article class="bloque-tecnico"> 
+            <h3>02 · Carrito</h3> <p>El cliente añade al carrito los productos que quiere comprar. Si navega como invitado, la información se conserva mediante cookies. Si ya está identificado se gestiona mediante la sesión de PHP. </p> </article> <article class="bloque-tecnico"> 
+                <h3>03 · Pedido</h3> <p>Para finalizarlo hay que iniciar sesión como cliente. En ese momento, el carrito de las cookies pasa a la sesión y no se pierde la selección. Aquí es donde se redirigiría a la pasarela de pago, que queda fuera del alcance del proyecto.</p> </article> <article class="bloque-tecnico"> 
+                    <h3>04 · n8n</h3> <p>Al confirmar el pedido n8n guarda el pedido y cada uno de sus productos en Google Sheets, así el almacén puede prepararlo. También envía un email al cliente con los datos del pedido. </p> </article> </div> </section>
 
 
     <!-- ENLACES -->

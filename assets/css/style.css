@@ -576,13 +576,11 @@ button {
 }
 
 .galeria-proyecto.captura-principal {
-    grid-template-columns: minmax(0, 1fr);
-    max-width: 780px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 900px;
 }
 
-.galeria-proyecto.captura-principal img {
-    max-height: 420px;
-}
+
 
 .galeria-proyecto img {
     display: block;
@@ -599,7 +597,8 @@ button {
     cursor: pointer;
 }
 
-.galeria-proyecto p {
+.galeria-proyecto p,
+.captura-principal p {
     margin: 10px 0 0;
     color: var(--text-muted);
     font-size: var(--fs-sm);
