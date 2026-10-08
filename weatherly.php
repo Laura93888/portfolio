@@ -19,7 +19,7 @@ $descripcionlarga=$proyecto["descripcionlarga"];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Weatherly - Aplicación web de consulta meteorológica de Laura Basurto.">
+    <meta name="description" content="<?= htmlspecialchars($descripcion, ENT_QUOTES, 'UTF-8');?>">
 
     <title>Weatherly - Laura Basurto</title>
 
@@ -51,7 +51,7 @@ $descripcionlarga=$proyecto["descripcionlarga"];
     <!-- CAPTURAS DEL PROYECTO -->
     <section class="proyecto-imagen-principal">
 
-        <div>
+        <div class="captura-principal">
             <img 
                 src="/assets/img/weatherly/pantallappal.png" 
                 alt="Pantalla de inicio de Weatherly">
@@ -252,6 +252,56 @@ $descripcionlarga=$proyecto["descripcionlarga"];
                 </p>
 
             </article>
+
+        </div>
+
+    </section>
+
+    <!-- CÓMO FUNCIONA UNA CONSULTA -->
+    <section class="seccion-proyecto">
+
+        <div class="cabecera-seccion">
+            <h2>Cómo funciona una consulta</h2>
+            <p>Recorrido del proceso desde la búsqueda de la ciudad hasta la visualización del tiempo.</p>
+        </div>
+
+        <div class="proceso-timeline">
+
+            <div class="paso-timeline">
+                <div class="punto-timeline"></div>
+                <div class="contenido-paso">
+                    <span class="numero-paso">01 · Búsqueda</span>
+                    <h3>Coincidencias de ubicación</h3>
+                    <p>El usuario introduce el nombre de la ciudad y la API de geocodificación devuelve las posibles localidades encontradas.</p>
+                </div>
+            </div>
+
+            <div class="paso-timeline">
+                <div class="punto-timeline"></div>
+                <div class="contenido-paso">
+                    <span class="numero-paso">02 · Selección</span>
+                    <h3>Elección de la ciudad</h3>
+                    <p>De entre las opciones de la lista, el usuario selecciona la ubicación exacta para fijar las coordenadas deseadas.</p>
+                </div>
+            </div>
+
+            <div class="paso-timeline">
+                <div class="punto-timeline"></div>
+                <div class="contenido-paso">
+                    <span class="numero-paso">03 · Predicción</span>
+                    <h3>Consulta meteorológica</h3>
+                    <p>Con la ubicación ya definida, se ejecuta la segunda petición a WeatherAPI para recuperar los datos climáticos actuales.</p>
+                </div>
+            </div>
+
+            <div class="paso-timeline">
+                <div class="punto-timeline"></div>
+                <div class="contenido-paso">
+                    <span class="numero-paso">04 · Visualización</span>
+                    <h3>Interfaz y cookies</h3>
+                    <p>Se muestran los resultados adaptando el diseño (día/noche) y se almacena la consulta en el historial de las últimas búsquedas.</p>
+                </div>
+            </div>
 
         </div>
 

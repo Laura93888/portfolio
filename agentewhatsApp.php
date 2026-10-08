@@ -4,8 +4,8 @@ require_once 'data/proyectos.php';
 
 $proyecto = null;
 
-foreach ($proyectos["automatizaciones"] as $item) {
-    if ($item["titulo"] === "Agente IA para WhatsApp") {
+foreach($proyectos["automatizaciones"] as $item){
+    if ($item["titulo"] === "Agente IA para WhatsApp"){
         $proyecto = $item;
         break;
     }
@@ -13,9 +13,9 @@ foreach ($proyectos["automatizaciones"] as $item) {
 
 $titulo = $proyecto["titulo"];
 $descripcion = $proyecto["descripcion"];
-$tecnologias = $proyecto["tecnologias"];
 $categoria = "Automatización e IA";
 $descripcionlarga=$proyecto["descripcionlarga"];
+tecnologias=$proyecto["tecnologias"];
 
 ?>
 
@@ -28,7 +28,7 @@ $descripcionlarga=$proyecto["descripcionlarga"];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-        content="Agente conversacional de WhatsApp desarrollado con n8n para automatizar la captación, conversación, seguimiento y agendado de llamadas con propietarios.">
+    content="<?= htmlspecialchars($proyecto['descripcion']); ?>">
 
     <title><?= $titulo; ?> - Laura Basurto</title>
 
@@ -48,10 +48,6 @@ $descripcionlarga=$proyecto["descripcionlarga"];
          ===================================================== -->
 
     <section class="proyecto-hero">
-
-        <span class="etiqueta-bloque">
-            <?= $categoria; ?>
-        </span>
 
         <h1>
             <?=$titulo?>
@@ -198,485 +194,158 @@ $descripcionlarga=$proyecto["descripcionlarga"];
 
     </section>
 
+            <!-- =====================================================
+                 PROCESO DE AUTOMATIZACIÓN
+                 ===================================================== -->
 
-    <!-- =====================================================
-         PROCESO DE AUTOMATIZACIÓN
-         ===================================================== -->
+            <section class="seccion-proyecto">
 
-    <section class="seccion-proyecto">
+                <div class="cabecera-seccion">
 
-        <div class="cabecera-seccion">
+                    <h2>Proceso de automatización</h2>
 
-            <h2>Proceso de automatización</h2>
-
-            <p>
-                El workflow combina procesos programados y eventos recibidos
-                en tiempo real para gestionar el ciclo completo del contacto.
-            </p>
-
-        </div>
-
-
-        <!-- =================================================
-             PROCESO 1
-             ================================================= -->
-
-        <div class="cabecera-proceso">
-
-            <span class="numero-proceso">
-                Proceso 1
-            </span>
-
-            <h3>
-                Envío proactivo de primeros mensajes
-            </h3>
-
-            <p>
-                El sistema parte de una base de leads almacenada en
-                Google Sheets y realiza diariamente el primer contacto con
-                los propietarios que cumplen las condiciones establecidas.
-            </p>
-
-        </div>
-
-
-        <div class="bloques-tecnicos pasos-proceso">
-
-
-            <!-- PASOS 01-03 -->
-
-            <article class="bloque-tecnico">
-
-                <h3>
-                    01–03 · Selección, validación y envío
-                </h3>
-
-                <p>
-                    Un trigger programado inicia el proceso diariamente a las
-                    <strong>10:00</strong>. El workflow consulta Google Sheets
-                    y selecciona los leads que cumplen las condiciones
-                    establecidas, descartando aquellos que no disponen de
-                    teléfono.
-                </p>
-
-                <p>
-                    Para controlar el volumen de cada ejecución se limita el
-                    procesamiento a <strong>20 contactos</strong>. Antes de
-                    enviar el mensaje, <strong>Evolution API</strong> comprueba
-                    si el número dispone de WhatsApp.
-                </p>
-
-                <p>
-                    Los contactos válidos reciben un primer mensaje
-                    personalizado utilizando datos del lead, como su nombre
-                    y la URL del anuncio. Entre los diferentes envíos se
-                    introduce una espera para controlar el ritmo de contacto.
-                </p>
-
-                <p>
-                    Una vez realizado el proceso, el estado del contacto se
-                    actualiza en Google Sheets, diferenciando los registros a
-                    los que se ha enviado el mensaje de aquellos que no
-                    disponen de WhatsApp.
-                </p>
-
-                <p>
-                    Además, el contacto se copia a una hoja de historial que
-                    funciona como ficha de seguimiento y permite conservar
-                    la información necesaria para las siguientes etapas.
-                </p>
-
-                <div class="proyecto-imagen-principal">
-
-                    <a href="assets/img/agenteWhatsapp/envio_proactivo_msjes.png"
-                       target="_blank">
-
-                        <img src="assets/img/agenteWhatsapp/envio_proactivo_msjes.png"
-                             alt="Flujo de selección, validación y envío proactivo de mensajes por WhatsApp">
-
-                    </a>
+                    <p>
+                        Desglose por fases de los circuitos implementados en el workflow.
+                    </p>
 
                 </div>
 
-            </article>
+
+                <div class="bloques-tecnicos pasos-proceso">
 
 
+                    <!-- FASE 1 -->
 
-        <!-- =================================================
-             PROCESO 2
-             ================================================= -->
+                    <article class="bloque-tecnico">
 
-        <div class="cabecera-proceso">
+                        <h3>
+                            Fase 1 · Envío proactivo y validación
+                        </h3>
 
-            <span class="numero-proceso">
-                Proceso 2
-            </span>
+                        <p>
+                            Un trigger programado activa el flujo diariamente. El sistema consulta <strong>Google Sheets</strong>, filtra los registros pendientes y limita el procesamiento a lotes controlados (20 contactos). Antes de enviar nada, <strong>Evolution API</strong> comprueba si el número dispone realmente de WhatsApp activo.
+                        </p>
 
-            <h3>
-                Conversación entrante con agente de IA
-            </h3>
+                        <p>
+                            Tras el envío del mensaje personalizado, se actualiza el estado en la hoja de cálculo y se genera una ficha de seguimiento en el histórico para evitar duplicados.
+                        </p>
 
-            <p>
-                Cuando el propietario responde, el sistema recibe el mensaje,
-                lo procesa y lo entrega al agente con el contexto necesario
-                para mantener la conversación.
-            </p>
+                        <div class="proyecto-imagen-principal">
 
-        </div>
+                            <a href="assets/img/agenteWhatsapp/envio_proactivo_msjes.png"
+                               target="_blank">
 
+                                <img src="assets/img/agenteWhatsapp/envio_proactivo_msjes.png"
+                                     alt="Flujo de envío proactivo">
 
-        <div class="bloques-tecnicos pasos-proceso">
+                            </a>
 
+                        </div>
 
-            <!-- PASO 05 -->
-
-            <article class="bloque-tecnico">
-
-                <h3>
-                    05 · Recibir y normalizar el mensaje
-                </h3>
-
-                <p>
-                    <strong>Evolution API</strong> envía los mensajes
-                    entrantes al workflow mediante un webhook.
-                </p>
-
-                <p>
-                    Antes de continuar, se normalizan los datos recibidos,
-                    como el número de teléfono, el tipo de contenido, el
-                    texto y la marca temporal.
-                </p>
-
-                <div class="proyecto-imagen-principal">
-
-                    <a href="assets/img/agenteWhatsapp/normalizacion_datos.png"
-                       target="_blank">
-
-                        <img src="assets/img/agenteWhatsapp/normalizacion_datos.png"
-                             alt="Webhook y normalización de los datos recibidos">
-
-                    </a>
-
-                </div>
-
-            </article>
+                    </article>
 
 
-            <!-- PASO 06 -->
+                    <!-- FASE 2 -->
 
-            <article class="bloque-tecnico">
+                    <article class="bloque-tecnico">
 
-                <h3>
-                    06 · Agrupar mensajes con Redis
-                </h3>
+                        <h3>
+                            Fase 2 · Buffer en tiempo real y multimodalidad
+                        </h3>
 
-                <p>
-                    Los mensajes entrantes se almacenan temporalmente en
-                    <strong>Redis</strong> en lugar de responder
-                    inmediatamente.
-                </p>
+                        <p>
+                            Los mensajes entrantes se capturan mediante webhooks y se almacenan temporalmente en <strong>Redis</strong>. Esto actúa como un buffer inteligente: si el usuario escribe varios mensajes seguidos o audios cortos, el sistema espera unos segundos y los agrupa en un único turno, evitando que el bot responda de forma fragmentada.
+                        </p>
+                        <div class="proyecto-imagen-principal">
 
-                <p>
-                    El sistema espera unos segundos y comprueba si ha llegado
-                    un mensaje posterior. Si el usuario continúa escribiendo,
-                    la ejecución anterior se cancela y únicamente continúa
-                    el procesamiento más reciente.
-                </p>
+                        <a href="assets/img/agenteWhatsapp/buffer.png"
+                           target="_blank">
 
-                <div class="proyecto-imagen-principal">
+                            <img src="assets/img/agenteWhatsapp/buffer.png"
+                                 alt="Buffer de mensajes en Redis">
 
-                    <a href="assets/img/agenteWhatsapp/buffer.png"
-                       target="_blank">
+                        </a>
+                            </div>
+                        <p>
+                            Si se reciben notas de voz, se descargan y transcriben automáticamente con <strong>Whisper</strong> antes de unificar todo el contenido por marcas temporales y cruzarlo con la ficha del lead.
+                        </p>
 
-                        <img src="assets/img/agenteWhatsapp/buffer.png"
-                             alt="Buffer de mensajes con Redis">
+                        <div class="proyecto-imagen-principal">
+                            <a href="assets/img/agenteWhatsapp/ordenacion_unificacion.png" target="_blank">
+                                <img src="assets/img/agenteWhatsapp/ordenacion_unificacion.png" alt="Ordenación de los mensajes">
+                            </a>
+                        </div>
 
-                    </a>
-
-                </div>
-
-            </article>
+                    </article>
 
 
-            <!-- PASO 07 -->
+                    <!-- FASE 3 -->
+                    <article class="bloque-tecnico">
+                        <h3>
+                            Fase 3 · Agente IA y herramientas autónomas
+                        </h3>
 
-            <article class="bloque-tecnico">
+                        <p>
+                            El <strong>AI Agent</strong> recibe el contexto unificado del usuario y gestiona una memoria persistente alojada en <strong>PostgreSQL</strong> (separando las sesiones por cada número de teléfono). Su estrategia comercial se rige por un prompt estructurado en fases de cualificación.
+                        </p>
 
-                <h3>
-                    07 · Procesar texto y audio
-                </h3>
+                        <div class="proyecto-imagen-principal">
+                            <a href="assets/img/agenteWhatsapp/prompt_agente.png" target="_blank">
+                                <img src="assets/img/agenteWhatsapp/prompt_agente.png" alt="Configuración del Agente IA y su prompt">
+                            </a>
+                        </div>
 
-                <p>
-                    Una vez agrupados los mensajes, el sistema identifica el
-                    tipo de contenido recibido.
-                </p>
+                        <p>
+                            Lo más revolucionario de esta arquitectura es que <strong>el modelo decide de forma autónoma cuándo utilizar herramientas externas</strong>. No siguen una secuencia fija: según la evolución de la conversación, el agente selecciona dinámicamente la acción necesaria:
+                        </p>
 
-                <p>
-                    Los mensajes de texto continúan directamente, mientras
-                    que los audios se descargan y se transcriben mediante
-                    <strong>Whisper</strong>.
-                </p>
+                        <ul style="margin: 15px 0 15px 20px; line-height: 1.6;">
+                            <li><strong>Google Sheets · Agregar Interesados:</strong> Registra o actualiza los datos del lead y su franja horaria de disponibilidad si muestra interés pero no concreta la cita de inmediato.</li>
+                            <li><strong>Google Sheets · Agregar Agendado:</strong> Guarda el registro formal de la llamada una vez concertada para mantener la trazabilidad en el CRM.</li>
+                            <li><strong>Google Calendar · Consultar eventos:</strong> Comprueba la disponibilidad real de la agenda antes de proponer o confirmar una hora con el propietario.</li>
+                            <li><strong>Google Calendar · Crear evento:</strong> Agenda de forma automática el evento de seguimiento en cuanto se acuerda una fecha exacta.</li>
+                        </ul>
 
-                <div class="proyecto-imagen-principal">
+                        <div class="proyecto-imagen-principal">
+                            <a href="assets/img/agenteWhatsapp/opciones_autonomas_agente.png" target="_blank">
+                                <img src="assets/img/agenteWhatsapp/opciones_autonomas_agente.png" alt="Herramientas autónomas disponibles para el agente de IA">
+                            </a>
+                        </div>
+                    </article>
 
-                    <a href="assets/img/agenteWhatsapp/procesamiento_por_tipo.png"
-                       target="_blank">
+                    <!-- FASE 4 -->
 
-                        <img src="assets/img/agenteWhatsapp/procesamiento_por_tipo.png"
-                             alt="Procesamiento de mensajes según su tipo de contenido">
+                    <article class="bloque-tecnico">
 
-                    </a>
+                        <h3>
+                            Fase 4 · Reactivación automática de leads
+                        </h3>
 
-                </div>
+                        <p>
+                            Mediante un trigger diario, el sistema revisa la hoja de seguimiento para detectar aquellos contactos que no cerraron cita pero cuya fecha de reactivación toca ese día.
+                        </p>
 
-            </article>
+                        <p>
+                            Se valida que el usuario no haya agendado previamente por otra vía y se dispara de forma automática un mensaje personalizado para retomar la conversación, actualizando el CRM sin intervención manual.
+                        </p>
 
+                        <div class="proyecto-imagen-principal">
 
-            <!-- PASOS 08-09 -->
+                            <a href="assets/img/agenteWhatsapp/reactivacion_automatica_mensaje.png"
+                               target="_blank">
 
-            <article class="bloque-tecnico">
+                                <img src="assets/img/agenteWhatsapp/reactivacion_automatica_mensaje.png"
+                                     alt="Flujo de reactivación automática">
 
-                <h3>
-                    08–09 · Unificar mensajes y recuperar el contexto
-                </h3>
+                            </a>
 
-                <p>
-                    Los mensajes se ordenan mediante su timestamp y se
-                    agrupan en un único texto para que el agente pueda
-                    interpretar el turno completo del usuario.
-                </p>
+                        </div>
 
-                <p>
-                    También se normaliza el número de teléfono al formato
-                    utilizado por Google Sheets y se utiliza para localizar
-                    la ficha correspondiente al contacto.
-                </p>
-
-                <p>
-                    De esta forma, el agente recibe información contextual
-                    como el nombre, la descripción del inmueble, la
-                    plataforma de origen y la URL del anuncio.
-                </p>
-
-                <div class="proyecto-imagen-principal">
-
-                    <a href="assets/img/agenteWhatsapp/ordenacion_unificacion.png"
-                       target="_blank">
-
-                        <img src="assets/img/agenteWhatsapp/ordenacion_unificacion.png"
-                             alt="Ordenación, unificación de mensajes y recuperación del contexto del contacto">
-
-                    </a>
+                    </article>
 
                 </div>
 
-            </article>
-
-
-            <!-- PASO 10 -->
-
-            <article class="bloque-tecnico">
-
-                <h3>
-                    10 · Agente IA con memoria
-                </h3>
-
-                <p>
-                    El <strong>AI Agent</strong> recibe el mensaje unificado
-                    junto con la información del contacto y mantiene el
-                    historial de la conversación mediante una sesión
-                    independiente para cada número de teléfono.
-                </p>
-
-                <p>
-                    La memoria se almacena en
-                    <strong>PostgreSQL</strong>, evitando mezclar las
-                    conversaciones de diferentes contactos.
-                </p>
-
-                <p>
-                    El prompt define una estrategia comercial por fases:
-                    detectar interés, presentar el valor del servicio,
-                    responder objeciones y tratar de cerrar una llamada
-                    cuando existe interés suficiente.
-                </p>
-
-                <div class="proyecto-imagen-principal">
-
-                    <a href="assets/img/agenteWhatsapp/prompt_agente.png"
-                       target="_blank">
-
-                        <img src="assets/img/agenteWhatsapp/prompt_agente.png"
-                             alt="Configuración del agente de IA y su prompt">
-
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <!-- PASO 11 -->
-
-            <article class="bloque-tecnico">
-
-                <h3>
-                    11 · Utilizar herramientas de forma autónoma
-                </h3>
-
-                <p>
-                    El agente tiene acceso a herramientas conectadas con
-                    <strong>Google Sheets</strong> y
-                    <strong>Google Calendar</strong>.
-                </p>
-
-                <p>
-                    No se ejecutan como una secuencia fija. Es el propio
-                    modelo quien determina, según la conversación, qué
-                    herramienta necesita utilizar y en qué momento.
-                </p>
-
-                <div class="proyecto-imagen-principal">
-
-                    <a href="assets/img/agenteWhatsapp/opciones_autonomas_agente.png"
-                       target="_blank">
-
-                        <img src="assets/img/agenteWhatsapp/opciones_autonomas_agente.png"
-                             alt="Herramientas autónomas disponibles para el agente de IA">
-
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <!-- PASO 12 -->
-
-            <article class="bloque-tecnico">
-
-                <h3>
-                    12 · Responder y registrar la conversación
-                </h3>
-
-                <p>
-                    La respuesta generada por el agente se envía al usuario
-                    mediante WhatsApp.
-                </p>
-
-                <p>
-                    Paralelamente, el mensaje recibido, la respuesta del bot,
-                    el teléfono y la fecha quedan registrados en una hoja de
-                    log para conservar el histórico de la conversación.
-                </p>
-
-                <div class="proyecto-imagen-principal">
-
-                    <a href="assets/img/agenteWhatsapp/conversacion-ia.png"
-                       target="_blank">
-
-                        <img src="assets/img/agenteWhatsapp/conversacion-ia.png"
-                             alt="Conversación entre el usuario y el agente de IA">
-
-                    </a>
-
-                </div>
-
-                <div class="proyecto-imagen-principal">
-
-                    <a href="assets/img/agenteWhatsapp/historial_conver.png"
-                       target="_blank">
-
-                        <img src="assets/img/agenteWhatsapp/historial_conver.png"
-                             alt="Historial de la conversación registrado en el sistema">
-
-                    </a>
-
-                </div>
-
-            </article>
-
-        </div>
-
-
-        <!-- =================================================
-             PROCESO 3
-             ================================================= -->
-
-        <div class="cabecera-proceso">
-
-            <span class="numero-proceso">
-                Proceso 3
-            </span>
-
-            <h3>
-                Reactivación automática
-            </h3>
-
-            <p>
-                Los contactos que no han terminado el proceso pueden recibir
-                automáticamente un nuevo mensaje cuando corresponde realizar
-                el seguimiento.
-            </p>
-
-        </div>
-
-
-        <div class="bloques-tecnicos pasos-proceso">
-
-
-            <!-- PASOS 13-16 -->
-
-            <article class="bloque-tecnico">
-
-                <h3>
-                    13–16 · Detectar, comprobar, reactivar y registrar
-                </h3>
-
-                <p>
-                    Un trigger programado ejecuta diariamente el flujo y
-                    consulta la hoja de seguimiento para localizar los
-                    contactos cuya fecha de reactivación corresponde a ese
-                    día.
-                </p>
-
-                <p>
-                    Antes de contactar nuevamente, se comprueba el estado del
-                    registro para evitar enviar mensajes a personas que ya
-                    hayan agendado una llamada o que ya hayan sido
-                    procesadas.
-                </p>
-
-                <p>
-                    Los contactos que cumplen las condiciones reciben
-                    automáticamente un nuevo mensaje por WhatsApp para
-                    retomar la conversación.
-                </p>
-
-                <p>
-                    Después del envío, Google Sheets se actualiza para dejar
-                    constancia de la reactivación y evitar que el mismo
-                    contacto vuelva a procesarse de forma duplicada.
-                </p>
-
-                <div class="proyecto-imagen-principal">
-
-                    <a href="assets/img/agenteWhatsapp/reactivacion_automatica_mensaje.png"
-                       target="_blank">
-
-                        <img src="assets/img/agenteWhatsapp/reactivacion_automatica_mensaje.png"
-                             alt="Flujo general de reactivación automática de contactos">
-
-                    </a>
-
-                </div>
-
-            </article>
-
-        </div>
-
-    </section>
-
+            </section>
 
     <!-- =====================================================
          HERRAMIENTAS DEL AGENTE
@@ -1088,10 +757,6 @@ $descripcionlarga=$proyecto["descripcionlarga"];
          ===================================================== -->
 
     <section class="enlaces-proyecto">
-
-        <a href="#" class="boton-proyecto">
-            Ver automatización
-        </a>
 
         <a href="#" class="boton-proyecto">
             Ver código

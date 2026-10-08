@@ -37,10 +37,6 @@ $descripcionlarga=$proyecto["descripcionlarga"];
     <!-- CABECERA DEL PROYECTO -->
     <section class="proyecto-hero">
 
-        <span class="etiqueta-bloque">
-            <?= $categoria; ?>
-        </span>
-
         <h1><?= $titulo; ?></h1>
 
         <p class="proyecto-introduccion">
@@ -62,6 +58,9 @@ $descripcionlarga=$proyecto["descripcionlarga"];
             >
 
             <p style="margin-bottom:25px;">Página de inicio de la aplicación</p>
+        </div>
+
+            <div>
         
             <img
                 src="/assets/img/biblioteca/portada2.png"
@@ -329,80 +328,48 @@ $descripcionlarga=$proyecto["descripcionlarga"];
             <h2>Cómo funciona un préstamo</h2>
 
             <p>
-                Ejemplo del recorrido de una operación desde la interfaz hasta la base de datos.
+                Recorrido de la operación desde la selección del libro hasta su devolución.
             </p>
 
         </div>
 
-        <div class="bloques-tecnicos">
+        <div class="proceso-timeline">
 
-            <article class="bloque-tecnico">
+            <div class="paso-timeline">
+                <div class="punto-timeline"></div>
+                <div class="contenido-paso">
+                    <span class="numero-paso">01 · Solicitud</span>
+                    <h3>Selección y sesión</h3>
+                    <p>El usuario busca un ejemplar en el catálogo y el sistema verifica que su sesión esté activa para poder solicitarlo.</p>
+                </div>
+            </div>
 
-                <h3>01 · Usuario</h3>
+            <div class="paso-timeline">
+                <div class="punto-timeline"></div>
+                <div class="contenido-paso">
+                    <span class="numero-paso">02 · Comprobación</span>
+                    <h3>Disponibilidad en tiempo real</h3>
+                    <p>La aplicación valida automáticamente que el libro no se encuentre prestado actualmente a otro usuario.</p>
+                </div>
+            </div>
 
-                <p>
-                    El usuario accede al catálogo y selecciona el
-                    <strong>libro que quiere solicitar</strong>.
-                </p>
+            <div class="paso-timeline">
+                <div class="punto-timeline"></div>
+                <div class="contenido-paso">
+                    <span class="numero-paso">03 · Registro</span>
+                    <h3>Asignación de préstamo</h3>
+                    <p>Se almacena la operación en la base de datos vinculando las fechas y el estado, visible desde el panel personal.</p>
+                </div>
+            </div>
 
-            </article>
-
-
-            <article class="bloque-tecnico">
-
-                <h3>02 · Sesión</h3>
-
-                <p>
-                    PHP comprueba que el usuario esté
-                    <strong>identificado mediante su sesión</strong>. Si no lo está no le dejará reservar redigiéndole directamente a la página de inicio de sesión. 
-                </p>
-
-            </article>
-
-
-            <article class="bloque-tecnico">
-
-                <h3>03 · Disponibilidad</h3>
-
-                <p>
-                    El sistema comprueba si el libro está disponible, es decir, si no existe un préstamo activo.
-                </p>
-
-            </article>
-
-
-            <article class="bloque-tecnico">
-
-                <h3>04 · Préstamo</h3>
-
-                <p>
-                    Se registra el préstamo asociado al usuario y al libro,
-                    junto con sus <strong>fechas y estado</strong>.
-                </p>
-
-            </article>
-
-
-            <article class="bloque-tecnico">
-
-                <h3>05 · Resultado</h3>
-
-                <p>
-                    La aplicación actualiza la información mostrada y permite
-                    consultar el estado del préstamo tanto en el perfil del usuario como en el del administrador. 
-                </p>
-
-            </article>
-
-            <article class="bloque-tecnico">
-
-                <h3>06 · Devoluciones</h3>
-
-                <p>
-                    Cuando el usuario devuelva físicamente el libro, el administrador podrá marcarlo como devuelto, permitiendo así que se vuelva a poder prestar. Quedará registrado si se ha devuelto con retraso para posibles penalizaciones. 
-                </p>
-
-            </article>
+            <div class="paso-timeline">
+                <div class="punto-timeline"></div>
+                <div class="contenido-paso">
+                    <span class="numero-paso">04 · Control</span>
+                    <h3>Gestión y devolución</h3>
+                    <p>El administrador registra la devolución física del ejemplar para reactivar su disponibilidad en el sistema.</p>
+                </div>
+            </div>
 
         </div>
 
@@ -411,11 +378,11 @@ $descripcionlarga=$proyecto["descripcionlarga"];
     <!-- ENLACES -->
     <section class="enlaces-proyecto">
 
-        <a href="https://bookify.infinityfreeapp.com/" class="boton-proyecto">
+        <a target="_blank" href="https://bookify.infinityfreeapp.com/" class="boton-proyecto">
             Ver página web
         </a>
 
-        <a href="https://github.com/Laura93888/Biblioteca-Digital" class="boton-proyecto">
+        <a target="_blank" href="https://github.com/Laura93888/Biblioteca-Digital" class="boton-proyecto">
             Ver código en GitHub
         </a>
 

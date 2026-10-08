@@ -242,15 +242,55 @@ $categoriaextra = $proyecto['categoriaextra'] ?? null;
         </div>
 
     </section>
+    <!-- CÓMO FUNCIONA UN PEDIDO -->
+    <section class="seccion-proyecto">
 
+        <div class="cabecera-seccion">
+            <h2>Cómo funciona un pedido</h2>
+            <p>Recorrido del proceso desde la selección inicial hasta la automatización con n8n.</p>
+        </div>
 
-    <!-- CÓMO FUNCIONA UN PEDIDO --> 
-    <section class="seccion-proyecto"> <div class="cabecera-seccion"> <h2>Cómo funciona un pedido</h2> </div> <div class="bloques-tecnicos"> <article class="bloque-tecnico"> 
-        <h3>01 · Catálogo</h3> <p>El cliente puede navegar por las diferentes categorías de la tienda y consultar la información de los productos existentes. </p> </article> <article class="bloque-tecnico"> 
-            <h3>02 · Carrito</h3> <p>El cliente añade al carrito los productos que quiere comprar. Si navega como invitado, la información se conserva mediante cookies. Si ya está identificado se gestiona mediante la sesión de PHP. </p> </article> <article class="bloque-tecnico"> 
-                <h3>03 · Pedido</h3> <p>Para finalizarlo hay que iniciar sesión como cliente. En ese momento, el carrito de las cookies pasa a la sesión y no se pierde la selección. Aquí es donde se redirigiría a la pasarela de pago, que queda fuera del alcance del proyecto.</p> </article> <article class="bloque-tecnico"> 
-                    <h3>04 · n8n</h3> <p>Al confirmar el pedido n8n guarda el pedido y cada uno de sus productos en Google Sheets, así el almacén puede prepararlo. También envía un email al cliente con los datos del pedido. </p> </article> </div> </section>
+        <div class="proceso-timeline">
 
+            <div class="paso-timeline">
+                <div class="punto-timeline"></div>
+                <div class="contenido-paso">
+                    <span class="numero-paso">01 · Catálogo</span>
+                    <h3>Navegación y categorías</h3>
+                    <p>El cliente navega por las diferentes categorías de la tienda y consulta la información detallada de los productos disponibles.</p>
+                </div>
+            </div>
+
+            <div class="paso-timeline">
+                <div class="punto-timeline"></div>
+                <div class="contenido-paso">
+                    <span class="numero-paso">02 · Carrito</span>
+                    <h3>Gestión de selección</h3>
+                    <p>Los productos se añaden al carrito. Si navega como invitado se almacena mediante cookies; si está identificado, a través de la sesión de PHP.</p>
+                </div>
+            </div>
+
+            <div class="paso-timeline">
+                <div class="punto-timeline"></div>
+                <div class="contenido-paso">
+                    <span class="numero-paso">03 · Pedido</span>
+                    <h3>Identificación y cierre</h3>
+                    <p>Para finalizar la compra se requiere iniciar sesión (fusionando el carrito previo). Se contempla el diseño enfocado a una pasarela de pago.</p>
+                </div>
+            </div>
+
+            <div class="paso-timeline">
+                <div class="punto-timeline"></div>
+                <div class="contenido-paso">
+                    <span class="numero-paso">04 · n8n</span>
+                    <h3>Automatización de datos</h3>
+                    <p>Al confirmar, un flujo de n8n registra el pedido y sus artículos en Google Sheets para el control de stock y envía un email de confirmación al cliente.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
 
     <!-- ENLACES -->
     <section class="enlaces-proyecto">

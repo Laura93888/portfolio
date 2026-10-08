@@ -147,7 +147,7 @@ $descripcionlarga=$proyecto["descripcionlarga"];
 
                 <p>
                     El usuario puede
-                    consultar las actividades que tiene reservadas filtrando por diferentes estados, cancelarlas o modificarlas.</strong>. 
+                    consultar las actividades que tiene reservadas filtrando por diferentes estados, cancelarlas o modificarlas.
                 </p>
 
             </article>
@@ -230,7 +230,7 @@ $descripcionlarga=$proyecto["descripcionlarga"];
 
                 <p>
                     <strong>Panel de usuario.</strong>
-                    Permite gestionar la cuenta personal, consultar y gestionar las actividades reservada y acceder a los favoritos y las valoracions realizadas.
+                    Permite gestionar la cuenta personal, consultar y gestionar las actividades reservadas y acceder a los favoritos y las valoraciones realizadas.
                 </p>
 
             </div>
@@ -260,17 +260,17 @@ $descripcionlarga=$proyecto["descripcionlarga"];
 
             <article class="bloque-tecnico">
 
-                <h3>Frontend</h3>
+                <h3>Aplicación dinámica</h3>
 
                 <p>
-                    <strong>HTML, CSS y JavaScript</strong> para construir
+                    <strong>HTML, CSS y JavaScript</strong> se utilizan para construir
                     la interfaz y gestionar la interacción con el usuario.
                 </p>
 
                 <p>
                     JavaScript se utiliza también para realizar
                     <strong>peticiones asíncronas mediante AJAX y Fetch</strong>,
-                    permitiendo actualizar información sin recargar
+                    permitiendo consultar y actualizar información sin recargar
                     completamente la página.
                 </p>
 
@@ -279,19 +279,18 @@ $descripcionlarga=$proyecto["descripcionlarga"];
 
             <article class="bloque-tecnico">
 
-                <h3>Backend</h3>
+                <h3>Lógica de reservas</h3>
 
                 <p>
-                    <strong>PHP</strong> gestiona la lógica de negocio,
-                    las sesiones, la validación de datos y el control
-                    de permisos.
+                    <strong>PHP</strong> gestiona la lógica de negocio de la aplicación
+                    y procesa las operaciones relacionadas con las reservas.
                 </p>
 
                 <p>
-                    El proyecto utiliza
-                    <strong>programación orientada a objetos</strong>
-                    para estructurar diferentes partes de la lógica
-                    de la aplicación.
+                    El sistema comprueba la <strong>disponibilidad de las actividades</strong>
+                    y las condiciones necesarias antes de realizar una operación,
+                    conectando la interacción del usuario con la información
+                    almacenada en la base de datos.
                 </p>
 
             </article>
@@ -302,14 +301,15 @@ $descripcionlarga=$proyecto["descripcionlarga"];
                 <h3>Base de datos</h3>
 
                 <p>
-                    <strong>MySQL</strong> almacena la información relacionada
-                    con usuarios, empresas, actividades, categorías,
-                    reservas y reseñas.
+                    <strong>MySQL</strong> almacena la información de las principales
+                    entidades de la aplicación, como <strong>usuarios, empresas,
+                    actividades, categorías, reservas y reseñas</strong>.
                 </p>
 
                 <p>
                     La comunicación entre PHP y MySQL se realiza mediante
-                    <strong>PDO y consultas preparadas</strong>.
+                    <strong>PDO y consultas preparadas</strong>, permitiendo consultar
+                    y modificar los datos de forma estructurada y segura.
                 </p>
 
             </article>
@@ -428,102 +428,66 @@ $descripcionlarga=$proyecto["descripcionlarga"];
 
         <div class="cabecera-seccion">
 
-            <h2>Cómo funciona una reserva</h2>
+            <h2>Experiencia de reserva</h2>
 
             <p>
-                Recorrido de una reserva desde la interacción del usuario
-                hasta la respuesta de la aplicación.
+                Recorrido visual del usuario desde que descubre una actividad 
+                hasta que gestiona su reserva de forma inmediata.
             </p>
 
         </div>
 
-        <div class="bloques-tecnicos">
+        <div class="proceso-timeline">
 
-            <article class="bloque-tecnico">
+            <div class="paso-timeline">
+                <div class="punto-timeline"></div>
+                <div class="contenido-paso">
+                    <span class="numero-paso">01 · Descubrimiento</span>
+                    <h3>Búsqueda y filtrado interactivo</h3>
+                    <p> El usuario explora el mapa o utiliza los filtros de categoría, fecha y ubicación para encontrar actividades que se ajusten a sus preferencias.</p>
+                </div>
+            </div>
 
-                <h3>01 · Usuario</h3>
+            <div class="paso-timeline">
+                <div class="punto-timeline"></div>
+                <div class="contenido-paso">
+                    <span class="numero-paso">02 · Exploración</span>
+                    <h3>Consulta de detalles y disponibilidad</h3>
+                    <p>Accede a la ficha completa de la actividad para revisar las características, ver la ubicación exacta y comprobar los horarios disponibles en tiempo real.</p>
+                </div>
+            </div>
 
-                <p>
-                    Selecciona una actividad y solicita realizar una reserva
-                    desde la interfaz.
-                </p>
+            <div class="paso-timeline">
+                <div class="punto-timeline"></div>
+                <div class="contenido-paso">
+                    <span class="numero-paso">03 · Confirmación</span>
+                    <h3>Reserva rápida e instantánea</h3>
+                    <p>C El usuario elige día y horario, solicita la reserva y el sistema comprueba la disponibilidad y las condiciones necesarias antes de registrar la operación.</p>
+                </div>
+            </div>
 
-            </article>
-
-
-            <article class="bloque-tecnico">
-
-                <h3>02 · Frontend</h3>
-
-                <p>
-                    JavaScript envía la información al servidor mediante una
-                    <strong>petición HTTP o AJAX</strong>.
-                </p>
-
-            </article>
-
-
-            <article class="bloque-tecnico">
-
-                <h3>03 · Backend</h3>
-
-                <p>
-                    PHP recibe la petición y comprueba
-                    <strong>sesión, permisos, disponibilidad y reglas de negocio</strong>.
-                </p>
-
-            </article>
-
-
-            <article class="bloque-tecnico">
-
-                <h3>04 · Base de datos</h3>
-
-                <p>
-                    PHP consulta o modifica la información almacenada en
-                    <strong>MySQL mediante PDO</strong>.
-                </p>
-
-            </article>
-
-
-            <article class="bloque-tecnico">
-
-                <h3>05 · Procesamiento</h3>
-
-                <p>
-                    El servidor procesa el resultado y determina si la operación
-                    puede realizarse correctamente.
-                </p>
-
-            </article>
-
-
-            <article class="bloque-tecnico">
-
-                <h3>06 · Respuesta</h3>
-
-                <p>
-                    El frontend recibe el resultado y actualiza la información
-                    mostrada al usuario.
-                </p>
-
-            </article>
+            <div class="paso-timeline">
+                <div class="punto-timeline"></div>
+                <div class="contenido-paso">
+                    <span class="numero-paso">04 · Gestión personal</span>
+                    <h3>Control desde el panel de usuario</h3>
+                    <p>El usuario visualiza su nueva reserva en su perfil personal, pudiendo consultarla, cancelarla si lo necesita, o dejar una reseña una vez finalizada la actividad.</p>
+                </div>
+            </div>
 
         </div>
 
     </section>
 
-
     <!-- ENLACES -->
 
     <section class="enlaces-proyecto">
 
-        <a href="http://bodyandsoul.infinityfreeapp.com/publico/index.php" class="boton-proyecto">
+        <a target="_blank" href="http://bodyandsoul.infinityfreeapp.com/publico/index.php" class="boton-proyecto">
             Ver página web
         </a>
 
-        <a href="https://github.com/Laura93888/body-and-soul" class="boton-proyecto">
+        <a target="_blank" href="https://github.com/Laura93888/body-and-soul" class="boton-proyecto">
             Ver código en GitHub
         </a>
 

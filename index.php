@@ -120,7 +120,7 @@ foreach ($proyectos as $clave => $grupo) {
         </div>
 
         <div class="enlaces-proyecto">
-            <a href="mis-proyectos.php" class="boton-proyecto">Ver más proyectos →</a>
+            <a href="mis-proyectos.php" class="boton-proyecto">Ver todos los proyectos →</a>
         </div>
     </section>
 

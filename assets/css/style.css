@@ -226,7 +226,7 @@ button {
 
 .proyectos {
     width: min(1280px, 68%);
-    margin: 0 auto 90px;
+    margin: 0 auto 50px;
 }
 
 .cabecera-seccion {
@@ -904,7 +904,7 @@ button {
     flex-wrap: wrap;
     gap: 12px;
 
-    margin-top: 20px;
+    margin-top: 35px;
 }
 
 .boton-proyecto {
@@ -1011,4 +1011,100 @@ button {
 
 .categorias-proyecto span[data-categoria="Automatización"]::before {
     background: var(--accent-magenta);
+}
+
+
+/* ---------------------------------------------------------
+   LÍNEA DE TIEMPO (PROCESO DE RESERVA)
+   --------------------------------------------------------- */
+
+.proceso-timeline {
+    position: relative;
+    max-width: 850px;
+    margin: 30px auto 0;
+    padding-left: 28px;
+}
+
+/* Línea vertical conectora */
+.proceso-timeline::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+    left: 10px;
+    width: 2px;
+    background-color: var(--border);
+}
+
+.paso-timeline {
+    position: relative;
+    margin-bottom: 22px;
+}
+
+.paso-timeline:last-child {
+    margin-bottom: 0;
+}
+
+/* Círculo indicador sobre la línea */
+.punto-timeline {
+    position: absolute;
+    left: -28px;
+    top: 6px;
+    width: 14px;
+    height: 14px;
+    background: var(--surface);
+    border: 3px solid var(--brand);
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px var(--brand-soft);
+    z-index: 2;
+    transition: transform 180ms ease, border-color 180ms ease;
+}
+
+.paso-timeline:hover .punto-timeline {
+    transform: scale(1.2);
+    border-color: var(--accent-magenta);
+    background: var(--brand-soft);
+}
+
+/* Tarjeta de contenido integrada con tu diseño */
+.contenido-paso {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px 20px;
+    box-shadow: 0 8px 24px rgba(71, 22, 125, 0.04);
+    transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.contenido-paso:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent-pink);
+    box-shadow: 0 12px 28px rgba(71, 22, 125, 0.08);
+}
+
+.contenido-paso .numero-paso {
+    display: inline-block;
+    margin-bottom: 4px;
+    color: var(--brand);
+    font-size: var(--fs-badge);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.contenido-paso h3 {
+    margin: 0 0 6px 0;
+    color: var(--brand-dark);
+    font-size: var(--fs-md);
+}
+
+.contenido-paso p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: var(--fs-sm);
+    line-height: 1.6;
+}
+
+.contenido-paso strong {
+    color: var(--brand-dark);
 }

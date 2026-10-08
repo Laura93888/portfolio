@@ -54,16 +54,12 @@ $descripcionlarga=$proyecto["descripcionlarga"];
 
         <div class="captura-principal">
 
-            <div>
-
                 <img
                     src="/assets/img/colegios/paginappal.png"
                     alt="Página principal de Madrid Colegios"
                 >
 
                 <p>Página principal de la aplicación</p>
-
-            </div>
 
         </div>
 
@@ -178,75 +174,53 @@ $descripcionlarga=$proyecto["descripcionlarga"];
             <h2>Cómo funciona</h2>
 
             <p>
-                Del término de búsqueda al resultado mostrado.
+                Experiencia de consulta rápida para el ciudadano.
             </p>
 
         </div>
 
-        <div class="bloques-tecnicos">
+        <div class="proceso-timeline">
 
-            <article class="bloque-tecnico">
+            <div class="paso-timeline">
+                <div class="punto-timeline"></div>
+                <div class="contenido-paso">
+                    <span class="numero-paso">01 · Búsqueda</span>
+                    <h3>Filtrado instantáneo</h3>
+                    <p>El usuario introduce el nombre del colegio y la interfaz muestra los resultados de forma dinámica mientras escribe.</p>
+                </div>
+            </div>
 
-                <h3>01 · Buscar</h3>
+            <div class="paso-timeline">
+                <div class="punto-timeline"></div>
+                <div class="contenido-paso">
+                    <span class="numero-paso">02 · Consulta</span>
+                    <h3>Ficha del centro</h3>
+                    <p>Acceso inmediato a los datos esenciales del colegio, como la dirección, el código postal y la localidad.</p>
+                </div>
+            </div>
 
-                <p>
-                    El usuario introduce el nombre del colegio mediante
-                    el formulario.
-                </p>
-
-            </article>
-
-
-            <article class="bloque-tecnico">
-
-                <h3>02 · Consultar</h3>
-
-                <p>
-                    PHP recibe el término mediante <strong>GET</strong> y
-                    realiza la petición a la API utilizando
-                    <strong>cURL</strong>.
-                </p>
-
-            </article>
-
-
-            <article class="bloque-tecnico">
-
-                <h3>03 · Procesar</h3>
-
-                <p>
-                    La respuesta <strong>JSON</strong> se convierte en un
-                    array de PHP y se procesan los datos obtenidos.
-                </p>
-
-            </article>
-
-
-            <article class="bloque-tecnico">
-
-                <h3>04 · Mostrar</h3>
-
-                <p>
-                    Se muestran los colegios encontrados junto con sus
-                    datos y su ubicación en Google Maps.
-                </p>
-
-            </article>
+            <div class="paso-timeline">
+                <div class="punto-timeline"></div>
+                <div class="contenido-paso">
+                    <span class="numero-paso">03 · Ubicación</span>
+                    <h3>Acceso a Google Maps</h3>
+                    <p>Enlace directo generado a partir de las coordenadas oficiales para consultar la localización exacta en el mapa.</p>
+                </div>
+            </div>
 
         </div>
 
     </section>
 
-
     <!-- ENLACES -->
 
     <section class="enlaces-proyecto">
 
-        <a href="https://colegiosmadrid.infinityfreeapp.com/" class="boton-proyecto">
+        <a target="_blank" href="https://colegiosmadrid.infinityfreeapp.com/" class="boton-proyecto">
             Ver proyecto
         </a>
 
-        <a href="https://github.com/Laura93888/ColegiosMadrid" class="boton-proyecto">
+        <a target="_blank" href="https://github.com/Laura93888/ColegiosMadrid" class="boton-proyecto">
             Ver código en GitHub
         </a>
 
