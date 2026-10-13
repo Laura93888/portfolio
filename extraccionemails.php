@@ -13,7 +13,6 @@ foreach ($proyectos["automatizaciones"] as $item) {
 
 $titulo = $proyecto["titulo"];
 $descripcion = $proyecto["descripcion"];
-$tecnologias = $proyecto["tecnologias"];
 $categoria = "Automatización e IA";
 $descripcionlarga=$proyecto["descripcionlarga"];
 
@@ -28,7 +27,7 @@ $descripcionlarga=$proyecto["descripcionlarga"];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-        content="Automatización desarrollada con n8n para localizar empresas, analizar sus páginas web y extraer direcciones de email.">
+    content="<?= htmlspecialchars($proyecto['descripcion']); ?>">
 
     <title><?= $titulo; ?> - Laura Basurto</title>
 
@@ -43,10 +42,6 @@ $descripcionlarga=$proyecto["descripcionlarga"];
 <main class="pagina-proyecto">
 
     <section class="proyecto-hero">
-
-        <span class="etiqueta-bloque">
-            <?= $categoria; ?>
-        </span>
 
         <h1>
             <?=$titulo?>
@@ -68,23 +63,9 @@ $descripcionlarga=$proyecto["descripcionlarga"];
         </div>
 
         <p>
-            Crear una base de datos de posibles clientes puede implicar
-            localizar empresas, recopilar sus datos y acceder a sus páginas
-            web una por una para comprobar si disponen de información de
-            contacto.
-        </p>
-
-        <p>
-            Cuando se trabaja con muchas empresas, repetir estas tareas
-            manualmente consume tiempo y dificulta mantener la información
-            organizada y actualizada.
-        </p>
-
-        <p>
-            Además, cada página web puede presentar la información de contacto
-            de una forma diferente. Por ello, se planteó automatizar tanto
-            la recopilación inicial de empresas como el análisis de sus
-            páginas web.
+            Crear una base de datos de posibles clientes implica localizar
+            empresas, recopilar sus datos y entrar en sus webs una por una para encontrar un email de contacto, que cada web muestra de una forma
+distinta. Con muchas empresas, hacerlo a mano consume mucho tiempo y la información acaba desorganizada.
         </p>
 
     </section>
@@ -95,61 +76,12 @@ $descripcionlarga=$proyecto["descripcionlarga"];
         <div class="cabecera-seccion">
 
             <h2>La solución</h2>
-
-            <p>
-                La automatización conecta varios procesos para pasar de una
-                búsqueda de empresas a una base de datos con información de
-                contacto obtenida automáticamente.
-            </p>
+           
+                <p>Un sistema desarrollado en n8n que localiza empresas por nicho y ubicación, analiza sus webs y extrae sus emails de forma totalmente automatizada.
+                </p>
+           
 
         </div>
-
-
-        <div class="bloques-tecnicos">
-
-            <article class="bloque-tecnico">
-
-                <h3>Captación de empresas</h3>
-
-                <p>
-                    El proceso comienza con una búsqueda definida por
-                    <strong>nicho y ubicación</strong>. Apify utiliza estos
-                    parámetros para localizar empresas en Google Maps y
-                    obtener sus datos disponibles, incluida su página web.
-                </p>
-
-            </article>
-
-
-            <article class="bloque-tecnico">
-
-                <h3>Análisis de páginas web</h3>
-
-                <p>
-                    Las URLs obtenidas se utilizan como entrada de un segundo
-                    workflow. Este accede a cada página, obtiene su contenido
-                    HTML y lo analiza mediante <strong>JavaScript</strong>
-                    para localizar direcciones de email.
-                </p>
-
-            </article>
-
-
-            <article class="bloque-tecnico">
-
-                <h3>Vía alternativa mediante LinkedIn</h3>
-
-                <p>
-                    Si el análisis de la página web no encuentra un email,
-                    se puede realizar una búsqueda de la empresa en LinkedIn
-                    y obtener perfiles profesionales relacionados para
-                    localizar información pública de contacto.
-                </p>
-
-            </article>
-
-        </div>
-
 
         <div class="proyecto-imagen-principal">
 
@@ -162,11 +94,32 @@ $descripcionlarga=$proyecto["descripcionlarga"];
                     loading="lazy">
 
             </a>
+        </div>
+
+            <p>
+                Si no encuentra el email en la web, busca contactos de alto nivel de la empresa por LinkedIn, lo que permite ampliar las fuentes consultadas cuando el primer proceso no encuentra un correo.
+            </p>
+
+            <div class="proyecto-imagen-principal">
+
+            <a href="assets/img/extraccion_emails/ampliacion_linkedin.png"
+               target="_blank">
+
+                <img
+                    src="assets/img/extraccion_emails/ampliacion_linkedin.png"
+                    alt="Flujo de extraccion de información de Linkedin"
+                    loading="lazy">
+
+            </a>
 
         </div>
 
     </section>
 
+
+    <!-- =====================================================
+         PROCESO DE AUTOMATIZACIÓN
+         ===================================================== -->
 
     <section class="seccion-proyecto">
 
@@ -175,29 +128,8 @@ $descripcionlarga=$proyecto["descripcionlarga"];
             <h2>Proceso de automatización</h2>
 
             <p>
-                El proceso principal se divide en dos workflows conectados.
-                El primero localiza empresas y recopila sus datos; el segundo
-                utiliza las páginas web obtenidas para buscar información de
-                contacto.
-            </p>
-
-        </div>
-
-
-        <div class="cabecera-proceso">
-
-            <span class="numero-proceso">
-                Proceso 1
-            </span>
-
-            <h3>
-                Captación de empresas
-            </h3>
-
-            <p>
-                Este workflow parte de una búsqueda definida por nicho y
-                ubicación, utiliza Apify para localizar empresas y almacena
-                los resultados en Google Sheets.
+                Tres fases conectadas por Google Sheets, con una vía
+                alternativa por LinkedIn para las webs sin email.
             </p>
 
         </div>
@@ -206,71 +138,19 @@ $descripcionlarga=$proyecto["descripcionlarga"];
         <div class="bloques-tecnicos pasos-proceso">
 
 
-            <article class="bloque-tecnico">
-
-                <h3>
-                    01–02 · Definir y preparar la búsqueda
-                </h3>
-
-                <p>
-                    El proceso comienza indicando el <strong>nicho y la
-                    ubicación</strong> que se quieren investigar.
-                </p>
-
-                <p>
-                    Los datos introducidos se preparan para utilizarlos como
-                    parámetros de entrada en la búsqueda de empresas.
-                </p>
-
-                <div class="proyecto-imagen-principal">
-
-                    <a href="assets/img/extraccion_emails/form.png"
-                       target="_blank">
-
-                        <img
-                            src="assets/img/extraccion_emails/form.png"
-                            alt="Formulario de búsqueda"
-                            loading="lazy">
-
-                    </a>
-
-                    <a href="assets/img/extraccion_emails/datos_form.png"
-                       target="_blank">
-
-                        <img
-                            src="assets/img/extraccion_emails/datos_form.png"
-                            alt="Preparación de los datos de búsqueda"
-                            loading="lazy">
-
-                    </a>
-
-                </div>
-
-            </article>
-
+            <!-- FASE 1 -->
 
             <article class="bloque-tecnico">
 
                 <h3>
-                    03–04 · Localizar empresas y extraer sus datos
+                    Fase 1 · Captación de empresas
                 </h3>
 
                 <p>
-                    <strong>Apify</strong> ejecuta un actor especializado en
-                    Google Maps utilizando los parámetros definidos
-                    anteriormente.
-                </p>
-
-                <p>
-                    El proceso localiza las empresas y obtiene la información
-                    disponible, incluyendo datos como nombre, ubicación,
-                    teléfono y página web.
-                </p>
-
-                <p>
-                    La información obtenida queda preparada para continuar
-                    con el siguiente workflow, que utilizará las URLs de las
-                    páginas web para realizar el análisis.
+                    Un formulario recoge el nicho y la ubicación, y n8n lanza un
+                    actor de <strong>Apify</strong> que busca las empresas en
+                    Google Maps. Los resultados (nombre, ubicación, teléfono y dirección web) se guardan en <strong>Google Sheets</strong>, que hace
+                    de punto de conexión con los siguientes flujos.
                 </p>
 
                 <div class="proyecto-imagen-principal">
@@ -278,20 +158,8 @@ $descripcionlarga=$proyecto["descripcionlarga"];
                     <a href="assets/img/extraccion_emails/actor_maps.png"
                        target="_blank">
 
-                        <img
-                            src="assets/img/extraccion_emails/actor_maps.png"
-                            alt="Actor de Apify para la búsqueda en Google Maps"
-                            loading="lazy">
-
-                    </a>
-
-                    <a href="assets/img/extraccion_emails/extraccion_maps.png"
-                       target="_blank">
-
-                        <img
-                            src="assets/img/extraccion_emails/extraccion_maps.png"
-                            alt="Datos extraídos mediante el proceso de Google Maps"
-                            loading="lazy">
+                        <img src="assets/img/extraccion_emails/actor_maps.png"
+                             alt="Actor de Apify para la búsqueda en Google Maps">
 
                     </a>
 
@@ -300,115 +168,16 @@ $descripcionlarga=$proyecto["descripcionlarga"];
             </article>
 
 
-            <article class="bloque-tecnico">
-
-                <h3>
-                    05 · Almacenar los resultados
-                </h3>
-
-                <p>
-                    Los resultados obtenidos se incorporan automáticamente a
-                    <strong>Google Sheets</strong>, donde cada empresa queda
-                    registrada junto con la información recopilada y su
-                    página web cuando está disponible.
-                </p>
-
-                <p>
-                    Esta hoja funciona como punto de conexión entre el primer
-                    y el segundo workflow.
-                </p>
-
-                <div class="proyecto-imagen-principal">
-
-                    <a href="assets/img/extraccion_emails/almacenamiento_sheet.png"
-                       target="_blank">
-
-                        <img
-                            src="assets/img/extraccion_emails/almacenamiento_sheet.png"
-                            alt="Almacenamiento de empresas en Google Sheets"
-                            loading="lazy">
-
-                    </a>
-
-                </div>
-
-            </article>
-
-        </div>
-
-
-        <div class="cabecera-proceso">
-
-            <span class="numero-proceso">
-                Proceso 2
-            </span>
-
-            <h3>
-                Análisis de las páginas web
-            </h3>
-
-            <p>
-                El segundo workflow utiliza las URLs almacenadas para acceder
-                a las páginas web y analizar su contenido en busca de
-                direcciones de email.
-            </p>
-
-        </div>
-
-
-        <div class="bloques-tecnicos pasos-proceso">
-
+            <!-- FASE 2 -->
 
             <article class="bloque-tecnico">
 
                 <h3>
-                    06–07 · Procesar cada página web
+                    Fase 2 · Búsqueda de emails en las webs
                 </h3>
 
                 <p>
-                    El workflow trabaja con los nuevos registros disponibles
-                    y procesa las empresas individualmente para utilizar la
-                    URL de cada una como entrada.
-                </p>
-
-                <p>
-                    Mediante <strong>HTTP Request</strong>, se realiza una
-                    petición a la página web y se obtiene el contenido HTML
-                    disponible.
-                </p>
-
-                <div class="proyecto-imagen-principal">
-
-                    <a href="assets/img/extraccion_emails/http_request.png"
-                       target="_blank">
-
-                        <img
-                            src="assets/img/extraccion_emails/http_request.png"
-                            alt="Petición HTTP para obtener el contenido de una página web"
-                            loading="lazy">
-
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <article class="bloque-tecnico">
-
-                <h3>
-                    08–09 · Analizar el HTML y actualizar el registro
-                </h3>
-
-                <p>
-                    El contenido HTML obtenido se procesa mediante
-                    <strong>JavaScript</strong> para localizar direcciones
-                    de email presentes en la página.
-                </p>
-
-                <p>
-                    Cuando se encuentra información de contacto, el resultado
-                    se incorpora al registro correspondiente en
+                    Para cada empresa, el flujo busca las direcciones webs obtenidas y entra directamente a ellas usando un <strong>HTTP Request</strong> para obtener el HTML. Después, mediante código <strong>JavaScript</strong>, lee y analiza ese texto de en busca de cualquier dirección de email corporativo. Los emails que encuentra los guarda en la hoja de
                     <strong>Google Sheets</strong>.
                 </p>
 
@@ -417,63 +186,8 @@ $descripcionlarga=$proyecto["descripcionlarga"];
                     <a href="assets/img/extraccion_emails/extracion_email.png"
                        target="_blank">
 
-                        <img
-                            src="assets/img/extraccion_emails/extracion_email.png"
-                            alt="Extracción de emails a partir del contenido HTML"
-                            loading="lazy">
-
-                    </a>
-
-                </div>
-
-            </article>
-
-        </div>
-
-    </section>
-
-
-    <section class="seccion-proyecto">
-
-        <div class="cabecera-seccion">
-
-            <h2>
-                Vía alternativa · LinkedIn
-            </h2>
-
-            <p>
-                Cuando el análisis de la página web no permite localizar un
-                email, el sistema incorpora una segunda vía para buscar
-                información pública de contacto relacionada con la empresa.
-            </p>
-
-        </div>
-
-
-        <div class="bloques-tecnicos">
-
-
-            <article class="bloque-tecnico">
-
-                <h3>
-                    01 · Localizar la empresa
-                </h3>
-
-                <p>
-                    <strong>SerpAPI</strong> realiza una búsqueda para
-                    localizar la página profesional de la empresa en
-                    LinkedIn.
-                </p>
-
-                <div class="proyecto-imagen-principal">
-
-                    <a href="assets/img/extraccion_emails/serpApi_linkedin.png"
-                       target="_blank">
-
-                        <img
-                            src="assets/img/extraccion_emails/serpApi_linkedin.png"
-                            alt="Búsqueda de una empresa en LinkedIn mediante SerpAPI"
-                            loading="lazy">
+                        <img src="assets/img/extraccion_emails/extracion_email.png"
+                             alt="Extracción de emails a partir del HTML de una web">
 
                     </a>
 
@@ -482,111 +196,49 @@ $descripcionlarga=$proyecto["descripcionlarga"];
             </article>
 
 
-            <article class="bloque-tecnico">
-
-                <h3>
-                    02 · Obtener y validar la URL
-                </h3>
-
-                <p>
-                    La respuesta obtenida se procesa mediante
-                    <strong>JavaScript</strong> para seleccionar la URL de
-                    LinkedIn correspondiente a la empresa buscada.
-                </p>
-
-                <div class="proyecto-imagen-principal">
-
-                    <a href="assets/img/extraccion_emails/url_linkedin.png"
-                       target="_blank">
-
-                        <img
-                            src="assets/img/extraccion_emails/url_linkedin.png"
-                            alt="URL de LinkedIn obtenida y validada"
-                            loading="lazy">
-
-                    </a>
-
-                </div>
-
-            </article>
-
+            <!-- FASE 3 -->
 
             <article class="bloque-tecnico">
 
                 <h3>
-                    03 · Obtener perfiles profesionales
+                    Fase 3 · Contactos de LinkedIn para las webs sin email
                 </h3>
 
                 <p>
-                    La URL de la empresa se utiliza como entrada para un
-                    actor de <strong>Apify</strong> encargado de obtener
-                    perfiles profesionales relacionados con ella.
+                    Otro flujo revisa la hoja de Sheets y detecta las empresas en las que no se encontró ningún email. Para esas,
+                    <strong>SerpAPI</strong> busca la dirección de Linkedin de la empresa en Google, procesando la respuesta mediante
+                    <strong>JavaScript</strong> para asegurar que la URL corresponde con la empresa buscada. 
                 </p>
 
-                <div class="proyecto-imagen-principal">
-
-                    <a href="assets/img/extraccion_emails/actor_linkedin.png"
-                       target="_blank">
-
-                        <img
-                            src="assets/img/extraccion_emails/actor_linkedin.png"
-                            alt="Actor de Apify para obtener perfiles profesionales"
-                            loading="lazy">
-
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <article class="bloque-tecnico">
-
-                <h3>
-                    04 · Extraer información de contacto
-                </h3>
-
-                <p>
-                    Los perfiles obtenidos se procesan para seleccionar la
-                    información relevante. Cuando existe un email público,
-                    puede utilizarse como una fuente adicional de contacto.
-                </p>
+    
 
                 <div class="proyecto-imagen-principal">
 
                     <a href="assets/img/extraccion_emails/extraer_email_linkedin.png"
                        target="_blank">
 
-                        <img
-                            src="assets/img/extraccion_emails/extraer_email_linkedin.png"
-                            alt="Extracción de información de contacto de perfiles profesionales"
-                            loading="lazy">
+                        <img src="assets/img/extraccion_emails/url_linkedin.png"
+                             alt="Extracción de contacto a partir de perfiles de LinkedIn">
 
                     </a>
 
-                    <a href="assets/img/extraccion_emails/ampliacion_linkedin.png"
+                </div>
+                
+                <p>A continuación un actor de <strong>Apify</strong> extrae los perfiles profesionales de altos cargos de cada uno de estos links de empresas. A partir de los perfiles extraídos, con JavaScript se procesa la respuesta para extraer el email principal, direcciones email alternativas y el perfil de LinkedIn
+                </p>
+                <div class="proyecto-imagen-principal">
+
+                    <a href="assets/img/extraccion_emails/extraer_email_linkedin.png"
                        target="_blank">
 
-                        <img
-                            src="assets/img/extraccion_emails/ampliacion_linkedin.png"
-                            alt="Información ampliada de los perfiles obtenidos"
-                            loading="lazy">
+                        <img src="assets/img/extraccion_emails/extraer_email_linkedin.png"
+                             alt="Extracción de contacto a partir de perfiles de LinkedIn">
 
                     </a>
 
                 </div>
 
             </article>
-
-        </div>
-
-
-        <p>
-            Esta vía funciona como alternativa al análisis directo de la web.
-            No siempre habrá información pública disponible, pero permite
-            ampliar las fuentes consultadas cuando el primer proceso no
-            encuentra un correo.
-        </p>
 
     </section>
 
@@ -602,127 +254,14 @@ $descripcionlarga=$proyecto["descripcionlarga"];
         </div>
 
         <p>
-            El resultado es un proceso automatizado que parte de una búsqueda
-            de empresas, recopila sus datos y utiliza las páginas web
-            obtenidas para localizar direcciones de email.
+            Un sistema 100% autónomo que elimina las horas de trabajo manual en prospección. En lugar de revisar webs una por una, el sistema entrega una base de datos limpia, organizada y enriquecida directamente en Google Sheets.
         </p>
 
         <p>
-            Cuando el análisis de la web no encuentra información de contacto,
-            se dispone de una segunda vía basada en la búsqueda de perfiles
-            profesionales y datos públicos relacionados con la empresa.
-        </p>
-
-        <p>
-            Toda la información obtenida queda centralizada en
-            <strong>Google Sheets</strong>, permitiendo utilizar estos datos
-            posteriormente en otros procesos de automatización.
+            De este modo, obtienes listados listos para usar en tus campañas comerciales, combinando tanto correos corporativos como contactos directos de LinkedIn de forma totalmente automatizada.
         </p>
 
     </section>
-
-
-    <section class="seccion-proyecto">
-
-        <div class="cabecera-seccion">
-
-            <h2>
-                Valor técnico
-            </h2>
-
-        </div>
-
-        <div class="bloques-tecnicos">
-
-            <article class="bloque-tecnico">
-
-                <h3>
-                    Workflows conectados
-                </h3>
-
-                <p>
-                    El segundo proceso utiliza directamente los datos
-                    generados por el primero, creando un flujo de trabajo
-                    encadenado.
-                </p>
-
-            </article>
-
-
-            <article class="bloque-tecnico">
-
-                <h3>
-                    Scraping automatizado
-                </h3>
-
-                <p>
-                    Apify permite automatizar la obtención de información
-                    tanto de empresas como de perfiles profesionales.
-                </p>
-
-            </article>
-
-
-            <article class="bloque-tecnico">
-
-                <h3>
-                    Procesamiento de datos
-                </h3>
-
-                <p>
-                    JavaScript se utiliza para preparar, filtrar y analizar
-                    los datos obtenidos durante los diferentes procesos.
-                </p>
-
-            </article>
-
-
-            <article class="bloque-tecnico">
-
-                <h3>
-                    Análisis de contenido web
-                </h3>
-
-                <p>
-                    El sistema obtiene HTML mediante peticiones HTTP y lo
-                    procesa para localizar información de contacto.
-                </p>
-
-            </article>
-
-
-            <article class="bloque-tecnico">
-
-                <h3>
-                    Múltiples fuentes de información
-                </h3>
-
-                <p>
-                    El proceso combina Google Maps, páginas web y LinkedIn
-                    para ampliar las fuentes desde las que obtener
-                    información empresarial.
-                </p>
-
-            </article>
-
-
-            <article class="bloque-tecnico">
-
-                <h3>
-                    Datos centralizados
-                </h3>
-
-                <p>
-                    Google Sheets actúa como punto de almacenamiento y
-                    conexión entre los diferentes procesos.
-                </p>
-
-            </article>
-
-        </div>
-
-    </section>
-
 
     <section class="seccion-proyecto">
 
@@ -743,7 +282,7 @@ $descripcionlarga=$proyecto["descripcionlarga"];
                 </h3>
 
                 <p>
-                    Diseño y conexión de los diferentes workflows de
+                    Diseño y conexión de los diferentes workflows de la
                     automatización.
                 </p>
 
@@ -757,8 +296,7 @@ $descripcionlarga=$proyecto["descripcionlarga"];
                 </h3>
 
                 <p>
-                    Automatización de la extracción de información de
-                    empresas y perfiles profesionales.
+                    Uso de actores especializados para el scraping automatizado: uno realiza la extracción masiva de empresas en Google Maps y otro extrae los perfiles profesionales en LinkedIn.
                 </p>
 
             </article>
@@ -797,10 +335,8 @@ $descripcionlarga=$proyecto["descripcionlarga"];
                 <h3>
                     HTTP Request
                 </h3>
-
                 <p>
-                    Obtención del contenido HTML de las páginas web para su
-                    posterior análisis.
+                    Consulta directa del código fuente HTML de los sitios web para su posterior análisis.
                 </p>
 
             </article>
@@ -813,8 +349,7 @@ $descripcionlarga=$proyecto["descripcionlarga"];
                 </h3>
 
                 <p>
-                    Búsqueda de páginas profesionales de empresas para
-                    utilizar LinkedIn como fuente alternativa.
+                    Búsqueda en Google de páginas profesionales de empresas para utilizar LinkedIn como fuente alternativa.
                 </p>
 
             </article>
@@ -825,14 +360,6 @@ $descripcionlarga=$proyecto["descripcionlarga"];
 
 
     <section class="enlaces-proyecto">
-
-        <a href="#" class="boton-proyecto">
-            Ver automatización
-        </a>
-
-        <a href="#" class="boton-proyecto">
-            Ver código
-        </a>
 
         <a href="index.php" class="enlace-proyecto">
             ← Volver al portfolio

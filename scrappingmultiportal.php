@@ -13,7 +13,6 @@ foreach ($proyectos["automatizaciones"] as $item) {
 
 $titulo = $proyecto["titulo"];
 $descripcion = $proyecto["descripcion"];
-$tecnologias = $proyecto["tecnologias"];
 $categoria = "Automatización e IA";
 $descripcionlarga = $proyecto["descripcionlarga"];
 
@@ -30,7 +29,7 @@ $descripcionlarga = $proyecto["descripcionlarga"];
 
     <meta
         name="description"
-        content="Sistema de scraping avanzado desarrollado con n8n, Apify, Playwright y JavaScript mediante actores personalizados."
+        content="<?= htmlspecialchars($proyecto['descripcion']); ?>"
     >
 
     <title><?= $titulo; ?> - Laura Basurto</title>
@@ -47,11 +46,6 @@ $descripcionlarga = $proyecto["descripcionlarga"];
 
 
     <section class="proyecto-hero">
-
-        <span class="etiqueta-bloque">
-            <?= $categoria; ?>
-        </span>
-
         <h1>
             <?= $titulo ?> 
         </h1>
@@ -68,11 +62,11 @@ $descripcionlarga = $proyecto["descripcionlarga"];
         <div class="proyecto-imagen-principal">
 
             <a
-                href="assets/img/scrappingbots/web_scrapper.png"
+                href="assets/img/scrappingbots/kelify2.png"
                 target="_blank"
             >
                 <img
-                    src="assets/img/scrappingbots/web_scrapper.png"
+                    src="assets/img/scrappingbots/kelify2.png"
                     alt="Flujo principal de scraping en n8n"
                 >
             </a>
@@ -93,18 +87,11 @@ $descripcionlarga = $proyecto["descripcionlarga"];
         </div>
 
         <p>
-            Un scraper convencional funciona bien cuando la información que
-            necesitamos está disponible directamente en una página web.
-            El problema aparece cuando es necesario realizar pasos adicionales
-            para llegar hasta esos datos.
+            Recopilar información de posibles leads de forma manual en portales web exige mucho tiempo: hay que entrar página por página, buscar los datos relevantes y organizarlos, lo que dificulta procesar grandes volúmenes de forma eficiente.
         </p>
 
         <p>
-            Algunas plataformas requieren autenticación, navegación entre
-            diferentes páginas o una estructura específica para localizar
-            correctamente la información. Además, en procesos recurrentes es
-            necesario controlar qué datos ya se han procesado para evitar
-            repetir trabajo y generar duplicados.
+            Al intentar automatizar este proceso, las herramientas de scraping tradicionales se quedan cortas. Muchos de estos portales imponen barreras de acceso: exigen iniciar sesión con cuenta, aceptar cookies, seleccionar ubicaciones manualmente o navegar haciendo clics hasta llegar al dato clave.
         </p>
 
     </section>
@@ -119,479 +106,75 @@ $descripcionlarga = $proyecto["descripcionlarga"];
             </h2>
 
             <p>
-                La solución combina <strong>n8n</strong> como herramienta de
-                orquestación con <strong>Apify</strong> como plataforma de
-                ejecución de los procesos de scraping.
+                Desarrollar un sistema de scraping personalizado e integrado con n8n, capaz de adaptar la extracción de información a las características de cada portal web.
             </p>
 
             <p>
-                Cuando un scraper convencional no es suficiente, se desarrollan
-                actores personalizados adaptados a la estructura concreta de
-                cada web.
+                Tras un análisis previo de la estructura del sitio web, estos bots se configuran para iniciar sesión, aceptar avisos de cookies y navegar por la web haciendo los clics necesarios. De esta manera localizan de forma precisa los datos clave (como nombres y teléfonos) que serán utilizados en acciones comerciales, como el envío automatizado de mensajes por WhatsApp.
             </p>
-
+            
         </div>
-
-
-        <div class="bloques-tecnicos">
-
-            <article class="bloque-tecnico">
-
-                <h3>
-                    Scraping convencional
-                </h3>
-
-                <p>
-                    Extracción de información que ya está disponible
-                    directamente en una página web.
-                </p>
-
-            </article>
-
-
-            <article class="bloque-tecnico">
-
-                <h3>
-                    Actores personalizados
-                </h3>
-
-                <p>
-                    Procesos programados específicamente para webs que
-                    requieren una lógica de navegación o acceso determinada.
-                </p>
-
-            </article>
-
-
-            <article class="bloque-tecnico">
-
-                <h3>
-                    Orquestación con n8n
-                </h3>
-
-                <p>
-                    Coordina las búsquedas, el procesamiento de datos,
-                    los filtros y el almacenamiento de resultados.
-                </p>
-
-            </article>
-
-        </div>
-
-
-        <div class="proyecto-imagen-principal">
-
-            <a
-                href="assets/img/scrappingbots/preparacion_urls.png"
-                target="_blank"
-            >
-                <img
-                    src="assets/img/scrappingbots/preparacion_urls.png"
-                    alt="Preparación de URLs para el proceso de scraping"
-                >
-            </a>
-
-        </div>
-
     </section>
 
 
-    <section class="seccion-proyecto">
+        <!-- =====================================================
+             PROCESO DE AUTOMATIZACIÓN
+             ===================================================== -->
+        <section class="seccion-proyecto">
 
-        <div class="cabecera-seccion">
-
-            <h2>
-                Proceso de automatización
-            </h2>
-
-            <p>
-                El sistema se adapta a las características de cada plataforma.
-                Estos son tres de los flujos desarrollados.
-            </p>
-
-        </div>
-
-
-        <div class="cabecera-proceso">
-
-            <span class="numero-proceso">
-                Proceso 1
-            </span>
-
-            <h3>
-                Kelify · Scraping autenticado
-            </h3>
-
-            <p>
-                El flujo más avanzado del proyecto combina detección de
-                novedades con un actor personalizado desarrollado con
-                Playwright.
-            </p>
-
-        </div>
-
-
-        <div class="bloques-tecnicos pasos-proceso">
-
-
-            <article class="bloque-tecnico">
-
-                <h3>
-                    01 · Detectar nuevos anuncios
-                </h3>
-
+            <div class="cabecera-seccion">
+                <h2>Proceso de automatización</h2>
                 <p>
-                    Un primer actor de <strong>Apify</strong> recorre los
-                    anuncios de la zona y obtiene sus URLs y fechas de
-                    publicación.
+                    El objetivo es extraer de forma masiva los datos de contacto y características de inmuebles automatizando el rastreo en diferentes portales de vivienda de Madrid. Dependiendo de las restricciones de cada plataforma (como Milanuncios, Fotocasa o Kelify), el flujo adapta su estrategia de extracción.
                 </p>
-
-                <p>
-                    n8n compara estas fechas con la última búsqueda registrada
-                    para esa zona y descarta los anuncios ya procesados.
-                </p>
-
-                <div class="proyecto-imagen-principal">
-
-                    <a
-                        href="assets/img/scrappingbots/kelify.png"
-                        target="_blank"
-                    >
-                        <img
-                            src="assets/img/scrappingbots/kelify.png"
-                            alt="Flujo de scraping de Kelify"
-                        >
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <article class="bloque-tecnico">
-
-                <h3>
-                    02 · Acceder mediante el actor personalizado
-                </h3>
-
-                <p>
-                    Las URLs nuevas se envían a un actor desarrollado con
-                    <strong>Playwright</strong>. El actor inicia sesión y
-                    mantiene el estado de autenticación durante la ejecución.
-                </p>
-
-                <div class="proyecto-imagen-principal">
-
-                    <a
-                        href="assets/img/scrappingbots/actor_personalizado.png"
-                        target="_blank"
-                    >
-                        <img
-                            src="assets/img/scrappingbots/actor_personalizado.png"
-                            alt="Actor personalizado desarrollado con Playwright"
-                        >
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <article class="bloque-tecnico">
-
-                <h3>
-                    03 · Extraer la información
-                </h3>
-
-                <p>
-                    El actor accede a cada anuncio y localiza los datos
-                    necesarios mediante selectores CSS y expresiones regulares
-                    cuando resultan más adecuadas.
-                </p>
-
-                <p>
-                    Entre los datos obtenidos se encuentran precio, habitaciones,
-                    baños, metros cuadrados, descripción, teléfono y nombre
-                    del propietario.
-                </p>
-
-            </article>
-
-
-            <article class="bloque-tecnico">
-
-                <h3>
-                    04 · Procesar y almacenar
-                </h3>
-
-                <p>
-                    La información vuelve a n8n para ser procesada y
-                    almacenada en <strong>Google Sheets</strong>.
-                </p>
-
-                <div class="proyecto-imagen-principal">
-
-                    <a
-                        href="assets/img/scrappingbots/limpieza_datos.png"
-                        target="_blank"
-                    >
-                        <img
-                            src="assets/img/scrappingbots/limpieza_datos.png"
-                            alt="Limpieza y procesamiento de los datos obtenidos"
-                        >
-                    </a>
-
-                </div>
-
-            </article>
-
-        </div>
-
-
-        <div class="cabecera-proceso">
-
-            <span class="numero-proceso">
-                Proceso 2
-            </span>
-
-            <h3>
-                Milanuncios · Scraping sin autenticación
-            </h3>
-
-            <p>
-                En este caso no es necesario iniciar sesión. El flujo genera
-                búsquedas por zona, recorre los anuncios y controla los
-                registros ya procesados.
-            </p>
-
-        </div>
-
-
-        <div class="bloques-tecnicos pasos-proceso">
-
-
-            <article class="bloque-tecnico">
-
-                <h3>
-                    05 · Generar y recorrer la búsqueda
-                </h3>
-
-                <p>
-                    El flujo utiliza diferentes zonas configuradas y aplica
-                    el filtro para localizar anuncios publicados por
-                    particulares.
-                </p>
-
-            </article>
-
-
-            <article class="bloque-tecnico">
-
-                <h3>
-                    06 · Extraer y comprobar
-                </h3>
-
-                <p>
-                    El actor obtiene título, nombre y URL. n8n compara las
-                    URLs obtenidas con las almacenadas en Google Sheets para
-                    descartar registros duplicados.
-                </p>
-
-                <div class="proyecto-imagen-principal">
-
-                    <a
-                        href="assets/img/scrappingbots/milanuncios.png"
-                        target="_blank"
-                    >
-                        <img
-                            src="assets/img/scrappingbots/milanuncios.png"
-                            alt="Scraping y datos obtenidos de Milanuncios"
-                        >
-                    </a>
-
-                </div>
-
-            </article>
-
-        </div>
-
-
-        <div class="cabecera-proceso">
-
-            <span class="numero-proceso">
-                Proceso 3
-            </span>
-
-            <h3>
-                Fotocasa · Extracción y control por URL
-            </h3>
-
-            <p>
-                El mismo patrón se adapta a la estructura de este portal
-                mediante ejecuciones periódicas y control de los registros
-                mediante su URL.
-            </p>
-
-        </div>
-
-
-        <div class="bloques-tecnicos pasos-proceso">
-
-            <article class="bloque-tecnico">
-
-                <h3>
-                    07 · Ejecutar y extraer
-                </h3>
-
-                <p>
-                    Un <strong>Schedule Trigger</strong> inicia la búsqueda
-                    correspondiente a cada zona y el actor obtiene título,
-                    nombre, URL y teléfono.
-                </p>
-
-                <div class="proyecto-imagen-principal">
-
-                    <a
-                        href="assets/img/scrappingbots/fotocasa.png"
-                        target="_blank"
-                    >
-                        <img
-                            src="assets/img/scrappingbots/fotocasa.png"
-                            alt="Scraping y datos obtenidos de Fotocasa"
-                        >
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <article class="bloque-tecnico">
-
-                <h3>
-                    08 · Controlar duplicados
-                </h3>
-
-                <p>
-                    La URL se utiliza como referencia para identificar
-                    registros existentes y evitar almacenar varias veces
-                    el mismo anuncio.
-                </p>
-
-            </article>
-
-        </div>
-
-    </section>
-
-
-    <section class="seccion-proyecto">
-
-        <div class="cabecera-seccion">
-
-            <h2>
-                El actor personalizado
-            </h2>
-
-            <p>
-                La parte más avanzada del proyecto es el desarrollo de
-                actores adaptados a la forma en la que funciona una web.
-            </p>
-
-            <p>
-                En el caso de Kelify, el actor utiliza
-                <strong>Playwright</strong> para iniciar sesión, mantener
-                el estado de autenticación, navegar hasta los anuncios y
-                localizar la información necesaria.
-            </p>
-
-        </div>
-
-
-        <div class="bloques-tecnicos">
-
-            <article class="bloque-tecnico">
-
-                <h3>
-                    Autenticación
-                </h3>
-
-                <p>
-                    Inicio de sesión automático cuando la información requiere
-                    acceso a una zona autenticada.
-                </p>
-
-            </article>
-
-
-            <article class="bloque-tecnico">
-
-                <h3>
-                    Navegación
-                </h3>
-
-                <p>
-                    Acceso a diferentes URLs siguiendo el recorrido necesario
-                    para llegar hasta la información.
-                </p>
-
-            </article>
-
-
-            <article class="bloque-tecnico">
-
-                <h3>
-                    Selectores personalizados
-                </h3>
-
-                <p>
-                    Localización de elementos adaptada a la estructura de cada
-                    página mediante selectores CSS.
-                </p>
-
-            </article>
-
-        </div>
-
-
-        <div class="bloque-tecnico">
-
-            <h3>
-                De una URL a un proceso automatizado
-            </h3>
-
-            <p>
-                El actor ejecuta la lógica necesaria para acceder al contenido,
-                localizar los elementos relevantes y devolver los datos
-                estructurados que necesita n8n.
-            </p>
-
-            <p>
-                <strong>
-                    URL → autenticación → navegación →
-                    localización → extracción → datos estructurados
-                </strong>
-            </p>
-
-        </div>
-
-
-        <div class="proyecto-imagen-principal">
-
-            <a
-                href="assets/img/scrappingbots/limpiezadatos2.png"
-                target="_blank"
-            >
-                <img
-                    src="assets/img/scrappingbots/limpiezadatos2.png"
-                    alt="Procesamiento y limpieza de los datos obtenidos"
-                >
-            </a>
-
-        </div>
-
-    </section>
-
+            </div>
+
+            <div class="bloques-tecnicos pasos-proceso">
+
+                <!-- FASE 1 -->
+                <article class="bloque-tecnico">
+                    <h3>01 · Búsqueda paramétrica y control de duplicados</h3>
+                    <p>
+                        A través de triggers en <strong>n8n</strong> y formularios de selección de zona (como Arganzuela, Vicálvaro o Moratalaz), el sistema genera las URLs de búsqueda de pisos. Antes de ejecutar la extracción, contrasta los listados con <strong>Google Sheets</strong> para procesar únicamente los anuncios nuevos y evitar duplicidades.
+                    </p>
+                    <div class="proyecto-imagen-principal">
+                        <a href="assets/img/scrappingbots/kelify.png" target="_blank">
+                            <img src="assets/img/scrappingbots/kelify.png" alt="Generación de búsquedas y filtrado de URLs de pisos" loading="lazy">
+                        </a>
+                    </div>
+                </article>
+
+                <!-- FASE 2 -->
+                <article class="bloque-tecnico">
+                    <h3>02 · Dos vías de ejecución: Scraping directo o Actores con Playwright</h3>
+                    <p>
+                        Dependiendo del portal inmobiliario, el flujo actúa de dos formas: 
+                        <br>• <strong>Sin autenticación:</strong> Recorre listados públicos de viviendas (Milanuncios o Fotocasa) extrayendo títulos, nombres de particulares y URLs directamente.
+                        <br>• <strong>Con autenticación (Actor Playwright personalizado con JS):</strong> Inicia sesión con credenciales, acepta cookies y navega por zonas restringidas de los anuncios de pisos de forma interactiva (Kelify).
+                    </p>
+                    <div class="proyecto-imagen-principal">
+                        <a href="assets/img/scrappingbots/actor_personalizado.png" target="_blank">
+                            <img src="assets/img/scrappingbots/actor_personalizado.png" alt="Ejecución de scraping en portales inmobiliarios" loading="lazy">
+                        </a>
+                    </div>
+                </article>
+
+                <!-- FASE 3 -->
+                <article class="bloque-tecnico">
+                    <h3>03 · Extracción y volcado centralizado</h3>
+                    <p>
+                        Mediante selectores CSS adaptados a cada web de vivienda, los bots extraen los datos deseados de los inmuebles (precios, metros cuadrados, teléfonos y nombres de particulares). Toda la información estructurada se centraliza de forma limpia en Google Sheets, lista para disparar flujos comerciales como WhatsApp.
+                    </p>
+                    <div class="proyecto-imagen-principal">
+                        <a href="assets/img/scrappingbots/limpieza_datos.png" target="_blank">
+                            <img src="assets/img/scrappingbots/limpieza_datos.png" alt="Volcado de datos inmobiliarios a Google Sheets" loading="lazy">
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+
+        </section>
 
     <section class="seccion-proyecto">
 
@@ -604,102 +187,15 @@ $descripcionlarga = $proyecto["descripcionlarga"];
         </div>
 
         <p>
-            El resultado es un sistema capaz de automatizar procesos de
-            extracción incluso cuando obtener la información requiere algo
-            más que acceder directamente a una URL.
+            Hemos construido un sistema automatizado y escalable capaz de extraer diariamente los nuevos anuncios de pisos en diferentes portales inmobiliarios, superando barreras como inicios de sesión o restricciones de cookies.
         </p>
 
         <p>
-            La arquitectura permite combinar scraping convencional con
-            actores personalizados desarrollados específicamente para
-            determinadas páginas web.
-        </p>
-
-        <p>
-            El control de fechas y URLs permite ejecutar las búsquedas de
-            forma recurrente sin repetir innecesariamente el trabajo.
+            Gracias al control mediante fechas y URLs, se evita duplicar información y se obtienen bases de datos de leads limpios y actualizados en Google Sheets, listos para conectar con estrategias comerciales directas.
         </p>
 
     </section>
 
-
-    <section class="seccion-proyecto">
-
-        <div class="cabecera-seccion">
-
-            <h2>
-                Valor técnico
-            </h2>
-
-            <p>
-                El proyecto demuestra la capacidad de adaptar una
-                automatización de scraping a diferentes estructuras y
-                necesidades de extracción.
-            </p>
-
-        </div>
-
-
-        <div class="bloques-tecnicos">
-
-            <article class="bloque-tecnico">
-
-                <h3>
-                    Scraping autenticado
-                </h3>
-
-                <p>
-                    Desarrollo de actores capaces de iniciar sesión y
-                    mantener el estado de autenticación durante la ejecución.
-                </p>
-
-            </article>
-
-
-            <article class="bloque-tecnico">
-
-                <h3>
-                    Deduplicación
-                </h3>
-
-                <p>
-                    Control mediante fechas y URLs para evitar procesar
-                    información que ya ha sido almacenada.
-                </p>
-
-            </article>
-
-
-            <article class="bloque-tecnico">
-
-                <h3>
-                    Escalabilidad por zonas
-                </h3>
-
-                <p>
-                    El mismo patrón de automatización puede utilizarse para
-                    diferentes zonas sin construir el workflow desde cero.
-                </p>
-
-            </article>
-
-
-            <article class="bloque-tecnico">
-
-                <h3>
-                    Actores personalizados
-                </h3>
-
-                <p>
-                    Desarrollo de actores específicos cuando un scraper
-                    convencional no resulta suficiente.
-                </p>
-
-            </article>
-
-        </div>
-
-    </section>
 
 
     <section class="seccion-proyecto">

@@ -15,7 +15,7 @@ $titulo = $proyecto["titulo"];
 $descripcion = $proyecto["descripcion"];
 $categoria = "Automatización e IA";
 $descripcionlarga=$proyecto["descripcionlarga"];
-tecnologias=$proyecto["tecnologias"];
+
 
 ?>
 
@@ -73,23 +73,11 @@ tecnologias=$proyecto["tecnologias"];
         </div>
 
         <p>
-            La captación de propietarios puede implicar localizar contactos,
-            realizar el primer acercamiento, responder a las conversaciones,
-            gestionar los interesados y hacer seguimiento de aquellas
-            personas que todavía no han tomado una decisión.
+            Muchos negocios necesitan escribir a una lista grande de contactos, contestar a los que responden, apuntar quién está interesado y volver a escribir a los que no contestan. Hecho a mano, depende de una persona y el seguimiento se pierde en cuanto la lista crece.
         </p>
 
         <p>
-            Cuando estas tareas se realizan manualmente, el proceso depende
-            continuamente de una persona y resulta difícil mantener un
-            seguimiento constante cuando aumenta el número de contactos.
-        </p>
-
-        <p>
-            El objetivo era crear un sistema capaz de gestionar
-            automáticamente estas etapas, manteniendo el contexto de cada
-            conversación y pudiendo realizar acciones sobre los datos y el
-            calendario cuando fuese necesario.
+            Además, la persona que cierra la venta o la cita solo necesita que le lleguen contactos que ya han mostrado interés. Todo lo anterior es trabajo previo que se puede automatizar.
         </p>
 
     </section>
@@ -106,9 +94,10 @@ tecnologias=$proyecto["tecnologias"];
             <h2>La solución</h2>
 
             <p>
-                El sistema combina tres circuitos dentro de un mismo entorno
-                de automatización: contacto inicial, conversación con un
-                agente de IA y seguimiento automático.
+                Un agente de IA escribe por WhatsApp a una lista de contactos, mantiene la conversación con los que responden y deja todo
+                registrado para que la persona que atiende solo tenga que
+                ocuparse de los contactos que de verdad le interesan.
+                Cada contacto acaba en uno de estos tres sitios:
             </p>
 
         </div>
@@ -117,42 +106,30 @@ tecnologias=$proyecto["tecnologias"];
         <div class="bloques-tecnicos">
 
             <article class="bloque-tecnico">
-
-                <h3>Envío proactivo</h3>
-
+                <h3>1. Hoja de contactos</h3>
                 <p>
-                    El sistema consulta diariamente los leads disponibles,
-                    comprueba si el número tiene WhatsApp activo y envía un
-                    primer mensaje personalizado al propietario.
+                    Es la lista de teléfonos a los que escribir. Cuando alguien
+                    responde, su estado se actualiza. Si no responde, sigue
+                    pendiente y el sistema le vuelve a escribir más adelante.
                 </p>
-
             </article>
 
-
             <article class="bloque-tecnico">
-
-                <h3>Conversación con IA</h3>
-
+                <h3>2. Hoja de interesados</h3>
                 <p>
-                    Los mensajes entrantes se procesan mediante un agente de
-                    IA con memoria conversacional, capaz de mantener el
-                    contexto y utilizar herramientas externas según las
-                    necesidades de cada conversación.
+                    Aquí se guardan las personas que han mostrado interés pero no
+                    han cerrado una llamada. El equipo puede revisarla y
+                    contactarlas por su cuenta cuando quiera.
                 </p>
-
             </article>
 
-
             <article class="bloque-tecnico">
-
-                <h3>Reactivación automática</h3>
-
+                <h3>3. Calendario y hoja de agendados</h3>
                 <p>
-                    Cuando una conversación no termina en una llamada, el
-                    sistema puede programar un seguimiento y volver a
-                    contactar automáticamente cuando corresponde.
+                    Cuando alguien acepta una llamada, el agente crea el evento en
+                    el calendario del equipo y lo apunta también en una hoja de
+                    agendados, para que quede todo registrado en un solo sitio.
                 </p>
-
             </article>
 
         </div>
@@ -173,10 +150,8 @@ tecnologias=$proyecto["tecnologias"];
             </h2>
 
             <p>
-                El sistema está compuesto por tres flujos independientes pero
-                conectados. Cada uno se encarga de una parte del proceso y
-                comparte la información necesaria para continuar la gestión
-                de los contactos.
+                El sistema está compuesto por tres flujos en n8n conectados entre sí: envío de mensajes, conversación con el agente y reactivación de los que no responden. Estos comparten la información necesaria para gestionar los contactos.
+
             </p>
 
         </div>
@@ -219,15 +194,11 @@ tecnologias=$proyecto["tecnologias"];
                     <article class="bloque-tecnico">
 
                         <h3>
-                            Fase 1 · Envío proactivo y validación
+                            Fase 1 · Envío de mensajes
                         </h3>
 
                         <p>
-                            Un trigger programado activa el flujo diariamente. El sistema consulta <strong>Google Sheets</strong>, filtra los registros pendientes y limita el procesamiento a lotes controlados (20 contactos). Antes de enviar nada, <strong>Evolution API</strong> comprueba si el número dispone realmente de WhatsApp activo.
-                        </p>
-
-                        <p>
-                            Tras el envío del mensaje personalizado, se actualiza el estado en la hoja de cálculo y se genera una ficha de seguimiento en el histórico para evitar duplicados.
+                            Cada día un trigger lee la <strong>hoja de contactos</strong>, coge un lote de 20 contactos pendientes y comprueba con <strong>Evolution API</strong> que el número tenga WhatsApp. Después, con la misma herramienta, envía el mensaje y actualiza el estado en la hoja para no escribir dos veces a la misma persona.
                         </p>
 
                         <div class="proyecto-imagen-principal">
@@ -250,11 +221,12 @@ tecnologias=$proyecto["tecnologias"];
                     <article class="bloque-tecnico">
 
                         <h3>
-                            Fase 2 · Buffer en tiempo real y multimodalidad
+                            Fase 2 · Recepción de respuestas
                         </h3>
 
                         <p>
-                            Los mensajes entrantes se capturan mediante webhooks y se almacenan temporalmente en <strong>Redis</strong>. Esto actúa como un buffer inteligente: si el usuario escribe varios mensajes seguidos o audios cortos, el sistema espera unos segundos y los agrupa en un único turno, evitando que el bot responda de forma fragmentada.
+                            Las respuestas llegan por webhook y se guardan unos segundos en <strong>Redis</strong>, de esta forma si alguien escribe varios mensajes seguidos, se juntan en uno para que el agente no conteste a
+cada frase. 
                         </p>
                         <div class="proyecto-imagen-principal">
 
@@ -267,7 +239,7 @@ tecnologias=$proyecto["tecnologias"];
                         </a>
                             </div>
                         <p>
-                            Si se reciben notas de voz, se descargan y transcriben automáticamente con <strong>Whisper</strong> antes de unificar todo el contenido por marcas temporales y cruzarlo con la ficha del lead.
+                            Si se reciben notas de voz, se descargan y transcriben automáticamente con <strong>Whisper</strong> antes de unificar todo el contenido por marcas temporales.
                         </p>
 
                         <div class="proyecto-imagen-principal">
@@ -282,11 +254,11 @@ tecnologias=$proyecto["tecnologias"];
                     <!-- FASE 3 -->
                     <article class="bloque-tecnico">
                         <h3>
-                            Fase 3 · Agente IA y herramientas autónomas
+                            Fase 3 ·  El agente conversa y decide qué hacer
                         </h3>
 
                         <p>
-                            El <strong>AI Agent</strong> recibe el contexto unificado del usuario y gestiona una memoria persistente alojada en <strong>PostgreSQL</strong> (separando las sesiones por cada número de teléfono). Su estrategia comercial se rige por un prompt estructurado en fases de cualificación.
+                            El <strong>agente de IA</strong> recibe los mensajes ya unificados y tiene memoria en <strong>PostgreSQL</strong>, con una sesión por cada número de teléfono. Su estrategia comercial se rige por un prompt estructurado en fases. 
                         </p>
 
                         <div class="proyecto-imagen-principal">
@@ -296,14 +268,14 @@ tecnologias=$proyecto["tecnologias"];
                         </div>
 
                         <p>
-                            Lo más revolucionario de esta arquitectura es que <strong>el modelo decide de forma autónoma cuándo utilizar herramientas externas</strong>. No siguen una secuencia fija: según la evolución de la conversación, el agente selecciona dinámicamente la acción necesaria:
+                            El modelo decide <strong>de forma autónoma</strong> cuándo utilizar herramientas externas y cuáles usar. No sigue una secuencia fija: según la evolución de la conversación, el agente selecciona dinámicamente la acción necesaria:
                         </p>
 
                         <ul style="margin: 15px 0 15px 20px; line-height: 1.6;">
-                            <li><strong>Google Sheets · Agregar Interesados:</strong> Registra o actualiza los datos del lead y su franja horaria de disponibilidad si muestra interés pero no concreta la cita de inmediato.</li>
-                            <li><strong>Google Sheets · Agregar Agendado:</strong> Guarda el registro formal de la llamada una vez concertada para mantener la trazabilidad en el CRM.</li>
-                            <li><strong>Google Calendar · Consultar eventos:</strong> Comprueba la disponibilidad real de la agenda antes de proponer o confirmar una hora con el propietario.</li>
-                            <li><strong>Google Calendar · Crear evento:</strong> Agenda de forma automática el evento de seguimiento en cuanto se acuerda una fecha exacta.</li>
+                            <li><strong>Google Sheets · Agregar Interesados:</strong> guarda a quien muestra interés pero no cierra llamada. </li>
+                            <li><strong>Google Sheets · Agregar Agendado:</strong> Guarda el registro de aquellos lead que hayan concertado llamada con la franja horaria acordada.</li>
+                            <li><strong>Google Calendar · Consultar eventos:</strong> Comprueba la disponibilidad real de la agenda antes de proponer o confirmar una hora con el contacto.</li>
+                            <li><strong>Google Calendar · Crear evento:</strong> Agenda la llamada cuando se acuerda fecha y hora.</li>
                         </ul>
 
                         <div class="proyecto-imagen-principal">
@@ -318,15 +290,11 @@ tecnologias=$proyecto["tecnologias"];
                     <article class="bloque-tecnico">
 
                         <h3>
-                            Fase 4 · Reactivación automática de leads
+                            Fase 4 · Reactivación automática de los que no responden
                         </h3>
 
                         <p>
-                            Mediante un trigger diario, el sistema revisa la hoja de seguimiento para detectar aquellos contactos que no cerraron cita pero cuya fecha de reactivación toca ese día.
-                        </p>
-
-                        <p>
-                            Se valida que el usuario no haya agendado previamente por otra vía y se dispara de forma automática un mensaje personalizado para retomar la conversación, actualizando el CRM sin intervención manual.
+                            Mediante un trigger diario, el sistema revisa la hoja de contactos para detectar aquellos contactos que no respondieron al primer mensaje para volver a escribirles. Actualiza la hoja de contactos para que se marque como contactado y no se le escriba nunca más de 2 veces. 
                         </p>
 
                         <div class="proyecto-imagen-principal">
@@ -347,115 +315,6 @@ tecnologias=$proyecto["tecnologias"];
 
             </section>
 
-    <!-- =====================================================
-         HERRAMIENTAS DEL AGENTE
-         ===================================================== -->
-
-    <section class="seccion-proyecto">
-
-        <div class="cabecera-seccion">
-
-            <h2>
-                Herramientas del agente
-            </h2>
-
-            <p>
-                Una de las partes principales del sistema es la capacidad del
-                agente para utilizar herramientas externas durante la
-                conversación.
-            </p>
-
-        </div>
-
-
-        <div class="bloques-tecnicos">
-
-            <article class="bloque-tecnico">
-
-                <h3>
-                    Google Sheets · Agregar interesados
-                </h3>
-
-                <p>
-                    Registra o actualiza los datos de un posible cliente y
-                    su franja horaria de disponibilidad para una futura
-                    llamada.
-                </p>
-
-            </article>
-
-
-            <article class="bloque-tecnico">
-
-                <h3>
-                    Google Sheets · Agregar agendado
-                </h3>
-
-                <p>
-                    Registra la llamada una vez que ha sido concertada y
-                    mantiene la información necesaria para su seguimiento.
-                </p>
-
-            </article>
-
-
-            <article class="bloque-tecnico">
-
-                <h3>
-                    Google Calendar · Consultar eventos
-                </h3>
-
-                <p>
-                    Permite comprobar la disponibilidad real del calendario
-                    antes de proponer o confirmar una fecha y hora.
-                </p>
-
-            </article>
-
-
-            <article class="bloque-tecnico">
-
-                <h3>
-                    Google Calendar · Crear evento
-                </h3>
-
-                <p>
-                    Cuando el usuario y el agente acuerdan una fecha y hora,
-                    el agente puede crear directamente el evento de
-                    seguimiento.
-                </p>
-
-            </article>
-
-        </div>
-
-
-        <div class="bloque-tecnico">
-
-            <h3>
-                La decisión la toma el agente
-            </h3>
-
-            <p>
-                Estas herramientas no forman una secuencia fija dentro del
-                workflow. El proceso llega al <strong>AI Agent</strong> y es
-                el propio modelo quien decide, según la información de la
-                conversación, qué herramienta necesita utilizar, cuándo
-                utilizarla y en qué orden.
-            </p>
-
-            <p>
-                Por ejemplo, si una persona muestra interés pero todavía no
-                concreta una llamada, el agente puede registrar sus datos y
-                disponibilidad en Sheets. Si posteriormente se acuerda una
-                hora, puede consultar Calendar, comprobar la disponibilidad y
-                crear el evento una vez confirmada.
-            </p>
-
-        </div>
-
-    </section>
-
 
     <!-- =====================================================
          RESULTADO
@@ -472,128 +331,12 @@ tecnologias=$proyecto["tecnologias"];
         </div>
 
         <p>
-            El resultado es un sistema que automatiza el ciclo completo de
-            captación: desde el primer contacto con un propietario hasta la
-            conversación, el registro del interesado y la posibilidad de
-            agendar una llamada.
+            Un sistema que se encarga solo de todo el trabajo pesado: escribir los primeros mensajes, responder dudas y hacer el seguimiento a los que no contestan.
         </p>
 
         <p>
-            El agente mantiene el contexto de cada conversación, puede
-            procesar tanto mensajes de texto como audios y dispone de
-            herramientas para consultar y actualizar información externa.
+            El equipo solo tiene que entrar para dos cosas: ver las llamadas que se han agendado solas en el calendario y contactar con la gente que ha mostrado algún interés. 
         </p>
-
-        <p>
-            Cuando una conversación no termina en una llamada, el sistema
-            puede realizar automáticamente un seguimiento posterior sin
-            necesidad de revisar manualmente cada contacto.
-        </p>
-
-    </section>
-
-
-    <!-- =====================================================
-         VALOR TÉCNICO
-         ===================================================== -->
-
-    <section class="seccion-proyecto">
-
-        <div class="cabecera-seccion">
-
-            <h2>
-                Valor técnico
-            </h2>
-
-        </div>
-
-        <div class="bloques-tecnicos">
-
-            <article class="bloque-tecnico">
-
-                <h3>
-                    Agente con memoria
-                </h3>
-
-                <p>
-                    Implementación de un agente conversacional con memoria
-                    persistente y una estrategia definida mediante prompt.
-                </p>
-
-            </article>
-
-
-            <article class="bloque-tecnico">
-
-                <h3>
-                    Buffer de mensajes
-                </h3>
-
-                <p>
-                    Redis permite agrupar mensajes consecutivos y evitar que
-                    el agente responda varias veces cuando el usuario escribe
-                    varios mensajes seguidos.
-                </p>
-
-            </article>
-
-
-            <article class="bloque-tecnico">
-
-                <h3>
-                    Procesamiento multimodal
-                </h3>
-
-                <p>
-                    El mismo flujo puede procesar mensajes de texto y audios
-                    mediante transcripción antes de enviarlos al agente.
-                </p>
-
-            </article>
-
-
-            <article class="bloque-tecnico">
-
-                <h3>
-                    Herramientas autónomas
-                </h3>
-
-                <p>
-                    El agente puede utilizar servicios externos según las
-                    necesidades detectadas durante la conversación.
-                </p>
-
-            </article>
-
-
-            <article class="bloque-tecnico">
-
-                <h3>
-                    Automatización híbrida
-                </h3>
-
-                <p>
-                    Combina triggers programados con eventos recibidos en
-                    tiempo real mediante webhooks.
-                </p>
-
-            </article>
-
-
-            <article class="bloque-tecnico">
-
-                <h3>
-                    Control de estados
-                </h3>
-
-                <p>
-                    Google Sheets mantiene los estados de los contactos y
-                    permite evitar procesamientos y envíos duplicados.
-                </p>
-
-            </article>
-
-        </div>
 
     </section>
 
@@ -679,21 +422,6 @@ tecnologias=$proyecto["tecnologias"];
 
             </article>
 
-
-            <article class="bloque-tecnico">
-
-                <h3>
-                    LangChain
-                </h3>
-
-                <p>
-                    Arquitectura del agente, herramientas y memoria mediante
-                    el nodo AI Agent de n8n.
-                </p>
-
-            </article>
-
-
             <article class="bloque-tecnico">
 
                 <h3>
@@ -701,8 +429,7 @@ tecnologias=$proyecto["tecnologias"];
                 </h3>
 
                 <p>
-                    Leads, CRM, estados de contacto y registro de
-                    conversaciones.
+                     Contactos, interesados, llamadas agendadas y estados de contacto.
                 </p>
 
             </article>
@@ -757,10 +484,6 @@ tecnologias=$proyecto["tecnologias"];
          ===================================================== -->
 
     <section class="enlaces-proyecto">
-
-        <a href="#" class="boton-proyecto">
-            Ver código
-        </a>
 
         <a href="index.php" class="enlace-proyecto">
             ← Volver al portfolio
