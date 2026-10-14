@@ -76,8 +76,8 @@ $proyectos = [
         ],
         [
             "titulo" => "Scraping avanzado con bots personalizados",
-            "descripcion" => "Sistema automatizado con bots capaces de navegar e interactuar con diferentes páginas web para extraer información.",
-            "descripcionlarga" => "Sistema de scraping automatizado con bots capaces de navegar e interactuar con páginas web para obtener información que no puede extraerse mediante un scraping convencional, reduciendo así el trabajo manual necesario para recopilar y preparar estos datos.",
+            "descripcion" => "Sistema de scraping personalizado que automatiza la navegación web y la extracción de información, adaptable a distintos portales y necesidades de negocio.",
+            "descripcionlarga" => "Sistema de scraping automatizado mediante bots personalizados capaces de navegar e interactuar con diferentes páginas web para recopilar información que requiere procesos de extracción específicos. Aplicado actualmente al sector inmobiliario, permite automatizar la búsqueda de anuncios, extraer datos relevantes y organizar los resultados. Su enfoque modular permite adaptar la solución a otros sectores y objetivos de recopilación de información.",
             "tecnologias" => ["n8n", "Apify", "Playwright", "JavaScript", "Web Scraping"],
             "capturas" => [
                 "preparacion_urls.png",

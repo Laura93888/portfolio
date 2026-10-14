@@ -57,6 +57,17 @@ $descripcionlarga=$proyecto["descripcionlarga"];
            <?=$descripcionlarga?>
         </p>
 
+        <div class="proyecto-imagen-principal">
+
+            <a href="assets/img/agenteWhatsapp/resultadowhatsap.png" target="_blank">
+
+                <img src="assets/img/agenteWhatsapp/resultadowhatsap.png"
+                     alt="Posible resultado del flujo">
+
+            </a>
+
+        </div>
+
     </section>
 
 
@@ -94,14 +105,29 @@ $descripcionlarga=$proyecto["descripcionlarga"];
             <h2>La solución</h2>
 
             <p>
-                Un agente de IA escribe por WhatsApp a una lista de contactos, mantiene la conversación con los que responden y deja todo
-                registrado para que la persona que atiende solo tenga que
-                ocuparse de los contactos que de verdad le interesan.
-                Cada contacto acaba en uno de estos tres sitios:
+                Un agente de IA escribe por WhatsApp a una lista de contactos, mantiene la conversación y deja todo registrado para que la persona que atiende solo tenga que ocuparse de los contactos que de verdad le interesan. 
+            </p>
+            <p>El sistema está compuesto por tres flujos en n8n conectados entre sí: envío de mensajes, conversación con el agente y reactivación de los que no responden. Estos comparten la información necesaria para gestionar los contactos
             </p>
 
         </div>
+            
+            <div class="proyecto-imagen-principal">
 
+                <a href="assets/img/agenteWhatsapp/flujo_completo.png" target="_blank">
+
+                    <img src="assets/img/agenteWhatsapp/flujo_completo.png"
+                         alt="Flujo completo de la automatización del agente de WhatsApp">
+
+                </a>
+
+            </div>
+        <div class="cabecera-seccion">
+            <p>
+La información de los contactos se organiza en tres registros según su estado y evolución:
+            </p>
+
+        </div>
 
         <div class="bloques-tecnicos">
 
@@ -128,7 +154,7 @@ $descripcionlarga=$proyecto["descripcionlarga"];
                 <p>
                     Cuando alguien acepta una llamada, el agente crea el evento en
                     el calendario del equipo y lo apunta también en una hoja de
-                    agendados, para que quede todo registrado en un solo sitio.
+                    agendados, para que quede todo registrado.
                 </p>
             </article>
 
@@ -136,38 +162,6 @@ $descripcionlarga=$proyecto["descripcionlarga"];
 
     </section>
 
-
-    <!-- =====================================================
-         ARQUITECTURA DE LA AUTOMATIZACIÓN
-         ===================================================== -->
-
-    <section class="seccion-proyecto">
-
-        <div class="cabecera-seccion">
-
-            <h2>
-                Arquitectura de la automatización
-            </h2>
-
-            <p>
-                El sistema está compuesto por tres flujos en n8n conectados entre sí: envío de mensajes, conversación con el agente y reactivación de los que no responden. Estos comparten la información necesaria para gestionar los contactos.
-
-            </p>
-
-        </div>
-
-        <div class="proyecto-imagen-principal">
-
-            <a href="assets/img/agenteWhatsapp/flujo_completo.png" target="_blank">
-
-                <img src="assets/img/agenteWhatsapp/flujo_completo.png"
-                     alt="Flujo completo de la automatización del agente de WhatsApp">
-
-            </a>
-
-        </div>
-
-    </section>
 
             <!-- =====================================================
                  PROCESO DE AUTOMATIZACIÓN
@@ -180,7 +174,7 @@ $descripcionlarga=$proyecto["descripcionlarga"];
                     <h2>Proceso de automatización</h2>
 
                     <p>
-                        Desglose por fases de los circuitos implementados en el workflow.
+                        El proceso se divide en varias fases que abarcan el envío de mensajes, la gestión de respuestas y el seguimiento automático de los contactos.
                     </p>
 
                 </div>

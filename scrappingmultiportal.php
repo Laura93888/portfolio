@@ -11,6 +11,11 @@ foreach ($proyectos["automatizaciones"] as $item) {
     }
 }
 
+if($proyecto==null){
+    header("Location: index.php");
+    exit;
+}
+
 $titulo = $proyecto["titulo"];
 $descripcion = $proyecto["descripcion"];
 $categoria = "Automatización e IA";
@@ -54,24 +59,20 @@ $descripcionlarga = $proyecto["descripcionlarga"];
             <?= $descripcionlarga ?> 
         </p>
 
-    </section>
-
-
-    <section class="seccion-proyecto">
-
         <div class="proyecto-imagen-principal">
 
-            <a
-                href="assets/img/scrappingbots/kelify2.png"
-                target="_blank"
-            >
-                <img
-                    src="assets/img/scrappingbots/kelify2.png"
-                    alt="Flujo principal de scraping en n8n"
-                >
-            </a>
+            <a href="assets/img/scrappingbots/resultado.png"
+               target="_blank">
 
+                <img
+                    src="assets/img/scrappingbots/resultado.png"
+                    alt="Captura de los datos extraidos del scraping en el sheet"
+                    loading="lazy">
+
+            </a>
         </div>
+
+
 
     </section>
 
@@ -84,15 +85,14 @@ $descripcionlarga = $proyecto["descripcionlarga"];
                 El reto
             </h2>
 
-        </div>
-
         <p>
-            Recopilar información de posibles leads de forma manual en portales web exige mucho tiempo: hay que entrar página por página, buscar los datos relevantes y organizarlos, lo que dificulta procesar grandes volúmenes de forma eficiente.
+            <strong>Recopilar información de posibles leads</strong> de forma manual en portales web exige mucho tiempo: hay que entrar página por página, buscar los datos relevantes y organizarlos, lo que dificulta procesar grandes volúmenes de forma eficiente.
         </p>
 
         <p>
-            Al intentar automatizar este proceso, las herramientas de scraping tradicionales se quedan cortas. Muchos de estos portales imponen barreras de acceso: exigen iniciar sesión con cuenta, aceptar cookies, seleccionar ubicaciones manualmente o navegar haciendo clics hasta llegar al dato clave.
+            Además, automatizar esta tarea no siempre es sencillo: cada portal tiene una estructura y unas condiciones de acceso diferentes. Se puede requerir iniciar sesión, aceptar cookies, o interactuar con distintos elementos de la página para llegar a la información necesaria.
         </p>
+            </div>
 
     </section>
 
@@ -106,15 +106,32 @@ $descripcionlarga = $proyecto["descripcionlarga"];
             </h2>
 
             <p>
-                Desarrollar un sistema de scraping personalizado e integrado con n8n, capaz de adaptar la extracción de información a las características de cada portal web.
+                Desarrollar un sistema de scraping personalizado e integrado con <strong>n8n</strong>, capaz de adaptar la extracción de información a las características de cada portal web.
             </p>
 
             <p>
-                Tras un análisis previo de la estructura del sitio web, estos bots se configuran para iniciar sesión, aceptar avisos de cookies y navegar por la web haciendo los clics necesarios. De esta manera localizan de forma precisa los datos clave (como nombres y teléfonos) que serán utilizados en acciones comerciales, como el envío automatizado de mensajes por WhatsApp.
+                Tras analizar cada web, <strong>se configuran bots personalizados para cada portal, así se pueden localizar los datos relevantes</strong> y organizar la información para su uso en acciones comerciales. Aunque se aplica actualmente al sector inmobiliario, el sistema puede adaptarse a otras webs y necesidades.
             </p>
-            
-        </div>
+
+            </div>
+
+            <div class="proyecto-imagen-principal">
+
+                <a href="assets/img/scrappingbots/kelify2.png"
+                   target="_blank">
+
+                    <img
+                        src="assets/img/scrappingbots/kelify2.png"
+                        alt="Flujo de captación y extracción de datos de empresas"
+                        loading="lazy">
+
+                </a>
+            </div>
+    
+        
     </section>
+
+    
 
 
         <!-- =====================================================
@@ -125,7 +142,7 @@ $descripcionlarga = $proyecto["descripcionlarga"];
             <div class="cabecera-seccion">
                 <h2>Proceso de automatización</h2>
                 <p>
-                    El objetivo es extraer de forma masiva los datos de contacto y características de inmuebles automatizando el rastreo en diferentes portales de vivienda de Madrid. Dependiendo de las restricciones de cada plataforma (como Milanuncios, Fotocasa o Kelify), el flujo adapta su estrategia de extracción.
+                    El flujo comienza con la búsqueda de anuncios en distintos portales inmobiliarios, continúa con la extracción de información y termina con el almacenamiento de los datos obtenidos en Google Sheets.
                 </p>
             </div>
 
@@ -135,22 +152,21 @@ $descripcionlarga = $proyecto["descripcionlarga"];
                 <article class="bloque-tecnico">
                     <h3>01 · Búsqueda paramétrica y control de duplicados</h3>
                     <p>
-                        A través de triggers en <strong>n8n</strong> y formularios de selección de zona (como Arganzuela, Vicálvaro o Moratalaz), el sistema genera las URLs de búsqueda de pisos. Antes de ejecutar la extracción, contrasta los listados con <strong>Google Sheets</strong> para procesar únicamente los anuncios nuevos y evitar duplicidades.
+                        Mediante parámetros de búsqueda se seleccionan las ubicaciones en las que buscar pisos. A partir de esa selección, Web Scraper <strong>localiza los anuncios y recopila sus URL</strong> para identificar las viviendas que se van a analizar. Antes de procesar los resultados, contrasta las URL con los registros de Google Sheets para detectar anuncios ya registrados y <strong>evitar duplicados</strong>.
                     </p>
+              
                     <div class="proyecto-imagen-principal">
-                        <a href="assets/img/scrappingbots/kelify.png" target="_blank">
-                            <img src="assets/img/scrappingbots/kelify.png" alt="Generación de búsquedas y filtrado de URLs de pisos" loading="lazy">
+                        <a href="assets/img/scrappingbots/web_scrapper.png" target="_blank">
+                            <img src="assets/img/scrappingbots/web_scrapper.png" alt="Generación de URLs" loading="lazy">
                         </a>
                     </div>
                 </article>
 
                 <!-- FASE 2 -->
                 <article class="bloque-tecnico">
-                    <h3>02 · Dos vías de ejecución: Scraping directo o Actores con Playwright</h3>
+                    <h3>02 · Navegación automatizada y extracción de datos</h3>
                     <p>
-                        Dependiendo del portal inmobiliario, el flujo actúa de dos formas: 
-                        <br>• <strong>Sin autenticación:</strong> Recorre listados públicos de viviendas (Milanuncios o Fotocasa) extrayendo títulos, nombres de particulares y URLs directamente.
-                        <br>• <strong>Con autenticación (Actor Playwright personalizado con JS):</strong> Inicia sesión con credenciales, acepta cookies y navega por zonas restringidas de los anuncios de pisos de forma interactiva (Kelify).
+                        Una vez recopiladas las URL, el sistema las envía a un <strong>actor personalizado</strong> desarrollado con JavaScript y Playwright en Apify, que procesa los anuncios uno a uno. El actor automatiza la navegación por el portal, inicia sesión cuando es necesario, gestiona las cookies y accede a cada ficha como lo haría un usuario desde el navegador. De esta forma, puede recorrer los anuncios y extraer la información necesaria mediante selectores CSS.
                     </p>
                     <div class="proyecto-imagen-principal">
                         <a href="assets/img/scrappingbots/actor_personalizado.png" target="_blank">
@@ -161,9 +177,9 @@ $descripcionlarga = $proyecto["descripcionlarga"];
 
                 <!-- FASE 3 -->
                 <article class="bloque-tecnico">
-                    <h3>03 · Extracción y volcado centralizado</h3>
+                    <h3>03 · Procesamiento y almacenamiento de datos</h3>
                     <p>
-                        Mediante selectores CSS adaptados a cada web de vivienda, los bots extraen los datos deseados de los inmuebles (precios, metros cuadrados, teléfonos y nombres de particulares). Toda la información estructurada se centraliza de forma limpia en Google Sheets, lista para disparar flujos comerciales como WhatsApp.
+                        Tras la extracción de los campos de interés de cada anuncio, los datos se organizan y almacenan en Google Sheets, donde quedan centralizados y preparados para su consulta y para integrarlos en otras automatizaciones comerciales, como el envío de mensajes por WhatsApp.
                     </p>
                     <div class="proyecto-imagen-principal">
                         <a href="assets/img/scrappingbots/limpieza_datos.png" target="_blank">
@@ -187,7 +203,7 @@ $descripcionlarga = $proyecto["descripcionlarga"];
         </div>
 
         <p>
-            Hemos construido un sistema automatizado y escalable capaz de extraer diariamente los nuevos anuncios de pisos en diferentes portales inmobiliarios, superando barreras como inicios de sesión o restricciones de cookies.
+            Se ha construido un sistema automatizado y escalable capaz de extraer diariamente los nuevos anuncios de pisos en diferentes portales inmobiliarios, superando barreras como inicios de sesión o restricciones de cookies.
         </p>
 
         <p>
@@ -218,8 +234,7 @@ $descripcionlarga = $proyecto["descripcionlarga"];
                 </h3>
 
                 <p>
-                    Orquestación de workflows, procesamiento de datos,
-                    filtros y conexión entre servicios.
+                    Entorno principal desde el que se organiza y ejecuta la automatización.
                 </p>
 
             </article>
@@ -232,8 +247,7 @@ $descripcionlarga = $proyecto["descripcionlarga"];
                 </h3>
 
                 <p>
-                    Ejecución de los actores encargados de recorrer las webs
-                    y obtener la información.
+                    Plataforma en la nube integrada con n8n que permite ejecutar las herramientas de scraping y los actores personalizados encargados de localizar anuncios y extraer información de los portales inmobiliarios.
                 </p>
 
             </article>
@@ -246,8 +260,7 @@ $descripcionlarga = $proyecto["descripcionlarga"];
                 </h3>
 
                 <p>
-                    Automatización del navegador utilizada en el actor
-                    personalizado.
+                    Actor de Apify basado en Playwright, personalizado mediante código para desarrollar bots que navegan automáticamente por los portales web.
                 </p>
 
             </article>
@@ -260,8 +273,7 @@ $descripcionlarga = $proyecto["descripcionlarga"];
                 </h3>
 
                 <p>
-                    Desarrollo de lógica personalizada para procesar,
-                    filtrar y transformar los datos.
+                    Lenguaje utilizado tanto para desarrollar la lógica de los actores personalizados de scraping como para crear pequeños fragmentos de código en n8n que permiten procesar los datos entre las distintas etapas de la automatización.
                 </p>
 
             </article>
@@ -270,7 +282,7 @@ $descripcionlarga = $proyecto["descripcionlarga"];
             <article class="bloque-tecnico">
 
                 <h3>
-                    Web Scraping
+                    Web Scrapper
                 </h3>
 
                 <p>
