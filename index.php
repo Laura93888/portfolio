@@ -114,7 +114,7 @@ foreach ($proyectos as $clave => $grupo) {
                             <span><?= htmlspecialchars($t) ?></span>
                         <?php endforeach; ?>
                     </div>
-                    <a href="<?= $p['enlace'] ?>" class="enlace-proyecto">Ver proyecto →</a>
+                    <a href="<?= htmlspecialchars($p['enlace'], ENT_QUOTES, 'UTF-8') ?>" class="enlace-proyecto">Ver proyecto →</a>
                 </article>
             <?php endforeach; ?>
         </div>

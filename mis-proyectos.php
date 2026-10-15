@@ -40,10 +40,10 @@
                <?php $primero = true; ?>
                <?php foreach ($categorias as $clave => $cat): ?>
                    <?php if (empty($proyectos[$clave])) continue; ?>
-                   <button class="tarjeta-categoria <?= $primero ? ' activa' : '' ?>" data-categoria="<?= $clave ?>">
-                       <span class="icono-categoria"><?= $cat['icono'] ?></span>
-                       <strong><?= htmlspecialchars($cat['nombre']) ?></strong>
-                       <small><?= htmlspecialchars($cat['descripcion']) ?></small>
+                   <button class="tarjeta-categoria <?= $primero ? ' activa' : '' ?>" data-categoria="<?= htmlspecialchars($clave, ENT_QUOTES, 'UTF-8') ?>" type="button">
+                       <span class="icono-categoria"><?= htmlspecialchars($cat['icono'], ENT_QUOTES, 'UTF-8') ?></span>
+                       <strong><?= htmlspecialchars($cat['nombre'], ENT_QUOTES, 'UTF-8') ?></strong>
+                       <small><?= htmlspecialchars($cat['descripcion'], ENT_QUOTES, 'UTF-8') ?></small>
                    </button>
                 <?php $primero = false; ?>
                <?php endforeach; ?>
@@ -63,7 +63,7 @@
 <?php require_once 'includes/footer.php'; ?>
 
 <script>
-    const proyectos = <?= json_encode($proyectos, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>;
+    const proyectos = <?= json_encode($proyectos, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT); ?>;
 
 </script>
 

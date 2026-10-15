@@ -40,10 +40,10 @@ $descripcionlarga=$proyecto["descripcionlarga"];
 
     <section class="proyecto-hero">
 
-        <h1><?= $titulo; ?></h1>
+        <h1><?= htmlspecialchars($titulo, ENT_QUOTES, 'UTF-8'); ?></h1>
 
         <p class="proyecto-introduccion">
-            <?= $descripcionlarga; ?>
+            <?= htmlspecialchars($descripcionlarga, ENT_QUOTES, 'UTF-8'); ?>
         </p>
 
     </section>
@@ -491,8 +491,8 @@ $descripcionlarga=$proyecto["descripcionlarga"];
             Ver código en GitHub
         </a>
 
-        <a href="index.php" class="enlace-proyecto">
-            ← Volver al portfolio
+        <a href="mis-proyectos.php?categoria=desarrollo" class="enlace-proyecto">
+            ← Todos los proyectos
         </a>
 
     </section>

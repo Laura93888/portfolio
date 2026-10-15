@@ -34,10 +34,10 @@ $descripcionlarga = $proyecto["descripcionlarga"];
 
     <meta
         name="description"
-        content="<?= htmlspecialchars($proyecto['descripcion']); ?>"
+        content="<?= htmlspecialchars($proyecto['descripcion'], ENT_QUOTES, 'UTF-8'); ?>"
     >
 
-    <title><?= $titulo; ?> - Laura Basurto</title>
+    <title><?= htmlspecialchars($titulo, ENT_QUOTES, 'UTF-8'); ?> - Laura Basurto</title>
 
     <link rel="stylesheet" href="/assets/css/style.css">
 
@@ -52,11 +52,11 @@ $descripcionlarga = $proyecto["descripcionlarga"];
 
     <section class="proyecto-hero">
         <h1>
-            <?= $titulo ?> 
+            <?= htmlspecialchars($titulo, ENT_QUOTES, 'UTF-8'); ?>
         </h1>
 
         <p class="proyecto-introduccion">
-            <?= $descripcionlarga ?> 
+            <?= htmlspecialchars($descripcionlarga, ENT_QUOTES, 'UTF-8'); ?>
         </p>
 
         <div class="proyecto-imagen-principal">
@@ -313,17 +313,17 @@ $descripcionlarga = $proyecto["descripcionlarga"];
     <section class="enlaces-proyecto">
 
         <a
-            href="<?= $proyecto["enlace"]; ?>"
+            href="<?= htmlspecialchars($proyecto["enlace"], ENT_QUOTES, 'UTF-8'); ?>"
             class="boton-proyecto"
         >
             Ver proyecto
         </a>
 
         <a
-            href="index.php"
+            href="mis-proyectos.php?categoria=automatizaciones"
             class="enlace-proyecto"
         >
-            ← Volver al portfolio
+            ← Todos los proyectos
         </a>
 
     </section>

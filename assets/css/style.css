@@ -90,8 +90,6 @@ button {
 .cabecera .navegacion a:hover {
     color: var(--brand-dark);
     background: rgba(255,255,255,0.12);
-    padding: 6px 8px;
-    border-radius: 6px;
 }
 
 .boton-cv {
@@ -403,6 +401,12 @@ button {
 }
 
 @media (max-width: 850px) {
+    .presentacion,
+    .proyectos,
+    .pie-pagina-contenido {
+        width: calc(100% - 32px);
+    }
+
     .cabecera-contenido {
         flex-direction: column;
         align-items: flex-start;

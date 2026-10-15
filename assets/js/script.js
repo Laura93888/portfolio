@@ -23,23 +23,47 @@ function mostrarProyectos(categoria) {
         const tarjeta = document.createElement("article");
         tarjeta.classList.add("tarjeta-proyecto");
 
-        tarjeta.innerHTML = `
-            <div>
-            <div class="categorias-proyecto">
-                    ${categorias.map(c => `<span data-categoria="${c}">${c}</span>`).join("")}
-                </div>
-                <h3>${proyecto.titulo}</h3>
-                <p>${proyecto.descripcion}</p>
-            </div>
+        const contenido = document.createElement("div");
+        const listaCategorias = document.createElement("div");
+        listaCategorias.className = "categorias-proyecto";
+        categorias.forEach(categoriaTexto => {
+            const etiqueta = document.createElement("span");
+            etiqueta.dataset.categoria = categoriaTexto;
+            etiqueta.textContent = categoriaTexto;
+            listaCategorias.appendChild(etiqueta);
+        });
+        contenido.appendChild(listaCategorias);
 
-            <div class="tecnologias-proyecto">
-                ${proyecto.tecnologias.map(tecnologia => `<span>${tecnologia}</span>`).join("")}
-            </div>
+        const titulo = document.createElement("h3");
+        titulo.textContent = proyecto.titulo;
+        contenido.appendChild(titulo);
 
-            <a href="${proyecto.enlace}" class="enlace-proyecto">
-                Ver proyecto →
-            </a>
-        `;
+        const descripcion = document.createElement("p");
+        descripcion.textContent = proyecto.descripcion;
+        contenido.appendChild(descripcion);
+        tarjeta.appendChild(contenido);
+
+        const tecnologias = document.createElement("div");
+        tecnologias.className = "tecnologias-proyecto";
+        proyecto.tecnologias.forEach(tecnologiaTexto => {
+            const etiqueta = document.createElement("span");
+            etiqueta.textContent = tecnologiaTexto;
+            tecnologias.appendChild(etiqueta);
+        });
+        tarjeta.appendChild(tecnologias);
+
+        try {
+            const destino = new URL(proyecto.enlace, window.location.href);
+            if (destino.origin === window.location.origin) {
+                const enlace = document.createElement("a");
+                enlace.href = destino.href;
+                enlace.className = "enlace-proyecto";
+                enlace.textContent = "Ver proyecto →";
+                tarjeta.appendChild(enlace);
+            }
+        } catch {
+            // Ignora destinos inválidos sin interrumpir el listado.
+        }
 
         listaProyectos.appendChild(tarjeta);
     });
@@ -55,7 +79,20 @@ botonesCategoria.forEach(boton => {
         boton.classList.add("activa");
 
         mostrarProyectos(categoria);
+
+        const url = new URL(window.location.href);
+        url.searchParams.set("categoria", categoria);
+        window.history.replaceState(null, "", url);
     });
 });
 
-mostrarProyectos(document.querySelector(".tarjeta-categoria.activa").dataset.categoria);
+const categoriaSolicitada = new URLSearchParams(window.location.search).get("categoria");
+const botonInicial = Array.from(botonesCategoria).find(
+    boton => boton.dataset.categoria === categoriaSolicitada
+) || document.querySelector(".tarjeta-categoria.activa");
+
+if (botonInicial) {
+    botonesCategoria.forEach(boton => boton.classList.remove("activa"));
+    botonInicial.classList.add("activa");
+    mostrarProyectos(botonInicial.dataset.categoria);
+}

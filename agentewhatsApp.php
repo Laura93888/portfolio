@@ -28,9 +28,9 @@ $descripcionlarga=$proyecto["descripcionlarga"];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-    content="<?= htmlspecialchars($proyecto['descripcion']); ?>">
+    content="<?= htmlspecialchars($proyecto['descripcion'], ENT_QUOTES, 'UTF-8'); ?>">
 
-    <title><?= $titulo; ?> - Laura Basurto</title>
+    <title><?= htmlspecialchars($titulo, ENT_QUOTES, 'UTF-8'); ?> - Laura Basurto</title>
 
     <link rel="stylesheet" href="/assets/css/style.css">
 
@@ -50,11 +50,11 @@ $descripcionlarga=$proyecto["descripcionlarga"];
     <section class="proyecto-hero">
 
         <h1>
-            <?=$titulo?>
+            <?= htmlspecialchars($titulo, ENT_QUOTES, 'UTF-8'); ?>
         </h1>
 
         <p class="proyecto-introduccion">
-           <?=$descripcionlarga?>
+           <?= htmlspecialchars($descripcionlarga, ENT_QUOTES, 'UTF-8'); ?>
         </p>
 
         <div class="proyecto-imagen-principal">
@@ -479,8 +479,8 @@ cada frase.
 
     <section class="enlaces-proyecto">
 
-        <a href="index.php" class="enlace-proyecto">
-            ← Volver al portfolio
+        <a href="mis-proyectos.php?categoria=automatizaciones" class="enlace-proyecto">
+            ← Todos los proyectos
         </a>
 
     </section>

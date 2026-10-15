@@ -21,7 +21,7 @@ $descripcionlarga=$proyecto["descripcionlarga"];
 
     <meta name="description" content="Madrid Colegios - Proyecto de desarrollo web de Laura Basurto.">
 
-    <title><?= $titulo; ?> - Laura Basurto</title>
+    <title><?= htmlspecialchars($titulo, ENT_QUOTES, 'UTF-8'); ?> - Laura Basurto</title>
 
     <link rel="stylesheet" href="/assets/css/style.css">
 </head>
@@ -38,13 +38,13 @@ $descripcionlarga=$proyecto["descripcionlarga"];
     <section class="proyecto-hero">
 
         <span class="etiqueta-bloque">
-            <?= $categoria; ?>
+            <?= htmlspecialchars($categoria, ENT_QUOTES, 'UTF-8'); ?>
         </span>
 
-        <h1><?= $titulo; ?></h1>
+        <h1><?= htmlspecialchars($titulo, ENT_QUOTES, 'UTF-8'); ?></h1>
 
         <p class="proyecto-introduccion">
-            <?= $descripcionlarga; ?>
+            <?= htmlspecialchars($descripcionlarga, ENT_QUOTES, 'UTF-8'); ?>
         </p>
 
     </section>
@@ -224,8 +224,8 @@ $descripcionlarga=$proyecto["descripcionlarga"];
             Ver código en GitHub
         </a>
 
-        <a href="index.php" class="enlace-proyecto">
-            ← Volver al portfolio
+        <a href="mis-proyectos.php?categoria=desarrollo" class="enlace-proyecto">
+            ← Todos los proyectos
         </a>
 
     </section>

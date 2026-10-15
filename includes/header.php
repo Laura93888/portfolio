@@ -16,6 +16,12 @@
 
         <nav class="navegacion">
 
+            <a href="mis-proyectos.php">
+
+                Proyectos
+
+            </a>
+
             <a
                 href="https://github.com/Laura93888"
                 target="_blank"
@@ -35,7 +41,7 @@
             </a>
 
             <a
-                href="assets/Curriculum_2026.pdf"
+                href="assets/Curr%C3%ADculum_2026.pdf"
                 target="_blank"
                 class="boton-cv">
 

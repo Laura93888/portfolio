@@ -303,8 +303,8 @@ $categoriaextra = $proyecto['categoriaextra'] ?? null;
             Ver código en GitHub
         </a>
 
-        <a href="index.php" class="enlace-proyecto">
-            ← Volver al portfolio
+        <a href="mis-proyectos.php?categoria=desarrollo" class="enlace-proyecto">
+            ← Todos los proyectos
         </a>
 
     </section>
